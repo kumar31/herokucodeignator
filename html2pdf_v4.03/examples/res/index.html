@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Myshul : Invoice</title> 
+  </head>
+<style>
+@font-face {
+  font-family: HelveticaNeue;
+  src: url(HelveticaNeue.ttf);
+}	
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+a {
+  color: #0087C3;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+  width: 21cm;  
+  height: 29.7cm; 
+  margin: 0 auto;
+  padding: 0px 20px;  
+  color: #000;
+  background: #FFFFFF; 
+  font-family: HelveticaNeue; 
+  font-size: 14px;
+  
+}
+main {
+	padding: 0 20px;
+}
+.contain {
+	height: 29.7cm; 
+	background-image: url("Myshul-Logo-trans.png");
+    background-repeat: no-repeat;
+    background-position: 50% 40%; 
+}
+
+header {
+  padding: 0px 20px;
+  margin-bottom: 20px;  
+  background-color: #ebdfc9;
+  background-size: cover;  
+  text-align: center; 
+}
+
+#logo {
+  float: left;  
+}
+
+#logo img {
+  height: 135px;
+  width: 170px;
+}
+#client-logo img {
+  height: 125px;
+  width: 130px;
+}
+.circle-img {
+  border-radius: 50%;
+  border: 3px solid #F0F0F0;
+}
+#company {
+  padding-top: 60px;
+  padding-right: 120px;
+}
+#add-details {
+  margin-top: 20px;
+  float: right;
+  text-align: right;
+}
+.text-size {
+  font-size: 16px;
+}
+#details {
+  margin-bottom: 20px;
+}
+
+#client {
+  padding-left: 6px;
+  margin-top: 150px;
+  float: left;
+  font-size: 1.2em;
+}
+#client .address {
+	padding-top: 10px;
+}
+#client .to {
+  color: #777777;
+}
+
+h2.name {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0;
+}
+
+#invoice {
+  float: right;
+  text-align: right;
+}
+
+#invoice h1 {
+  color: #0087C3;
+  font-size: 2.4em;
+  line-height: 1em;
+  font-weight: normal;
+  margin: 0  0 10px 0;
+}
+
+#invoice .date {
+  font-size: 1.1em;
+  color: #777777;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+.table-bg {
+	background-color: #ebdfc9;
+}
+table th,
+table td {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #000;
+}
+
+table th {
+  white-space: nowrap;        
+  font-weight: normal;
+}
+
+table td {
+  text-align: right;
+}
+
+table td h3{
+  color: #57B223;
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0 0 0.2em 0;
+}
+
+table .no {
+  color: #000;
+  font-size: 1.6em;
+}
+
+table .desc {
+  text-align: left;
+  font-weight: bold;
+}
+
+table .unit {
+	font-weight: bold;
+	text-align: center;
+}
+
+table .qty {
+	font-weight: bold;
+}
+
+table .total {
+  color: #000;
+  font-weight: bold;
+}
+
+table td.unit,
+table td.qty,
+table td.total {
+  font-size: 1.2em;
+}
+
+table tbody tr:last-child td {
+  
+}
+
+table tfoot td {
+  padding: 10px 20px;
+  background: #FFFFFF;  
+  font-size: 1.2em;
+  white-space: nowrap; 
+  border-top: 1px solid #AAAAAA; 
+  font-weight: bold;
+}
+
+table tfoot tr:first-child td {
+  border-top: none; 
+}
+
+table tfoot tr:last-child td {
+  color: #57B223;
+  font-size: 1.4em;
+  border-top: 1px solid #57B223; 
+
+}
+
+table tfoot tr td:first-child {
+  border: none;
+}
+
+#thanks{
+  font-size: 2em;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+#notices{
+  padding-left: 6px;  
+}
+
+#notices .notice {
+  font-size: 1.1em;
+}
+
+footer {
+  color: #777777;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 5px 0;
+  text-align: center;
+}
+
+  </style>
+  <body>
+  <div class="contain">
+    <header class="clearfix">
+      <div id="logo">
+        <img class="" src="app-logo.png">
+      </div>
+      <div id="company">
+        <h2 style="text-decoration: underline;" class="name">INVOICE</h2>
+      </div>      
+    </header>
+    <main>
+      <div id="details" class="clearfix">
+        <div id="client">
+          <!--<div class="to">INVOICE TO:</div>
+          <h2 class="name">John Doe</h2>-->
+          <div class="address">Invoice Id : <b>#56365326</b></div>          
+          <div class="address">Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <b>12-05-2015</b></div> 
+		  <div class="address">Tax Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <b>#1234567</b></div>   
+        </div>
+        <div id="invoice">
+		<div id="client-logo">
+          <img class="circle-img" src="logo.jpg">
+		</div>  
+          <div id="add-details">
+			<h2 class="name"><b>Sandton Shul (BHH Sandton)</b></h2>
+			<div class="text-size">
+				<div>Tel: +27 11 883 4210</div>
+				<div>Fax: +27 11 883 4245</div>
+				<div>Email : <a href="mailto:company@example.com">sandtonshul@sandtonshul.co.za</a></div>
+			</div>        
+		  </div>        
+        </div>
+      </div>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr class="table-bg">
+            <!--<th class="no">#</th>-->
+            <th class="desc">DESCRIPTION</th>
+            <th class="unit">QUANTITY</th>
+            <th class="qty">PRICE</th>
+            <th class="total">TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!--<th class="no">#</th>-->
+            <td class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</td>
+            <td class="unit">1</td>
+            <td class="qty">$1000</td>
+            <td class="total">$1000</td>
+          </tr>
+          <tr>
+            <!--<th class="no">#</th>-->
+            <td class="desc">Processing Fee</td>
+            <td class="unit"></td>
+            <td class="qty">$5.00</td>
+            <td class="total">$5.00</td>
+          </tr>
+          <tr class="table-bg">
+            <!--<th class="no">#</th>-->
+            <td class="desc">Total</td>
+            <td class="unit"></td>
+            <td class="qty"></td>
+            <td class="total">$1005.00</td>
+          </tr>
+        </tbody>
+        
+      </table>    
+      <div id="notices">
+        <div><h3>NOTE:<h3></div>
+        <div class="notice">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+      </div>
+	   <div id="thanks">Thank you!</div>
+    </main>
+    <footer>
+      
+    </footer>
+	</div>
+  </body>
+</html>

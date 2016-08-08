@@ -1,0 +1,57 @@
+@font-face {
+    /*font-family: 'latoregular';*/
+    src: url('lato-regular-webfont.eot');
+    src: url('lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('lato-regular-webfont.woff2') format('woff2'),
+         url('lato-regular-webfont.woff') format('woff'),
+         url('lato-regular-webfont.ttf') format('truetype'),
+         url('lato-regular-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.logcontainer 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+	background-color:rgba(0,0,0,0.7);
+	width:382px;
+	color:white;
+	/*font-family: 'latoregular';*/
+	padding:30px;
+}
+
+.white-border
+{
+	border-bottom:1px solid white;
+	width:360px;
+	margin:auto;
+}
+
+.logcontainer .formlg
+{
+	text-align:center;
+	margin-top:20px;
+}
+.logcontainer a
+{
+	color:white;
+	font-weight:600;
+}
+.logcontainer input[type="text"]
+{
+	/*width:90%;
+	height:30px;*/
+	color: black;
+}
+
+
+.logcontainer h3
+{
+	margin:5px;
+}
