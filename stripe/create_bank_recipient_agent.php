@@ -13,10 +13,10 @@ error_reporting(0);
 			'description' => "bank"
 		 ));
 		
-		
+		echo "hi";
 		$customerId = $customer->id; 
 	       
-			echo "hi";
+			
 		$_GET['firstname'] = 'Kumar Karthick';
 		$dats = explode('_', $_GET['firstname']);
 		$name= $_REQUEST['fname']." ".$_REQUEST['lname'];
