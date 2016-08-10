@@ -17,8 +17,8 @@ error_reporting(0);
 		$customerId = $customer->id; 
 	       
 			
-		$_REQUEST['firstname'] = 'Kumar Karthick';
-		$dats = explode('_', $_REQUEST['firstname']);
+		$_GET['firstname'] = 'Kumar Karthick';
+		$dats = explode('_', $_GET['firstname']);
 		$name= $_REQUEST['fname']." ".$_REQUEST['lname'];
 		 $result = Stripe_Token::create(
 			   array(
