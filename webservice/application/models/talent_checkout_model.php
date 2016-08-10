@@ -137,7 +137,7 @@ class talent_checkout_model extends CI_Model {
 		$event_contact_name = $this->event_model->firstname($_POST['event_id']);
 		$subject = "Outfit - Checked Out for event"; 
 		$message ="<p>Hi ".$to_name.",</p>";
-		$message .="<p>You have been checked out by ".$event_contact_name." for ".$_POST['number_of_days'].":Days ".$_POST['number_of_hours'].":Hours ".$_POST['number_of_minutes'].":Minutes. Please click here to confirm http://smaatapps.com/nectorv2/website/index.php/login.</p>";
+		$message .="<p>You have been checked out by ".$event_contact_name." for ".$_POST['number_of_days'].":Days ".$_POST['number_of_hours'].":Hours ".$_POST['number_of_minutes'].":Minutes. Please click here to confirm https://testawsout.herokuapp.com/index.php/login.</p>";
 		$message .="<p>Regards,<br>Outfit Admin</p>";	
 		
 		$this->events_mail_model->email($to_email,$to_name,$subject,$message);
@@ -145,7 +145,7 @@ class talent_checkout_model extends CI_Model {
 		// sms noitification
 		$event_name = urlencode($event_name);
 		$phone = $this->talent_model->phone_number($_POST['talent_id']);
-		$text = "You have been checked out by ".$event_contact_name." for ".$_POST['number_of_days'].":Days ".$_POST['number_of_hours'].":Hours ".$_POST['number_of_minutes'].":Minutes. To Accept reply ".$_POST['event_id']."-".$_POST['talent_id']."-Y to 16603334054. Recheck click http://smaatapps.com/nectorv2/website/index.php/talent_fill_timesheet";
+		$text = "You have been checked out by ".$event_contact_name." for ".$_POST['number_of_days'].":Days ".$_POST['number_of_hours'].":Hours ".$_POST['number_of_minutes'].":Minutes. To Accept reply ".$_POST['event_id']."-".$_POST['talent_id']."-Y to 16603334054. Recheck click https://testawsout.herokuapp.com/index.php/talent_fill_timesheet";
 		$text = urlencode($text);
 		$events_smsurl = $this->variableconfig_model->events_smsurl();
 		file_get_contents("".$events_smsurl."?number=".$phone."&event_name=".$event_name."&text=".$text);

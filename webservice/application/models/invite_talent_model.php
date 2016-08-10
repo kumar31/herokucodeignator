@@ -46,7 +46,7 @@ class invite_talent_model extends CI_Model {
 		$event_start_datetime = date('D dS M Y h:i A', strtotime($event_start_datetime));
 		$subject = "Outfit - Selected for event"; 
 		$message ="<p>Hi ".$to_name.",</p>";
-		$message .="<p>".$event_contact_name." wants you for an upcoming event. ".$event_name." on ".$event_start_datetime.". Please click this link for details and to accept the invitation http://smaatapps.com/nectorv2/website/index.php/login .</p>";
+		$message .="<p>".$event_contact_name." wants you for an upcoming event. ".$event_name." on ".$event_start_datetime.". Please click this link for details and to accept the invitation https://testawsout.herokuapp.com/index.php/login .</p>";
 		$message .="<p>Regards,<br>Outfit Admin</p>";	
 		
 		$this->events_mail_model->email($to_email,$to_name,$subject,$message);
@@ -54,7 +54,7 @@ class invite_talent_model extends CI_Model {
 		// sms noitification
 		$event_name = urlencode($event_name);
 		$phone = $this->talent_model->phone_number($_POST['talent_id']);
-		$text = "".$event_contact_name." wants you for an upcoming event. ".$event_name." on ".$event_start_datetime.". Please click this link for details and to accept the invitation http://smaatapps.com/nectorv2/website/index.php/login .";
+		$text = "".$event_contact_name." wants you for an upcoming event. ".$event_name." on ".$event_start_datetime.". Please click this link for details and to accept the invitation https://testawsout.herokuapp.com/index.php/login .";
 		$text = urlencode($text);
 		$events_smsurl = $this->variableconfig_model->events_smsurl();
 		file_get_contents("".$events_smsurl."?number=".$phone."&event_name=".$event_name."&text=".$text);
