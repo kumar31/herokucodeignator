@@ -1,5 +1,5 @@
 <?php
-
+echo "hello";
 // Tested on PHP 5.2, 5.3
 
 // This snippet (and some of the curl code) due to the Facebook SDK.
@@ -14,44 +14,44 @@ if (!function_exists('mb_detect_encoding')) {
 }
 
 // Stripe singleton
-require(__DIR__ . '/Stripe/Stripe.php');
+require(dirname(__FILE__) . '/Stripe/Stripe.php');
 
 // Utilities
-require(__DIR__ . '/Stripe/Util.php');
-require(__DIR__ . '/Stripe/Util/Set.php');
+require(dirname(__FILE__) . '/Stripe/Util.php');
+require(dirname(__FILE__) . '/Stripe/Util/Set.php');
 
 // Errors
-require(__DIR__ . '/Stripe/Error.php');
-require(__DIR__ . '/Stripe/ApiError.php');
-require(__DIR__ . '/Stripe/ApiConnectionError.php');
-require(__DIR__ . '/Stripe/AuthenticationError.php');
-require(__DIR__ . '/Stripe/CardError.php');
-require(__DIR__ . '/Stripe/InvalidRequestError.php');
-require(__DIR__ . '/Stripe/RateLimitError.php');
+require(dirname(__FILE__) . '/Stripe/Error.php');
+require(dirname(__FILE__) . '/Stripe/ApiError.php');
+require(dirname(__FILE__) . '/Stripe/ApiConnectionError.php');
+require(dirname(__FILE__) . '/Stripe/AuthenticationError.php');
+require(dirname(__FILE__) . '/Stripe/CardError.php');
+require(dirname(__FILE__) . '/Stripe/InvalidRequestError.php');
+require(dirname(__FILE__) . '/Stripe/RateLimitError.php');
 
 // Plumbing
-require(__DIR__ . '/Stripe/Object.php');
-require(__DIR__ . '/Stripe/ApiRequestor.php');
-require(__DIR__ . '/Stripe/ApiResource.php');
-require(__DIR__ . '/Stripe/SingletonApiResource.php');
-require(__DIR__ . '/Stripe/AttachedObject.php');
-require(__DIR__ . '/Stripe/List.php');
+require(dirname(__FILE__) . '/Stripe/Object.php');
+require(dirname(__FILE__) . '/Stripe/ApiRequestor.php');
+require(dirname(__FILE__) . '/Stripe/ApiResource.php');
+require(dirname(__FILE__) . '/Stripe/SingletonApiResource.php');
+require(dirname(__FILE__) . '/Stripe/AttachedObject.php');
+require(dirname(__FILE__) . '/Stripe/List.php');
 
 // Stripe API Resources
-require(__DIR__ . '/Stripe/Account.php');
-require(__DIR__ . '/Stripe/Card.php');
-require(__DIR__ . '/Stripe/Balance.php');
-require(__DIR__ . '/Stripe/BalanceTransaction.php');
-require(__DIR__ . '/Stripe/Charge.php');
-require(__DIR__ . '/Stripe/Customer.php');
-require(__DIR__ . '/Stripe/Invoice.php');
-require(__DIR__ . '/Stripe/InvoiceItem.php');
-require(__DIR__ . '/Stripe/Plan.php');
-require(__DIR__ . '/Stripe/Subscription.php');
-require(__DIR__ . '/Stripe/Token.php');
-require(__DIR__ . '/Stripe/Coupon.php');
-require(__DIR__ . '/Stripe/Event.php');
-require(__DIR__ . '/Stripe/Transfer.php');
-require(__DIR__ . '/Stripe/Recipient.php');
-require(__DIR__ . '/Stripe/ApplicationFee.php');
+require(dirname(__FILE__) . '/Stripe/Account.php');
+require(dirname(__FILE__) . '/Stripe/Card.php');
+require(dirname(__FILE__) . '/Stripe/Balance.php');
+require(dirname(__FILE__) . '/Stripe/BalanceTransaction.php');
+require(dirname(__FILE__) . '/Stripe/Charge.php');
+require(dirname(__FILE__) . '/Stripe/Customer.php');
+require(dirname(__FILE__) . '/Stripe/Invoice.php');
+require(dirname(__FILE__) . '/Stripe/InvoiceItem.php');
+require(dirname(__FILE__) . '/Stripe/Plan.php');
+require(dirname(__FILE__) . '/Stripe/Subscription.php');
+require(dirname(__FILE__) . '/Stripe/Token.php');
+require(dirname(__FILE__) . '/Stripe/Coupon.php');
+require(dirname(__FILE__) . '/Stripe/Event.php');
+require(dirname(__FILE__) . '/Stripe/Transfer.php');
+require(dirname(__FILE__) . '/Stripe/Recipient.php');
+require(dirname(__FILE__) . '/Stripe/ApplicationFee.php');
 
