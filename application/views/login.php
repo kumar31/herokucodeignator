@@ -202,7 +202,7 @@ The right Outfit makes a party. <br><br>
 	</div>
 </section>
 <section >
-	<img src="<?php echo base_url(); ?>img/hd/city_v7-copy-wider.jpg" width="100%" style="margin-top:-50px;">
+	<img src="<?php echo base_url(); ?>img/hd/city_v7-copy-wider.png" width="100%" style="margin-top:-50px;">
 </section>
 <section id="footer">
 	<div class="container" style="width:100%">
