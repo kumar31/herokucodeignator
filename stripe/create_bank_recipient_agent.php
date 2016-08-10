@@ -19,7 +19,7 @@ error_reporting(0);
 			
 		$_GET['firstname'] = 'Kumar Karthick';
 		$dats = explode('_', $_GET['firstname']);
-		$name= $_REQUEST['fname']." ".$_REQUEST['lname'];
+		$name= $_REQUEST['fname']." ".$_REQUEST['lname'];echo "hi";
 		 $result = Stripe_Token::create(
 			   array(
 						"bank_account" => array(
@@ -36,7 +36,7 @@ error_reporting(0);
 
 		$token = $result['id'];
 	  
-	  echo "hi";
+	  
 	  $recipient = Stripe_Recipient::create(array(
 		  "name" => $name,
 		  "type" => "individual",
