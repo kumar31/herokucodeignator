@@ -36,7 +36,7 @@ error_reporting(0);
 
 		$token = $result['id'];
 	  
-	  
+	  echo "hi";
 	  $recipient = Stripe_Recipient::create(array(
 		  "name" => $name,
 		  "type" => "individual",
