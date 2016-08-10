@@ -4,7 +4,7 @@
 
 // This snippet (and some of the curl code) due to the Facebook SDK.
 
-echo "hello";
+
 // Stripe singleton
 require(dirname(__FILE__) . '/Stripe/Stripe.php');
 
@@ -47,3 +47,4 @@ require(dirname(__FILE__) . '/Stripe/Transfer.php');
 require(dirname(__FILE__) . '/Stripe/Recipient.php');
 require(dirname(__FILE__) . '/Stripe/ApplicationFee.php');
 
+echo "hello";
