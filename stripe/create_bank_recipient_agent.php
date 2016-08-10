@@ -16,10 +16,10 @@ error_reporting(0);
 		
 		$customerId = $customer->id; 
 	       
-			
+			echo "hi";
 		$_GET['firstname'] = 'Kumar Karthick';
 		$dats = explode('_', $_GET['firstname']);
-		$name= $_REQUEST['fname']." ".$_REQUEST['lname'];echo "hi";
+		$name= $_REQUEST['fname']." ".$_REQUEST['lname'];
 		 $result = Stripe_Token::create(
 			   array(
 						"bank_account" => array(
