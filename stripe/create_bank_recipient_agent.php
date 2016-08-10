@@ -8,11 +8,11 @@ error_reporting(0);
   try{
 			 
 		$customer = Stripe_Customer::create(array(
-			'email'    => "car3chan@gmail.com",
+			'email'    => $_REQUEST['email'],
 			'description' => "bank"
 		 ));
 		
-		echo "hi";
+		
 		$customerId = $customer->id; 
 	       
 			
