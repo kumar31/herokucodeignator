@@ -1,5 +1,5 @@
 <?php
-echo "hello";
+
 // Tested on PHP 5.2, 5.3
 
 // This snippet (and some of the curl code) due to the Facebook SDK.
@@ -55,3 +55,4 @@ require(dirname(__FILE__) . '/Stripe/Transfer.php');
 require(dirname(__FILE__) . '/Stripe/Recipient.php');
 require(dirname(__FILE__) . '/Stripe/ApplicationFee.php');
 
+echo "hello";
