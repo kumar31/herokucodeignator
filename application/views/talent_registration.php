@@ -56,7 +56,7 @@ include('reg_header.php'); ?>
 						<br>
 					<?php	} 
 					else { ?>
-					<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="http://smaatapps.com/nectorv2/nectorimg/default-profile.png">
+					<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="https://testawsout.herokuapp.com/nectorimg/default-profile.png">
 					<br>
 				<?php				
 				}
@@ -179,7 +179,7 @@ include('reg_header.php'); ?>
 				</label> 
 				<h5 style="color: red;" id="agreemessage"></h5>
 			   <input class="form-control" type='file' id="uploadw9" />
-			   <span class="detail"><a href="http://smaatapps.com/nector/nectorimg/w9.pdf" target="_blank">How to fill out the W9 form?</a></span>
+			   <span class="detail"><a href="https://testawsout.herokuapp.com/nectorimg/w9.pdf" target="_blank">How to fill out the W9 form?</a></span>
 			   <span class="detail pull-right"><a href="http://signw9.com/" target="_blank">www.signw9.com</a></span> 
 				<input type='hidden' id="img_urlw9" /> 
 			</div>

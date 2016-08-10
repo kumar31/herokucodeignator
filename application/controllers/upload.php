@@ -22,7 +22,7 @@ public function __construct()
 		else {
 			move_uploaded_file($_FILES['file']['tmp_name'], "../nectorimg/".$rand.".png");
 		}
-			echo 'http://smaatapps.com/nectorv2/nectorimg/'.$rand.'.png';
+			echo 'https://testawsout.herokuapp.com/nectorimg/'.$rand.'.png';
 	}
 	
 }

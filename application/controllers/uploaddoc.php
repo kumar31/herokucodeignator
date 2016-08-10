@@ -22,7 +22,7 @@ public function __construct()
 		else {
 			move_uploaded_file($_FILES['file']['tmp_name'], "../nectorimg/".$rand.".pdf");
 		}
-			echo 'http://smaatapps.com/nectorv2/nectorimg/'.$rand.'.pdf';
+			echo 'https://testawsout.herokuapp.com/nectorimg/'.$rand.'.pdf';
 	}
 	public function wfore()
 	{
@@ -34,7 +34,7 @@ public function __construct()
 		else {
 			move_uploaded_file($_FILES['file']['tmp_name'], "../nectorimg/".$rand.".pdf");
 		}
-			echo 'http://smaatapps.com/nectorv2/nectorimg/'.$rand.'.pdf';
+			echo 'https://testawsout.herokuapp.com/nectorimg/'.$rand.'.pdf';
 	}
 	public function inine()
 	{
@@ -46,7 +46,7 @@ public function __construct()
 		else {
 			move_uploaded_file($_FILES['file']['tmp_name'], "../nectorimg/".$rand.".pdf");
 		}
-			echo 'http://smaatapps.com/nectorv2/nectorimg/'.$rand.'.pdf';
+			echo 'https://testawsout.herokuapp.com/nectorimg/'.$rand.'.pdf';
 	}
 	
 }

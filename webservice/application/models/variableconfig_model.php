@@ -8,11 +8,11 @@ class variableconfig_model extends CI_Model {
 	
 	
 	function smsurl() {
-			return "http://smaatapps.com/nectorv2/twilio/Services/sms.php";
+			return "https://testawsout.herokuapp.com/twilio/Services/sms.php";
 	}
 	
 	function events_smsurl() {
-			return "http://smaatapps.com/nectorv2/twilio/Services/sms_events.php";
+			return "https://testawsout.herokuapp.com/twilio/Services/sms_events.php";
 	}
 }
 	

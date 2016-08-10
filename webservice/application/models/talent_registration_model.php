@@ -13,9 +13,9 @@ class talent_registration_model extends CI_Model {
 	function index()
 	{
 		if (!filter_var($_POST['profile_url'], FILTER_VALIDATE_URL) === false) {
-			$profile_url = "http://smaatapps.com/nector/nectorimg/default-profile.png";
+			$profile_url = "https://testawsout.herokuapp.com/nectorimg/default-profile.png";
 		} else if($_POST['profile_url'] == "") {
-			$profile_url = "http://smaatapps.com/nector/nectorimg/default-profile.png";
+			$profile_url = "https://testawsout.herokuapp.com/nectorimg/default-profile.png";
 		}
 		else {
 			$profile_url = $_POST['profile_url']; 

@@ -34,11 +34,11 @@ class verify extends CI_Controller {
 					if($result=="1")
 					{
 						if($type == 1) {
-							header("Location:http://smaatapps.com/nector/website/index.php/client_truth_verification");
+							header("Location:https://testawsout.herokuapp.com/index.php/client_truth_verification");
 						}
 						
 						if($type == 2) {
-							header("Location:http://smaatapps.com/nector/website/index.php/talent_truth_verification");
+							header("Location:https://testawsout.herokuapp.com/index.php/talent_truth_verification");
 						}
 						
 					}

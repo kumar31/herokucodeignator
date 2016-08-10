@@ -6,5 +6,5 @@
     else {
 		move_uploaded_file($_FILES['file']['tmp_name'], "kumar1.png");
     }
-	echo 'http://smaatapps.com/nector/nectorimg/kumar1.png';
+	echo 'https://testawsout.herokuapp.com/nectorimg/kumar1.png';
 ?>

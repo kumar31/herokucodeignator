@@ -54,7 +54,7 @@ include('reg_header.php'); ?>
 						<br>
 				<?php	}
 				else { ?>
-					<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="http://smaatapps.com/nectorv2/nectorimg/default-profile.png">
+					<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="https://testawsout.herokuapp.com/nectorimg/default-profile.png">
 					<br>
 				<?php				
 				}
