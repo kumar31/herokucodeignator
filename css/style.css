@@ -94,14 +94,14 @@ line-height: 56px;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color: #B8B8B8;
+  /*background-color: #B8B8B8;*/
 
 }
 #how2 
 {
 	
 	padding:30px;
-	background-color: #B8B8B8;
+	/*background-color: #B8B8B8;*/
 	
 }
 #home
