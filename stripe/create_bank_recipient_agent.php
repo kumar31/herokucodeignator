@@ -17,8 +17,8 @@ error_reporting(0);
 		$customerId = $customer->id; 
 	       
 			
-		$_GET['firstname'] = 'Kumar Karthick';
-		$dats = explode('_', $_GET['firstname']);
+		$_REQUEST['firstname'] = 'Kumar Karthick';
+		$dats = explode('_', $_REQUEST['firstname']);
 		$name= $_REQUEST['fname']." ".$_REQUEST['lname'];
 		 $result = Stripe_Token::create(
 			   array(
@@ -57,7 +57,7 @@ error_reporting(0);
 		$routing_number = $_REQUEST['routing_number'];
 		$account_number = $_REQUEST['account_number'];
 		$tax_id = $_REQUEST['tax_id'];
-		echo "hi";
+		
 		$servername = $_ENV['DB_HOST'];
 		$username = $_ENV['DB_USER'];
 		$password = $_ENV['DB_PASS'];
