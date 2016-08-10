@@ -7,13 +7,13 @@ error_reporting(0);
  
   try{
 			 
-     	
+     	echo "hi";
 		$customer = Stripe_Customer::create(array(
 			'email'    => $_REQUEST['email'],
 			'description' => "bank"
 		 ));
 		
-		echo "hi";
+		
 		$customerId = $customer->id; 
 	       
 			
