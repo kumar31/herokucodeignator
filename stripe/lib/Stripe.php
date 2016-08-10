@@ -12,7 +12,7 @@ if (!function_exists('json_decode')) {
 if (!function_exists('mb_detect_encoding')) {
   throw new Exception('Stripe needs the Multibyte String PHP extension.');
 }
-
+echo "hello";
 // Stripe singleton
 require(dirname(__FILE__) . '/Stripe/Stripe.php');
 
@@ -55,4 +55,3 @@ require(dirname(__FILE__) . '/Stripe/Transfer.php');
 require(dirname(__FILE__) . '/Stripe/Recipient.php');
 require(dirname(__FILE__) . '/Stripe/ApplicationFee.php');
 
-echo "hello";
