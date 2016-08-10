@@ -9,10 +9,10 @@ if((isset($_POST['client_id'])) && (isset($_POST['event_id']))){
 			$event_id = $_POST['event_id'];
 			$client_id = $_POST['client_id'];
 			
-			$servername = "localhost";
-			$username = "smaatapp_dev";
-			$password = "dev123%$";
-			$dbname = "smaatapp_nector";
+			$servername = $_ENV['DB_HOST'];
+			$username = $_ENV['DB_USER'];
+			$password = $_ENV['DB_PASS'];
+			$dbname = $_ENV['DB_NAME'];
 			
 			// Create connection
 			$conn = mysql_connect($servername, $username, $password);

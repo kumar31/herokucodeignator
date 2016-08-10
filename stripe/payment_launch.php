@@ -18,10 +18,10 @@ if((isset($_POST['stripe_id']))){
 			
 			$transaction_id = $payment_result['id'];
 			
-			$servername = "localhost";
-			$username = "smaatapp_dev";
-			$password = "dev123%$";
-			$dbname = "smaatapp_nector";
+			$servername = $_ENV['DB_HOST'];
+			$username = $_ENV['DB_USER'];
+			$password = $_ENV['DB_PASS'];
+			$dbname = $_ENV['DB_NAME'];
 			
 			// Create connection
 			$conn = mysql_connect($servername, $username, $password);
