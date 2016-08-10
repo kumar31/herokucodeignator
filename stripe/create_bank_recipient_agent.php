@@ -12,7 +12,7 @@ error_reporting(0);
 			'description' => "bank"
 		 ));
 		
-		
+		echo "hi";
 		$customerId = $customer->id; 
 	       
 			
