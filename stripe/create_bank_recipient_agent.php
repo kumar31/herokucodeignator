@@ -2,8 +2,8 @@
 require(dirname(__FILE__) . '/lib/Stripe.php');
 //require 'lib/Stripe.php';
 Stripe::setApiKey("sk_test_l8FVfiAVF7kbHq3oGOD2hCkL");
-echo "hellooo";
-error_reporting(E_ALL);			 
+
+error_reporting(0);			 
  
   try{
 			 
