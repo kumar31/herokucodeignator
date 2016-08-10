@@ -14,5 +14,5 @@ if (!function_exists('mb_detect_encoding')) {
 }
 
 // Stripe singleton
-require('Stripe/Stripe.php');
+require('./Stripe/Stripe.php');
 
