@@ -12,7 +12,7 @@ a {
 }
 a:hover, a:focus {
 	text-decoration: none;
-	color: #F5A623;
+	color: #D9C300;
 }
 .modal-body {
     max-height: calc(100vh - 210px) !important;
@@ -232,7 +232,7 @@ a:hover, a:focus {
             <textarea placeholder="Meet at the reception." class="form-control" name="" id="instructions" type="text" value=""></textarea>
           </div>
           <div class="form-group prepend-top">
-            <label class="" for="">Approximate number of talent needed <span data-placement="right" data-toggle="tooltip" title="Each talent is $30/hour including all taxes and fees." class="glyphicon glyphicon-question-sign"></span>
+            <label class="" for="">Approximate number of talent needed <span data-placement="right" data-toggle="tooltip" title="Please choose the approximate number of talent needed for your event. You can hire more or less but we will use this number to give you an estimate further down." class="glyphicon glyphicon-question-sign"></span>
             </label>
             <select class="col-xs-12 form-control form-group" name="" id="waitersnum">
 			<?php $range = range(1,30); 

@@ -203,7 +203,7 @@ $(document).ready(function() {
               </div>
 			  
               <div class="col-xs-6">
-                <h3 data-placement="bottom" data-toggle="tooltip" title="This is the estimated price for your event based on the hours and numbers of talent needed. Should this change during the event we will automatically add or refund the amended amount." id="number">$<?php /*$total_hours_est = $hrs_mins;
+                <h3 data-placement="bottom" data-toggle="tooltip" title="This is the estimated price for your event based on the hours and numbers of talent needed." id="number">$<?php /*$total_hours_est = $hrs_mins;
 					$total_talents = $hired_info[0]['hired_count'];
 					$per_hour = $total_talents * 30;
 					$total_amt = $total_hours_est * $per_hour;
@@ -247,6 +247,9 @@ $(document).ready(function() {
 							$per_hour = $employee_fee;
 						}
 						else {
+							if($event_detail[0]['talent_type'] == 1) {
+								$per_hour = $employee_fee;
+							}
 							$fee = $outfit_fee + $stripe_fee;
 							
 						}

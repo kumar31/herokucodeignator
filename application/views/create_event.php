@@ -13,7 +13,7 @@ a {
 }
 a:hover, a:focus {
 	text-decoration: none;
-	color: #F5A623;
+	color: #D9C300;
 }
 .modal-body {
     max-height: calc(100vh - 210px) !important;
@@ -244,7 +244,7 @@ a:hover, a:focus {
 		  
 		  
           <div class="form-group prepend-top">
-            <label class="" for="">Approximate number of talent needed <span data-placement="right" data-toggle="tooltip" title="Each talent is $30/hour including all taxes and fees." class="glyphicon glyphicon-question-sign"></span>
+            <label class="" for="">Approximate number of talent needed <span data-placement="right" data-toggle="tooltip" title="Please choose the approximate number of talent needed for your event. You can hire more or less but we will use this number to give you an estimate further down." class="glyphicon glyphicon-question-sign"></span>
             </label>
             <select class="col-xs-12 form-control form-group" name="" id="waitersnum">
 			<?php $range = range(1,30); 
@@ -397,8 +397,8 @@ a:hover, a:focus {
 				<br>
 				  <label>
 					<input type="radio" checked="checked" name="talent_type" id="talent_type" value="1">
-					Employee
-				  </label>&nbsp;<span data-placement="right" data-toggle="tooltip" title="Employees are - Employees via our staffing agency partners - Vetted by the agency - Fully insured by agency - Taxing and withholding handled by agency." class="glyphicon glyphicon-question-sign"></span>
+					Employees
+				  </label>&nbsp;<span data-placement="right" data-toggle="tooltip" data-html="true" title="<p class='text-left'>Employees are : <br> &bull; Employees via our staffing agency partners <br> &bull; Vetted by the agency <br> &bull; Fully insured by agency <br> &bull; Taxing and withholding handled by agency.</p>" class="glyphicon glyphicon-question-sign"></span>
 				</div>
 				<div class="col-sm-6 text-center">
 				<img class="center-block" style="height: 250px;" src="<?php echo base_url();?>img/contractors.png">
@@ -406,7 +406,7 @@ a:hover, a:focus {
 				  <label>
 					<input type="radio" id="talent_type" name="talent_type" value="2">
 					Independent Contractors
-				  </label>&nbsp;<span data-placement="right" data-toggle="tooltip" title="Independent contractors are - Their own company or sole propriator - Carry their own insurance - Are considered an independent contractor to your company or sole propriator - Pay their own taxes" class="glyphicon glyphicon-question-sign"></span>
+				  </label>&nbsp;<span data-placement="right" data-toggle="tooltip" data-html="true" title="<p class='text-left'>Independent contractors are : <br> &bull; Their own company or sole propriator <br> &bull; Carry their own insurance <br> &bull; Are considered an independent contractor to your company or sole propriator <br> &bull; Pay their own taxes</p>" class="glyphicon glyphicon-question-sign"></span>
 				</div>
 			</div>
 		  </div>
@@ -415,7 +415,7 @@ a:hover, a:focus {
 		  <div class="prepend-top clearfix">
 		  </br>
 				<div class="form-group">					
-					<h4>Total Estimate $<span id="estimateamt"></span>&nbsp;<span data-placement="right" data-toggle="tooltip" title="This is the estimated cost for your event based on the amount and type of talent needed. You won't get charged until you sign out the talent after the event" class="glyphicon glyphicon-question-sign"></span></h4>
+					<h4>Total Estimate $<span id="estimateamt"></span>&nbsp;<span data-placement="right" data-toggle="tooltip" title="This is the estimated cost for your event based on the amount and type of talent needed. You won't get charged until you sign out the talent after the event." class="glyphicon glyphicon-question-sign"></span></h4>
 				</div>
 		  </div>
 		  

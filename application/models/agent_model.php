@@ -33,12 +33,14 @@ class agent_model extends CI_Model {
 	
 	function talents_details($agentid,$eventid)
 	{		
-			$this->db->select('talent_details.*,talent_payment_details.amount');	
-			$this->db->where('agent_id',$agentid);
-			$this->db->where('event_id',$eventid);
-			$this->db->where('transaction_id !=',"");
+			$this->db->select('talent_details.*,checkin.*,talent_payment_details.amount');	
+			$this->db->where('talent_payment_details.agent_id',$agentid);
+			$this->db->where('talent_payment_details.event_id',$eventid);
+			$this->db->where('talent_payment_details.transaction_id !=',"");
 			$this->db->from('talent_payment_details');			
 			$this->db->join('talent_details','talent_details.talent_id=talent_payment_details.talent_id','LEFT');			
+			$this->db->join('checkin','checkin.talent_id=talent_payment_details.talent_id','LEFT');
+			$this->db->where('checkin.event_id',$eventid);			
 			$query = $this->db->get();
 			$result = $query->result_array(); 
 	

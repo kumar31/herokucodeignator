@@ -92,7 +92,7 @@
             <div class="col-lg-12 text-center">
                 <h1>Event Talent On Demand</h1>
                 <p class="lead">In a few easy clicks </p>
-                <button onclick="location.href = '<?php echo site_url();?>/client_registration';" class="orange-button">VIEW TALENT</button><br><br><br>
+                <button onclick="location.href = '<?php echo site_url();?>/client_registration';" class="orange-button">GET STARTED</button><br><br><br> 
 				
 				<br><br>
 				
@@ -202,7 +202,7 @@ The right Outfit makes a party. <br><br>
 	</div>
 </section>
 <section >
-	<img src="<?php echo base_url(); ?>img/hd/city_v7-copy-wider.png" width="100%" style="margin-top:-50px;">
+	<img src="<?php echo base_url(); ?>img/hd/city_v7-copy-wider.jpg" width="100%" style="margin-top:-50px;">
 </section>
 <section id="footer">
 	<div class="container" style="width:100%">
@@ -324,6 +324,12 @@ The right Outfit makes a party. <br><br>
 			</div>-->
 		</div>
 	  </div>
+	  <form id="clientlogin" action="<?php echo base_url();?>index.php/client_dashboard" method="POST">
+		<input type="hidden" name="my_userid" id="usrid"> 
+	  </form> 
+	  <form id="talentlogin" action="<?php echo base_url();?>index.php/talent_dashboard" method="POST">
+		<input type="hidden" name="my_userid" id="talid"> 
+	  </form>
     <!-- /.container -->
 
     <script src="<?php echo base_url(); ?>js/vendor/jquery-1.11.2.min.js">
@@ -375,12 +381,16 @@ The right Outfit makes a party. <br><br>
 							var clientid = JSON.stringify(data['result']['client_id']);
 							var clientid = clientid.replace(/\"/g, "");
 							/*session(id);*/
-							window.location.assign("<?php echo base_url();?>index.php/client_dashboard/"+clientid );
+							$('#usrid').val(clientid);
+							$( "#clientlogin" ).submit();
+							//window.location.assign("<?php echo base_url();?>index.php/client_dashboard/"+clientid );
 						}
 						if(usertype == "2") {
 							var talentid = JSON.stringify(data['result']['talent_id']);
 							var talentid = talentid.replace(/\"/g, "");
-							window.location.assign("<?php echo base_url();?>index.php/talent_dashboard/"+talentid);
+							$('#talid').val(talentid);
+							$( "#talentlogin" ).submit();
+							//window.location.assign("<?php echo base_url();?>index.php/talent_dashboard/"+talentid);
 						}						
 					}
 					else {

@@ -54,7 +54,7 @@ include('admin_header.php'); ?>
 								&nbsp;&nbsp;&nbsp;
 								<?php
 									if($val['status'] == 1) { ?>
-									<button id="inactive" onclick="inactive('<?php echo $val['agent_id']; ?>')" class="btn btn-danger btn-sm">Delete
+									<button id="inactive" data-toggle="modal" data-target="#myModaldel" class="btn btn-danger btn-sm">Delete
 									</button>
 								<?php		
 									}
@@ -235,6 +235,28 @@ include('admin_header.php'); ?>
 
 					  </div>
 					</div>
+					
+					<!-- Modal Add card details -->
+						<div id="myModaldel" class="modal fade" role="dialog">
+						  <div class="modal-dialog">
+
+							<!-- Modal content-->
+							<div class="modal-content">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Delete Agent</h4>
+							  </div>
+							  <div class="modal-body">
+								<p>Are you sure you want to delete this agency?</p>
+								<button onclick="inactive('<?php echo $val['agent_id']; ?>')" type="button" class="btn btn-success">Delete</button>
+							  </div>
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+							  </div>
+							</div>
+
+						  </div>
+						</div>
 			</div>	
 		</div>
 		

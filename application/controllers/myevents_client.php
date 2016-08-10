@@ -38,7 +38,7 @@ public function __construct()
 		
 		    $this->db->select('*');
 			$this->db->where('client_id',$myuser_id);		
-			//$this->db->where('status',0);		
+			$this->db->where('status',0);		
 			$this->db->where('launch_status !=',1);		
 			$this->db->from('event_detail');		
 			$query = $this->db->get();
@@ -66,13 +66,13 @@ public function __construct()
 				
 				$this->db->select('*');			
 				$this->db->where('client_id',$myuser_id);		
-				//$this->db->where('status',0);
+				$this->db->where('status',0);
 				$this->db->where('launch_status !=',1);					
 				$this->db->from('event_detail');
 				$query = $this->db->get();			
 				$result = $query->result_array(); 
 				
-				$query=$this->db->query("SELECT * from event_detail WHERE launch_status != 1 AND client_id = ".$myuser_id." ORDER BY event_id DESC LIMIT $position, $items_per_group");			
+				$query=$this->db->query("SELECT * from event_detail WHERE launch_status != 1 AND status = 0 AND client_id = ".$myuser_id." ORDER BY event_id DESC LIMIT $position, $items_per_group");			
 				$data['events'] = $result = $query->result_array();
 				$data['events'] = $this->invite_model->invite_details($result);
 				$data['stripe_id'] = $this->client_model->client_stripe_id($myuser_id);

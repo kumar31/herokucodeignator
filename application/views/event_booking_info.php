@@ -8,6 +8,7 @@
 	color: #D8BE2A;
 }
 </style>
+
 <?php 
 
 $event_id = $event_detail[0]['event_id'];
@@ -93,7 +94,7 @@ $is_advance_paid = $event_detail[0]['is_advance_paid'];
 					$hired_amount = "0";
 				}
 			?>
-              <h3 data-placement="bottom" data-toggle="tooltip" title="This is the estimated price for your event based on the hours and numbers of talent needed. Should this change during the event we will automatically add or refund the amended amount." id="number">$<?php /*$total_hours_est = $hrs_mins;
+              <h3 data-placement="bottom" data-toggle="tooltip" title="This is the estimated price for your event based on the hours and numbers of talent needed." id="number">$<?php /*$total_hours_est = $hrs_mins;
 			  $total_talents = $hired_info[0]['hired_count'];
 			  $per_hour = $total_talents * 30;
 			  $total_amt = $total_hours_est * $per_hour; echo $total_amt;*/
@@ -136,6 +137,9 @@ $is_advance_paid = $event_detail[0]['is_advance_paid'];
 							$per_hour = $employee_fee;
 						}
 						else {
+							if($event_detail[0]['talent_type'] == 1) {
+								$per_hour = $employee_fee;
+							}
 							$fee = $outfit_fee + $stripe_fee;
 							
 						}
@@ -160,16 +164,17 @@ $is_advance_paid = $event_detail[0]['is_advance_paid'];
           <div class="">
 			
 				<?php 
-			
-					if(($status == 0) && ($hired_count != 0)) {
+					$launch_status = $event_detail[0]['launch_status'];
+					
+					if(($launch_status == 0) && ($hired_count != 0)) {
 				?>
-				<span data-placement="bottom" data-toggle="tooltip" title=""><a class="btn btn-danger btn-lg btn-block largeHeight" href="<?php echo base_url();?>index.php/management/<?php echo $event_id ?>" type="submit">Book Now</a></span>
+				<span title=""><a class="btn btn-danger btn-lg btn-block largeHeight" onClick="launchevent();" role="button">Launch Event</a></span>
 					<?php } ?>
 				<?php 
 			
-					if(($status == 1) || ($hired_count == 0) ) {
+					if(($launch_status == 1) || ($hired_count == 0) ) {
 				?>
-				<button class="btn btn-danger btn-lg btn-block largeHeight" type="submit" disabled>Book Now</button>
+				<button class="btn btn-danger btn-lg btn-block largeHeight" type="submit" disabled>Launch Event</button>
 					<?php } ?>
 					
 			
@@ -186,3 +191,40 @@ $is_advance_paid = $event_detail[0]['is_advance_paid'];
  
   </div><!-- #container -->
   
+<script>
+	function launchevent(){
+			var client_id = <?php echo $myuser_id; ?>; 
+			var event_id = <?php echo $event_detail[0]['event_id']; ?>; 
+			
+				var url = '<?php echo $webserviceurl; ?>index.php/launch_event';
+				
+				$.ajax({
+					'type' : 'POST',
+					'url': url,
+					'data': {'client_id':client_id,'event_id':event_id},
+					//'dataType': 'json',
+					beforeSend: function(){
+					 $(".se-pre-con").show();
+				   },
+				   complete: function(){
+					 $(".se-pre-con").hide();
+				   },
+					success: function(data) {
+						//alert(JSON.stringify(data));
+						var message = JSON.stringify(data['StatusCode']);
+						var message = message.replace(/\"/g, "");
+						
+						if(message == "1") {
+							window.location.assign("<?php echo base_url();?>index.php/management/"+event_id);
+						}
+						else {
+							var alertmessage = JSON.stringify(data['message']);
+							$("#alertmsg").text(alertmessage);
+							$("html, body").animate({ scrollTop: 0 }, "slow");
+						}
+					}
+				
+				});
+	
+		}
+</script>

@@ -29,6 +29,7 @@ include('agent_header.php'); ?>
 							<th>Talent Name</th>
 							<th>Email</th>
 							<th>Amount</th>
+							<th>Hours worked</th>
 							<th>Payment Status</th>            
 						</tr>
 					</thead>
@@ -47,7 +48,22 @@ include('agent_header.php'); ?>
 							<?php } else { ?>
 								$<?php echo $val['amount']; ?>
 							<?php } ?></td>
+							<td>
+							<?php if($val['number_of_days'] != 0) {
+								echo $val['number_of_hours']; ?> Days
+							<?php } ?>
 							
+							<?php if($val['number_of_hours'] != 0) {
+								echo $val['number_of_hours']; ?> Hrs
+							<?php }							
+							?> 
+							
+							<?php if($val['number_of_minutes'] != 0) {
+								echo $val['number_of_minutes']; ?> Mins
+							<?php }							
+							?>
+							
+							</td>
 							<td><?php if($val['amount'] == "") { ?>
 								<span class="text-danger">Not Paid</span>
 							<?php } else { ?>

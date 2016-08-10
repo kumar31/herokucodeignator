@@ -73,6 +73,7 @@ class talent_checkout_model extends CI_Model {
 			$query = $this->db->get();
 			$result_talent = $query->result_array(); 
 			$talent_per_amt = $result_talent[0]['amount'];
+			$reg_type = $result_talent[0]['reg_type'];
 			
 			$fee = $agent_outfit_percentage + $stripe_percentage;
 			
@@ -81,6 +82,7 @@ class talent_checkout_model extends CI_Model {
 			if($talent_per_amt != 0) {
 				$emp_fee = $talent_per_amt;
 			}
+			
 			$per_talent_amt = $total_hours_est * $emp_fee;
 			
 			$agent_fee = ($agent_percentage / 100) * $per_talent_amt;

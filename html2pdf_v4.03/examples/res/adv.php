@@ -1,9 +1,9 @@
 <?php 
 
-$servername = $_ENV['DB_HOST'];
-$username = $_ENV['DB_USER'];
-$password = $_ENV['DB_PASS'];
-$dbname = $_ENV['DB_DATABASE'];
+$servername = "localhost";
+$username = "smaatapp_dev";
+$password = "dev123%$";
+$dbname = "smaatapp_nector";
 
 // Create connection
 $conn = mysql_connect($servername, $username, $password);
@@ -14,7 +14,7 @@ mysql_select_db($dbname);
 $AdID=$_GET['event_id'];	
 
 //Event details
-$query=mysql_query("select client_payment_details.*,sum(client_payment_details.amount) as amount from `client_payment_details` WHERE `event_id`='$AdID' "); 
+ $query=mysql_query("select client_payment_details.*,sum(client_payment_details.amount) as amount from `client_payment_details` WHERE `event_id`='$AdID' group by `event_id`"); 
 $row = mysql_fetch_array($query);
 $event_id = $row['event_id'];
 $client_id = $row['client_id'];

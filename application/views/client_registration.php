@@ -44,7 +44,7 @@ include('reg_header.php'); ?>
 		  <input type="hidden" value="<?php echo $profile['date']; ?>" class="form-control " name="" id="date" type="text"> 
 		  
 		  <div class="prepend-top form-group">
-		  <label for="" class="required">Profile Picture
+		  <label for="" class="required">Company logo / Profile Picture
                 </label> 
 				<span class="pull-right">Optional</span>
 				<?php
@@ -181,6 +181,9 @@ include('reg_header.php'); ?>
     </form>
 	</div>
   <!-- Footer Start -->
+  <form id="clientlogin" action="<?php echo base_url();?>index.php/client_dashboard" method="POST">
+		<input type="hidden" name="my_userid" id="usrid"> 
+	  </form>
   <div class="container">
     <hr>
     <footer>
@@ -360,7 +363,9 @@ include('reg_header.php'); ?>
 						if(message == "1") {
 							var clientid = JSON.stringify(data['result']);
 							var clientid = clientid.replace(/\"/g, "");
-							window.location.assign("<?php echo base_url();?>index.php/client_dashboard/"+clientid );
+							$('#usrid').val(clientid);
+							$( "#clientlogin" ).submit();
+							//window.location.assign("<?php echo base_url();?>index.php/client_dashboard/"+clientid );
 						}
 						else {
 							var alertmessage = JSON.stringify(data['message']);

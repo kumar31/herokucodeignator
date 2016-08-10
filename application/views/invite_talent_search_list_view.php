@@ -44,11 +44,14 @@ foreach($blogs as $key=>$val)
                   <a href="<?php echo base_url();?>index.php/talent_detail/<?php echo $val['talent_id']; ?>/<?php echo $event_id; ?>">
 				  <h3><span class="text-capitalize"><?php echo $val['first_name']; ?></span> <?php echo $val['last_name']; ?>
                   </h3></a>
+				  <?php if($val['reg_type'] == 3) { ?>
+					  <span class="glyphicon glyphicon-user"></span>Contractor & Agent : <?php echo $res[0]['name']; ?>
+				  <?php } elseif($val['reg_type'] == 2) {  ?>
 				  <?php if($res[0]['name'] == "") { ?>
 					  <span class="glyphicon glyphicon-user"></span>Contractor
-				  <?php } else { ?>
+				  <?php } } else { ?>
 					  <span class="glyphicon glyphicon-user"></span>Agent : <?php echo $res[0]['name']; ?>
-				  <?php } ?>
+				  <?php }  ?>
 				  
                   <h4 class="text-capitalize"><?php 
 				  $spl_skills = explode(',',$val['special_skills']);

@@ -1,9 +1,9 @@
 <?php 
 
-$servername = $_ENV['DB_HOST'];
-$username = $_ENV['DB_USER'];
-$password = $_ENV['DB_PASS'];
-$dbname = $_ENV['DB_DATABASE'];
+$servername = "localhost";
+$username = "smaatapp_dev";
+$password = "dev123%$";
+$dbname = "smaatapp_nector";
 
 // Create connection
 $conn = mysql_connect($servername, $username, $password);

@@ -19,7 +19,7 @@ include('agent_header.php'); ?>
 	<section>
 		<div class="container">			
 			<div class="row" id="">
-			<h4>Events List<span class="pull-right"><span class="amt">Revenue</span>&nbsp;&nbsp;:&nbsp;&nbsp;$<?php echo $revenue[0]['total_amount']; ?>&nbsp;&nbsp;&nbsp; <span class="amt">Profit</span>&nbsp;&nbsp;:&nbsp;&nbsp;$<?php echo $profit[0]['total_amount']; ?><hr></span></h4><br>
+			<h4>Events List<span class="pull-right"><span class="amt">Revenue</span>&nbsp;&nbsp;:&nbsp;&nbsp;$<?php echo round($revenue[0]['total_amount'],2); ?>&nbsp;&nbsp;&nbsp; <span class="amt">Profit</span>&nbsp;&nbsp;:&nbsp;&nbsp;$<?php echo round($profit[0]['total_amount'],2); ?><hr></span></h4><br>
 			
 				<?php
 					

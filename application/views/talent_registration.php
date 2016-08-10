@@ -24,6 +24,10 @@ include('reg_header.php'); ?>
 		<div class="col-md-4">
 		<form target="_top" data-toggle="validator" id="myForm" action="">
 		<div class="prepend-top clearfix form-group">
+			<a style="cursor: pointer;" role="button" href="<?php echo base_url();?>index.php/fb"><img class="center-block" src="<?php echo base_url(); ?>img/fb-logo-signup.png"></a>
+		</div>
+		
+		<div class="prepend-top clearfix form-group">
             <div class="row">
               <div class="col-xs-12 col-sm-6 gutter-bottom">
                 <label for="" class="required">First Name
@@ -98,112 +102,6 @@ include('reg_header.php'); ?>
 			</div>
 			</div>
 			
-			<div class="prepend-top clearfix">
-			<div class="form-group clearfix">
-			  <label class="pull-left" for="">Register Type
-			  </label>    
-			</div>
-			<div class="form-group">
-				<div class="radio">
-				  <label>
-					<input type="radio" checked="checked" id="contract" name="reg_type" value="2" required>
-					Contractors <span data-placement="right" data-toggle="tooltip" 
-					title="I will handel my taxes.
-					I have my own insurance.
-					I want to work at independent contractor status events." class="glyphicon glyphicon-question-sign"></span>
-				  </label>
-				</div>
-				<div class="radio">
-				  <label>
-					<input type="radio" name="reg_type" id="emp" value="1" required>
-					Employee <span data-placement="right" data-toggle="tooltip" title="I am already an employee of one of thr staffing agencies below.
-					I want Outfit to put me forward for a relevant agency to handle my taxes and insurance.
-					I want to work for employee status events." class="glyphicon glyphicon-question-sign"></span>
-				  </label>
-				</div>
-				<div class="radio">
-				  <label>
-					<input type="radio" name="reg_type" id="both" value="3" required>
-					Both
-				  </label>
-				</div>
-				
-			</div>
-		  </div>
-		  
-			<div class="prepend-top form-group contract">
-			  <label for="" class="required">Upload W9 form <span data-placement="right" data-toggle="tooltip" title="W9 is used (in the US income tax system) by a third party who must file an information return with the IRS. It requests the name, address, and taxpayer identification information such as their social security (or Employment) identification number." class="glyphicon glyphicon-question-sign"></span>
-				</label> 
-				<h5 style="color: red;" id="agreemessage"></h5>
-			   <input class="form-control" type='file' id="uploadw9" />
-			   <span class="detail"><a href="http://smaatapps.com/nector/nectorimg/w9.pdf" target="_blank">How to fill out the W9 form?</a></span>
-			   <span class="detail pull-right"><a href="http://signw9.com/" target="_blank">www.signw9.com</a></span> 
-				<input type='hidden' id="img_urlw9" /> 
-			</div>
-			<?php
-				$this->db->select('*');		
-				$this->db->where('status',1);
-				$this->db->where('bank_id !=',"");
-				$this->db->where('recp_id !=',"");
-				$this->db->from('agent_details');
-				$query = $this->db->get();
-				$result = $query->result_array(); 
-			?>
-			
-			<div class="prepend-top clearfix emp">
-			<div class="form-group clearfix">
-			  <label class="pull-left" for="">
-			  </label>    
-			</div>
-			<div class="form-group">
-				<div class="checkbox">
-				  <label>
-					<input type="checkbox" name="already" id="already" value="1" required>
-					I have already signed these forms at my agency
-				  </label>
-				</div>
-			  </div>
-		  </div>
-			
-			
-			<div class="form-group prepend-top emp">
-            <label class="" for="">Agency
-            </label>
-            <select class="col-xs-12 form-control form-group" name="" id="agency" >
-				<?php
-					$i=1;
-					foreach($result as $val){ 
-					if($i==1){ ?>
-						<option value="<?php echo $val['agent_id']; ?>" selected="selected"><?php echo $val['name']; ?></option>
-					<?php } else { ?>
-						<option value="<?php echo $val['agent_id']; ?>"><?php echo $val['name']; ?></option>
-					<?php } $i++; } ?>
-              
-            </select>
-			</div>
-			<div class="prepend-top form-group emp">
-			<label> Upload W4 form</label>
-			<!--  <label for="" class="required">Upload W9 form <span data-placement="right" data-toggle="tooltip" title="W9 is used (in the US income tax system) by a third party who must file an information return with the IRS. It requests the name, address, and taxpayer identification information such as their social security (or Employment) identification number." class="glyphicon glyphicon-question-sign"></span>
-				</label> -->
-				<h5 style="color: red;" id="agreemessagew4"></h5>
-			   <input class="form-control" type='file' id="uploadw4" />
-			   <span class="detail"><a type="" class="" data-toggle="modal" data-target="#myModalw4" href="" target="_blank">How to fill out the W4 form?</a></span>
-			   <!--<span class="detail pull-right"><a href="http://signw9.com/" target="_blank">www.signw9.com</a></span> -->
-				<input type='hidden' id="img_urlw4" /> 
-			</div>
-		  
-			<div class="prepend-top form-group emp">
-			<label> Upload i9 form</label> 
-			<!--  <label for="" class="required">Upload W9 form <span data-placement="right" data-toggle="tooltip" title="W9 is used (in the US income tax system) by a third party who must file an information return with the IRS. It requests the name, address, and taxpayer identification information such as their social security (or Employment) identification number." class="glyphicon glyphicon-question-sign"></span>
-				</label> -->
-				<h5 style="color: red;" id="agreemessagei9"></h5>
-			   <input class="form-control" type='file' id="uploadi9" />
-			   <span class="detail"><a type="" class="" data-toggle="modal" data-target="#myModali9" href="" target="_blank">How to fill out the i9 form?</a></span>
-			   <!--<span class="detail pull-right"><a href="http://signw9.com/" target="_blank">www.signw9.com</a></span> -->
-				<input type='hidden' id="img_urli9" /> 
-			</div>
-			
-		
 			<div class="prepend-top clearfix form-group"> 
             <div class="row">
               <div class="col-xs-12 col-sm-12 gutter-bottom">
@@ -246,7 +144,109 @@ include('reg_header.php'); ?>
               </div>
             </div>
           </div>
+			
+			<div class="prepend-top clearfix">
+			<div class="form-group clearfix">
+			  <label class="pull-left" for="">Register Type
+			  </label>    
+			</div>
+			<div class="form-group">
+				<div class="radio">
+				  <label>
+					<input type="radio" checked="checked" id="contract" name="reg_type" value="2" required>
+					Contractor <span data-placement="right" data-toggle="tooltip" 
+					title="I will handle my own tax and have my own insurance." class="glyphicon glyphicon-question-sign"></span>
+				  </label>
+				</div>
+				<div class="radio">
+				  <label>
+					<input type="radio" name="reg_type" id="emp" value="1" required>
+					Employee <span data-placement="right" data-toggle="tooltip" title="I want to be treated as an employee and have a third party agent handle my tax and insurance." class="glyphicon glyphicon-question-sign"></span>
+				  </label>
+				</div>
+				<div class="radio">
+				  <label>
+					<input type="radio" name="reg_type" id="both" value="3" required>
+					Both
+				  </label>
+				</div>
+				
+			</div>
+		  </div>
 		  
+			<div class="prepend-top form-group contract">
+			  <label for="" class="required">Upload W9 form <span data-placement="right" data-toggle="tooltip" title="W9 is used (in the US income tax system) by a third party who must file an information return with the IRS. It requests the name, address, and taxpayer identification information such as their social security (or Employment) identification number." class="glyphicon glyphicon-question-sign"></span>
+				</label> 
+				<h5 style="color: red;" id="agreemessage"></h5>
+			   <input class="form-control" type='file' id="uploadw9" />
+			   <span class="detail"><a href="http://smaatapps.com/nector/nectorimg/w9.pdf" target="_blank">How to fill out the W9 form?</a></span>
+			   <span class="detail pull-right"><a href="http://signw9.com/" target="_blank">www.signw9.com</a></span> 
+				<input type='hidden' id="img_urlw9" /> 
+			</div>
+			<?php
+				$this->db->select('*');		
+				$this->db->where('status',1);
+				$this->db->where('bank_id !=',"");
+				$this->db->where('recp_id !=',"");
+				$this->db->from('agent_details');
+				$query = $this->db->get();
+				$result = $query->result_array(); 
+			?>
+			
+			<div class="form-group prepend-top emp">
+            <label class="" for="">Agency
+            </label>
+            <select class="col-xs-12 form-control form-group" name="" id="agency" >
+				<option value="0">Select here</option>
+				<?php
+					$i=1;
+					foreach($result as $val){ 
+					if($i==1){ ?>
+						<option value="<?php echo $val['agent_id']; ?>"><?php echo $val['name']; ?></option>
+					<?php } else { ?>
+						<option value="<?php echo $val['agent_id']; ?>"><?php echo $val['name']; ?></option>
+					<?php } $i++; } ?>
+              
+            </select>
+			</div>
+			
+			<div class="prepend-top form-group emp w4i9">
+			<label> Upload W4 form</label>
+			<!--  <label for="" class="required">Upload W9 form <span data-placement="right" data-toggle="tooltip" title="W9 is used (in the US income tax system) by a third party who must file an information return with the IRS. It requests the name, address, and taxpayer identification information such as their social security (or Employment) identification number." class="glyphicon glyphicon-question-sign"></span>
+				</label> -->
+				<h5 style="color: red;" id="agreemessagew4"></h5>
+			   <input class="form-control" type='file' id="uploadw4" />
+			   <span class="detail"><a type="" class="" data-toggle="modal" data-target="#myModalw4" href="" target="_blank">How to fill out the W4 form?</a></span>
+			   <!--<span class="detail pull-right"><a href="http://signw9.com/" target="_blank">www.signw9.com</a></span> -->
+				<input type='hidden' id="img_urlw4" /> 
+			</div>
+		  
+			<div class="prepend-top form-group emp w4i9">
+			<label> Upload i9 form</label> 
+			<!--  <label for="" class="required">Upload W9 form <span data-placement="right" data-toggle="tooltip" title="W9 is used (in the US income tax system) by a third party who must file an information return with the IRS. It requests the name, address, and taxpayer identification information such as their social security (or Employment) identification number." class="glyphicon glyphicon-question-sign"></span>
+				</label> -->
+				<h5 style="color: red;" id="agreemessagei9"></h5>
+			   <input class="form-control" type='file' id="uploadi9" />
+			   <span class="detail"><a type="" class="" data-toggle="modal" data-target="#myModali9" href="" target="_blank">How to fill out the i9 form?</a></span>
+			   <!--<span class="detail pull-right"><a href="http://signw9.com/" target="_blank">www.signw9.com</a></span> -->
+				<input type='hidden' id="img_urli9" /> 
+			</div>
+			
+			<div class="prepend-top emp">
+				<div class="form-group">
+				  <label class="pull-left" for="">
+				  </label>    
+				</div>
+				<div class="form-group">
+					<div class="checkbox">
+					  <label>
+						<input type="checkbox" name="already" id="already" value="1" required>
+						I have already signed these forms at my agency
+					  </label>
+					</div>
+				  </div>
+			  </div> 
+			
 		  <div class="prepend-top clearfix">
 			<div class="form-group clearfix">
 			  <label class="pull-left" for="">Special Skills
@@ -358,10 +358,10 @@ include('reg_header.php'); ?>
 			  </div>
 			  <div class="modal-body">
 				<ol>
-					<li>Go to <a href="https://www.pdffiller.com/6964040-fillable-2016-w-4-forms-irs "> https://www.pdffiller.com/6964040-fillable-2016-w-4-forms-irs </a></li>
+					<li>Go to <a href="https://www.pdffiller.com/6964040-fillable-2016-w-4-forms-irs" target="_blank"> https://www.pdffiller.com/6964040-fillable-2016-w-4-forms-irs </a></li>
 					<li>Click fill online.</li>
 					<li>Fill out the required fields.</li>
-					<li>Click this link to watch a video if you are unsure on how to fill out some fields: <a href="https://www.youtube.com/watch?v=eVK7sl_SdSw">https://www.youtube.com/watch?v=eVK7sl_SdSw</a></li>
+					<li>Click this link to watch a video if you are unsure on how to fill out some fields: <a href="https://www.youtube.com/watch?v=eVK7sl_SdSw" target="_blank">https://www.youtube.com/watch?v=eVK7sl_SdSw</a></li>
 					<li>To sign the form you simply click ‘Sign’ up top and insert on the correct field.</li>
 					<li>Once completed click ‘Done’ top right and save it to your computer.</li>
 					<li>Upload the form on Outfit.</li>
@@ -380,6 +380,9 @@ include('reg_header.php'); ?>
     </div>
     </div>
     </form>
+	<form id="talentlogin" action="<?php echo base_url();?>index.php/talent_dashboard" method="POST">
+		<input type="hidden" name="my_userid" id="talid"> 
+	  </form>
   <!-- Footer Start -->
   <div class="container">
     <hr>
@@ -464,6 +467,9 @@ include('reg_header.php'); ?>
 		$("#emp").click(function() {
 			$( ".emp" ).show();
 			$( ".contract" ).hide();
+			if($("#already").is(':checked')){
+				$(".w4i9").hide();				
+			}
 		});
 		$("#contract").click(function() {
 			$( ".emp" ).hide();
@@ -472,6 +478,13 @@ include('reg_header.php'); ?>
 		$("#both").click(function() {
 			$( ".emp" ).show();
 			$( ".contract" ).show();
+			if($("#already").is(':checked')){
+				$(".w4i9").hide();				
+			}
+		});
+		
+		$('#already').click(function() {
+			$(".w4i9").toggle();		
 		});
 		$( "#submit" ).click(function() {
 			
@@ -503,6 +516,7 @@ include('reg_header.php'); ?>
 				if ((($("#img_urli9").val()) != "") && (($("#img_urlw4").val()) != "")) {
 					reg();
 				}
+				
 			}
 			
 			if(reg_type == '3'){
@@ -626,7 +640,9 @@ include('reg_header.php'); ?>
 						if(message == "1") {
 							var talentid = JSON.stringify(data['result']);
 							var talentid = talentid.replace(/\"/g, ""); 
-							window.location.assign("<?php echo base_url();?>index.php/talent_dashboard/"+talentid);
+							$('#talid').val(talentid);
+							$( "#talentlogin" ).submit();
+							//window.location.assign("<?php echo base_url();?>index.php/talent_dashboard/"+talentid);
 						}
 						else {
 							var alertmessage = JSON.stringify(data['message']);

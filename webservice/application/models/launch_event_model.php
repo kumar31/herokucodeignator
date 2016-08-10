@@ -38,7 +38,7 @@ class launch_event_model extends CI_Model {
 		$query = $this->db->get(); 
 		$result = $query->result_array();
 		
-		foreach($result as $val) {
+		/*foreach($result as $val) {
 			$talent_id = $val['talent_id'];
 			
 			// email noitification
@@ -60,7 +60,7 @@ class launch_event_model extends CI_Model {
 			$events_smsurl = $this->variableconfig_model->events_smsurl();
 			file_get_contents("".$events_smsurl."?number=".$phone."&event_name=".$event_name."&text=".$text);
 		
-		}
+		}*/
 		
 	
 	}

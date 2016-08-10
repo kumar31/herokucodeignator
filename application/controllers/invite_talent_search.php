@@ -71,7 +71,7 @@ public function __construct()
 		$talent_type = $result[0]['talent_type'];
 		
 		//$select = "SELECT * FROM talent_details LEFT JOIN `talent_review` ON `talent_details`.`talent_id`=`talent_review`.`talent_id` WHERE talent_details.status = 1";
-		$select = "SELECT * FROM talent_details WHERE talent_details.status = 0 AND (reg_type='".$talent_type."' OR reg_type='3') ";
+		$select = "SELECT * FROM talent_details WHERE talent_details.status = 0 AND (reg_type='".$talent_type."' OR reg_type='3')";
 		
 		if($hair_color != ""){
 			$select .= ' AND hair_color = "'.$hair_color.'"';

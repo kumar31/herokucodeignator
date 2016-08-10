@@ -14,7 +14,7 @@ $(document).ready(function() {
 	var track_load = 0; //total loaded record group(s)
 	var loading  = false; //to prevents multipal ajax loads
 	var total_groups = <?=$total_groups;?>; //total record group(s)
-	$('.animation_image').show(); 
+	//$('.animation_image').show(); 
 	
 	$('#results').load("<?php echo base_url();?>index.php/talent_dashboard/getblogdata", {'group_no':track_load}, function() {track_load++;}); //load first group
 	

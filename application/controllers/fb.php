@@ -15,8 +15,8 @@ class fb extends CI_Controller
 		 session_start();
 		
          $this->load->library('facebook', array(
-            'appId' => '831222763678258',
-            'secret' => '51a34bb64e16785057d9e732d212bc93'
+            'appId' => '503794236476725',
+            'secret' => 'f172b63c03783da5cca792df77550c84'
         ));
        
          $this->user = $this->facebook->getUser(); 

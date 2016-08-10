@@ -50,8 +50,8 @@ include('client_header.php'); ?>
           <h3>Outfit strives to make event staffing simple and this is how...</h3>
 		  <p>Step 1. Select the date, time, type of event and location and then submit your event to begin viewing and selecting talent.</p>
 		  <p>Step 2. View and handpick Talent and invite those who you wish to work on your event.</p>
-		  <p>Step 3. Handle booking details and confirmation through our platform. We take a small deposit upon confirmation.</p>
-		  <p>Step 4. Use Outfit to check-in and check out staff at the event. We handle collection of W-9 forms and prepare the invoice on behalf of the talent and facilitate immediate payment via our platform.</p>
+		  <p>Step 3. Handle booking details and confirmation through our platform.</p>
+		  <p>Step 4. Use Outfit to check-in and check out staff at the event. We handle collection of W-9 forms for our contractors and prepare the invoice on behalf of the talent and facilitate immediate payment via our platform. We also offer employees through our third party agency partners who handle insurance and tax forms in those cases.</p>
 		  <p>Step 5. Once the event is over the talent invoice is instantly sent to client. After each event both the talent and Client will have the opportunity to rate each other ensuring those who rate highly will be prioritized for future events.</p>
 		  <p>Our technology simplifies the staffing process. From talent selection through to book keeping you have complete visibility over each step in the process - making your event easier and less expensive to staff.</p>		  
          

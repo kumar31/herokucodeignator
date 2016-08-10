@@ -18,22 +18,38 @@ public function __construct()
 	
 	public function index()
 	{
-		$talentid = $this->uri->segment(2); 
-		$userdata = array(
+		//$talentid = $this->uri->segment(2); 
+		if($_POST['my_userid'] == "") {
+			$myuser_id = $this->session->userdata('talent_id'); 
+			if($myuser_id == ''){
+					$myuser_id = $this->input->cookie('talent',true);
+				}
+		}
+		else {
+			$talentid = $_POST['my_userid']; 
+			$userdata = array(
             'talent_id'  => $talentid,
-        );
-		$this->session->set_userdata($userdata);
-		$myuser_id = $this->session->userdata('talent_id'); 
-		$cookie= array(
-			'name'   => 'talent',
-			'value'  => $myuser_id,
-			'expire' => '86500'
-		);
-		$this->input->set_cookie($cookie);
-		$event_list['get_total_rows'] =$this->gettotalrows($myuser_id);
-		$event_list['items_per_group']='5';	
-		$this->db->truncate('fb');
-		$this->load->view('talent_dashboard',$event_list); 
+			);
+			$this->session->set_userdata($userdata);
+			$myuser_id = $this->session->userdata('talent_id'); 
+			
+			$cookie= array(
+				'name'   => 'talent',
+				'value'  => $myuser_id,
+				'expire' => '86500'
+			);
+			$this->input->set_cookie($cookie);
+		}
+		
+		if($myuser_id == "") {
+			redirect('login');
+		}
+		else{
+			$event_list['get_total_rows'] =$this->gettotalrows($myuser_id);
+			$event_list['items_per_group']='5';	
+			$this->db->truncate('fb');
+			$this->load->view('talent_dashboard',$event_list); 
+		}
 	}
 	function talent() {
 		$myuser_id = $this->session->userdata('talent_id'); 
