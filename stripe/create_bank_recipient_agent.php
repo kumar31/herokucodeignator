@@ -7,7 +7,7 @@ error_reporting(0);
  
   try{
 			 
-     	echo "hi";
+     	
 		$customer = Stripe_Customer::create(array(
 			'email'    => $_REQUEST['email'],
 			'description' => "bank"
@@ -57,7 +57,7 @@ error_reporting(0);
 		$routing_number = $_REQUEST['routing_number'];
 		$account_number = $_REQUEST['account_number'];
 		$tax_id = $_REQUEST['tax_id'];
-		
+		echo "hi";
 		$servername = $_ENV['DB_HOST'];
 		$username = $_ENV['DB_USER'];
 		$password = $_ENV['DB_PASS'];
