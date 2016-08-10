@@ -1,5 +1,5 @@
 <?php
-echo "hello";
+
 // Tested on PHP 5.2, 5.3
 
 // This snippet (and some of the curl code) due to the Facebook SDK.
