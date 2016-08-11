@@ -114,7 +114,7 @@ include('agent_header.php'); ?>
 			var agent_id = <?php echo $agent_details[0]['agent_id']; ?>;
 			
 			//var url = '<?php echo $stripeurl; ?>create_bank_recipient_agent.php';
-			var url = 'http://smaatapps.com/nectorv2/stripe/create_bank_recipient_agent.php';
+			var url = 'https://smaatapps.com/nectorv2/stripe/create_bank_recipient_agent.php';
 				
 				$.ajax({
 					'type' : 'POST',
