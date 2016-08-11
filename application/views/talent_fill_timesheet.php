@@ -441,7 +441,8 @@ include('talent_header.php'); ?>
 			var talent_id = "<?php echo $this->session->userdata('talent_id'); ?>"; 
 			var amount = "<?php echo $per_talent_amt; ?>";
 				
-				var url = '<?php echo $stripeurl; ?>getpaymentfromclientandtransfertotalent.php';
+				//var url = '<?php echo $stripeurl; ?>getpaymentfromclientandtransfertotalent.php';
+				var url = 'http://smaatapps.com/nectorv2/stripe/getpaymentfromclientandtransfertotalent.php';
 				
 				//alert(destination);alert(recipient);alert(event_id);alert(client_id);alert(agent_id);alert(talent_amount);alert(talent_id);alert(amount); die;
 				$.ajax({
