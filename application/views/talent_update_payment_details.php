@@ -84,8 +84,7 @@ include('talent_header.php'); ?>
 			
 			var talent_id = <?php echo $talent_profile[0]['talent_id']; ?>;
 			
-				//var url = '<?php echo $stripeurl; ?>create_bank_recipient.php';
-				var url = 'http://smaatapps.com/nectorv2/stripe/create_bank_recipient.php';
+				var url = '<?php echo $stripeurl; ?>create_bank_recipient.php';
 				
 				$.ajax({
 					'type' : 'POST',

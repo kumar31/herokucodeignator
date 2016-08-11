@@ -488,7 +488,6 @@ foreach($events as $val)
 	function make_payment(client_id,event_id) {
 		
 		var url = '<?php echo $stripeurl; ?>agent_payment.php';
-		var url = 'http://smaatapps.com/nectorv2/stripe/agent_payment.php';
 			
 			$.ajax({
 				'type' : 'POST',
