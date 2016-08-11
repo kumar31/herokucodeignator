@@ -1,8 +1,7 @@
 <?php
 require(dirname(__FILE__) . '/lib/Stripe.php');
 //require 'lib/Stripe.php';
-$apikey = $_ENV['SECRET_KEY'];
-Stripe::setApiKey($apikey);
+Stripe::setApiKey("sk_test_l8FVfiAVF7kbHq3oGOD2hCkL");
 
 error_reporting(0);			 
  
