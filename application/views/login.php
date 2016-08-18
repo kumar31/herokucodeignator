@@ -336,6 +336,9 @@ The right Outfit makes a party. <br><br>
 	  <form id="talentlogin" action="<?php echo base_url();?>index.php/talent_dashboard" method="POST">
 		<input type="hidden" name="my_userid" id="talid"> 
 	  </form>
+	  <form id="agentlogin" action="<?php echo base_url();?>index.php/agent_dashboard" method="POST">
+		<input type="hidden" name="my_userid" id="agentid"> 
+	  </form>
     <!-- /.container -->
 
     <script src="<?php echo base_url(); ?>js/vendor/jquery-1.11.2.min.js">
@@ -499,9 +502,11 @@ The right Outfit makes a party. <br><br>
 					
 					if(message == "1") {						
 						var agentid = JSON.stringify(data['result']['agent_id']);
-						var agentid = agentid.replace(/\"/g, ""); 
+						var agentid = agentid.replace(/\"/g, "");
+						$('#agentid').val(agentid);
+						$( "#agentlogin" ).submit();
 						/*session(id);*/
-						window.location.assign("<?php echo base_url();?>index.php/agent_dashboard/"+agentid );												
+						//window.location.assign("<?php echo base_url();?>index.php/agent_dashboard/"+agentid );												
 					}
 					else {
 						var alertmessage = JSON.stringify(data['message']);
