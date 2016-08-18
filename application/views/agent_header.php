@@ -91,13 +91,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 					<li class="pull-left">
-                        <a href="<?php echo site_url();?>/agent_dashboard/<?php echo $myuser_id; ?>" style="padding:0px 15px;"><img src="<?php echo base_url(); ?>img/logo-pop-transparent.png" class="logoo"></a>
+                        <a href="<?php echo site_url();?>/agent_dashboard" style="padding:0px 15px;"><img src="<?php echo base_url(); ?>img/logo-pop-transparent.png" class="logoo"></a>
                     </li>
                     <li class="pull-left">
-                        <a href="<?php echo site_url();?>/agent_dashboard/<?php echo $myuser_id; ?>" class="orange-nav">EVENTS LIST</a>
+                        <a href="<?php echo site_url();?>/agent_dashboard" class="orange-nav">EVENTS LIST</a>
                     </li>
                     <li class="pull-left">
-                        <a href="<?php echo site_url();?>/agent_profile/<?php echo $myuser_id; ?>" class="yellow-nav">PROFILE AND PAYMENT SETTINGS</a>
+                        <a href="<?php echo site_url();?>/agent_profile" class="yellow-nav">PROFILE AND PAYMENT SETTINGS</a>
                     </li>
 					<!--<li class="pull-right">
                         <!--<a href="<?php echo site_url();?>/login" class="gray-nav"><img src="<?php echo base_url(); ?>img/icon-signin.png" style="margin-right:5px;">SIGN IN</a>
