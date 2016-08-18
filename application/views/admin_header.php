@@ -91,25 +91,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-               <a href="<?php echo site_url();?>/admin_dashboard/<?php echo $myuser_id; ?>"><img src="<?php echo base_url(); ?>img/logo-pop-transparent.png" class="logoo2 logoo3"></a>
+               <a href="<?php echo site_url();?>/admin_dashboard"><img src="<?php echo base_url(); ?>img/logo-pop-transparent.png" class="logoo2 logoo3"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 					<li class="pull-left">
-                        <a href="<?php echo site_url();?>/admin_dashboard/<?php echo $myuser_id; ?>" style="padding:0px 15px;"><img src="<?php echo base_url(); ?>img/logo-pop-transparent.png" class="logoo"></a>
+                        <a href="<?php echo site_url();?>/admin_dashboard" style="padding:0px 15px;"><img src="<?php echo base_url(); ?>img/logo-pop-transparent.png" class="logoo"></a>
                     </li>
                     <li class="pull-left">
-                        <a href="<?php echo site_url();?>/admin_dashboard/<?php echo $myuser_id; ?>" class="orange-nav">AGENCY</a>
+                        <a href="<?php echo site_url();?>/admin_dashboard" class="orange-nav">AGENCY</a>
                     </li>
 					<li class="pull-left">
-                        <a href="<?php echo site_url();?>/contractor_pay/<?php echo $myuser_id; ?>" class="yellow-nav">TALENT HOURLY PAY</a>
+                        <a href="<?php echo site_url();?>/contractor_pay" class="yellow-nav">TALENT HOURLY PAY</a>
                     </li>
                     <!---<li class="pull-left">
                         <a href="<?php echo site_url();?>/event_type/<?php echo $myuser_id; ?>" class="yellow-nav">EVENT TYPE</a>
                     </li>-->
 					<li class="pull-left">
-                        <a href="<?php echo site_url();?>/admin_settings/<?php echo $myuser_id; ?>" class="yellow-nav">SETTINGS</a>
+                        <a href="<?php echo site_url();?>/admin_settings" class="yellow-nav">SETTINGS</a>
                     </li>
 					<!--<li class="pull-right">
                         <!--<a href="<?php echo site_url();?>/login" class="gray-nav"><img src="<?php echo base_url(); ?>img/icon-signin.png" style="margin-right:5px;">SIGN IN</a>
