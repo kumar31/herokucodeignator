@@ -12,7 +12,7 @@ error_reporting(0);
 require APPPATH.'/libraries/REST_Controller.php';
 require APPPATH.'/libraries/variableconfig.php';
 require APPPATH.'/libraries/validationandresult.php';
-require APPPATH.'/libraries/class.phpmailer.php';
+
 class client_registration extends REST_Controller {
 	
 	public function __construct()
