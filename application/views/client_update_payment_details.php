@@ -167,7 +167,7 @@ require APPPATH.'/libraries/variableconfig.php';
 				'data': {'firstname':firstname,'cardnumber':cardnumber,'client_id':client_id,'expyear':card_year,'expmonth':card_month,'cvc':cvc},
 				//'dataType': 'json',
 				success: function(data) {
-					alert(data);
+					//alert(data);
 					if(data == 1) {
 						$("#alertmsgs").text('success card updated');
 						window.location.reload();
