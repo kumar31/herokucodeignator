@@ -83,7 +83,7 @@ class verify_model extends CI_Model {
 	
 	function email($email,$first_name,$user_id){
 	
-	   $from_email = "admin@smaatapps.com";
+	   $from_email = "support@beta.outfitstaff.com";
 	   $to_email = $emailId;
 	   $to_username = $firstName;	   
 	   $subject = "Outfit";

@@ -96,9 +96,9 @@ class reset_password extends CI_Controller {
 			$to = $email;
 			$headers = "MIME-Version: 1.0" . "\r\n";
 			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-			$headers .= 'From: <admin@smaatapps.com>' . "\r\n";
-			$headers .= 'Cc: admin@smaatapps.com' . "\r\n";
-			$headers .= 'Reply-To: <admin@smaatapps.com>' . "\r\n"; 
+			$headers .= 'From: <support@beta.outfitstaff.com>' . "\r\n";
+			$headers .= 'Cc: support@beta.outfitstaff.com' . "\r\n";
+			$headers .= 'Reply-To: <support@beta.outfitstaff.com>' . "\r\n"; 
 			$message = $messagetext;
 			mail($to,$subject,$message,$headers);
 	

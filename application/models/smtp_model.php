@@ -22,12 +22,12 @@ class smtp_model extends CI_Model {
     	$mail->Port       = 25;                    // set the SMTP port for the GMAIL server
     	$mail->Username   = "smaatapp@auto.outfitstaff.com"; // SMTP account username
     	$mail->Password   = ")2gNYK3Ed9K*3Z9Q4n{mWJp#Eb/rTCRq";        // SMTP account password
-    	$mail->SetFrom('lakshmanan@smaatapps.com', 'outfitstaff');
-    	$mail->AddReplyTo("lakshmanan@smaatapps.com","outfitstaff");
+    	$mail->SetFrom('support@beta.outfitstaff.com', 'outfitstaff');
+    	$mail->AddReplyTo("support@beta.outfitstaff.com","outfitstaff");
     	$mail->Subject    = "smtp test mail";
     	$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
     	$mail->MsgHTML($body);
-    	$address = "kumarappan.ssb@gmail.com";
+    	$address = "support@beta.outfitstaff.com";
     	$mail->AddAddress($address, "outfitstaff");
     	//$mail->AddAttachment("images/phpmailer.gif");      // attachment
     	//$mail->AddAttachment("images/phpmailer_mini.gif"); // attachment

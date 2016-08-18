@@ -9,7 +9,7 @@ class events_mail_model extends CI_Model {
 	
 	function email($to_email,$to_name,$subject,$message){
 	
-	   $from_email = "admin@smaatapps.com";
+	   $from_email = "support@beta.outfitstaff.com";
 	  
 	   $to = $to_email;
 	   $headers = "MIME-Version: 1.0" . "\r\n";
@@ -37,8 +37,8 @@ class events_mail_model extends CI_Model {
     	$mail->Port       = 25;                    // set the SMTP port for the GMAIL server
     	$mail->Username   = "smaatapp@auto.outfitstaff.com"; // SMTP account username
     	$mail->Password   = ")2gNYK3Ed9K*3Z9Q4n{mWJp#Eb/rTCRq";        // SMTP account password
-    	$mail->SetFrom('admin@smaatapps.com', 'outfitstaff');
-    	$mail->AddReplyTo("admin@smaatapps.com","outfitstaff");
+    	$mail->SetFrom('support@beta.outfitstaff.com', 'outfitstaff');
+    	$mail->AddReplyTo("support@beta.outfitstaff.com","outfitstaff");
     	$mail->Subject    = $subject;
     	$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
     	$mail->MsgHTML($body);

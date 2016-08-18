@@ -9,7 +9,7 @@ class variableconfig {
   }
 
   function from_email() {
-    return "admin@smaatapps.com";
+    return "support@beta.outfitstaff.com";
   }
 
   function smsurl() {
@@ -22,5 +22,9 @@ class variableconfig {
 
   function stripeurl() {
     return getenv( 'SOIREE_BASE_URL' ) . '/stripe/';
+  }
+  
+  function imgurl() {
+    return getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/';
   }
 }

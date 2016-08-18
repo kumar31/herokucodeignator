@@ -46,7 +46,7 @@ include('reg_header.php'); ?>
 			
 			$subject = "Outfit - Need Support";
 			$message = "<p>Email: ".$email." <br> First name: ".$fname." <br>Last name: ".$lname." <br> Message: ".$msg."</p>";
-			$from_email = "admin@smaatapps.com";
+			$from_email = "support@beta.outfitstaff.com";
 			
 			$to = "car3chan@gmail.com";
 			$headers = "MIME-Version: 1.0" . "\r\n";

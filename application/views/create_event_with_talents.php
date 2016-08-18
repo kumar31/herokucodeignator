@@ -4,6 +4,7 @@ include('client_header.php'); ?>
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();
 		$webserviceurl = $variableconfig->webserviceurl(); 
+		$imgurl = $variableconfig->imgurl(); 
  ?>
 <style>
 a {
@@ -51,9 +52,9 @@ a:hover, a:focus {
           </div>
 		  
 		  <div class="prepend-top form-group">
-			<label for="" class="required">Event Picture
+			<label for="" class="required">Event Picture 
                 </label> 
-			<img class="eimg img-thumbnail" style="width: 350px; height: 150px;" src="http://smaatapps.com/nectorv2/nectorimg/default-event.png">
+			<img class="eimg img-thumbnail" style="width: 350px; height: 150px;" src="<?php echo $imgurl; ?>default-event.png">
 			<br>
 			<br>
            <input class="form-control my-form-control" type='file' id="upload" />

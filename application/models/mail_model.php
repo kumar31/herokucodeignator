@@ -9,7 +9,7 @@ class mail_model extends CI_Model {
 	
 	function email($from_email,$to_email,$from_name,$to_name,$subject,$message){
 	
-	   $from_email = "admin@smaatapps.com";
+	   $from_email = "support@beta.outfitstaff.com";
 	   
 	   $to = $to_email;
 	   $headers = "MIME-Version: 1.0" . "\r\n";

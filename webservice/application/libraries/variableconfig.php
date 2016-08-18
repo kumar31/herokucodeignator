@@ -9,7 +9,7 @@ class variableconfig {
   }
 
   function from_email() {
-    return "admin@smaatapps.com";
+    return "support@beta.outfitstaff.com";
   }
 
   function smsurl() {

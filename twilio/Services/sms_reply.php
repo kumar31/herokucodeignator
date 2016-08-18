@@ -15,10 +15,10 @@
 	$talent_id = $body[1]; 
 	$msg = $body[2];
 	
-	$servername = "localhost";
-	$username = "smaatapp_dev";
-	$password = "dev123%$";
-	$dbname = "smaatapp_nector";
+	$servername = getenv( 'DB_HOST' );
+	$username = getenv( 'DB_USER' );
+	$password = getenv( 'DB_PASS' );
+	$dbname = getenv( 'DB_NAME' );
 	
 	// Create connection
 	$conn = mysql_connect($servername, $username, $password);
