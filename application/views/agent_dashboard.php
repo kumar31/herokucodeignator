@@ -70,7 +70,7 @@ include('agent_header.php'); ?>
 				  </div>
 				  <div class="modal-body">
 					<p>Add account details to get listed in talents signup</p>
-					<a href="<?php echo base_url(); ?>index.php/agent_profile/<?php echo $agentid; ?>" type="button" class="btn btn-success">Add now</a>
+					<a href="<?php echo base_url(); ?>index.php/agent_profile" type="button" class="btn btn-success">Add now</a>
 				  </div>
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Ignore if added already</button>
