@@ -15,7 +15,7 @@ public function __construct()
 	public function index()
 	{
 		if($_POST['my_userid'] == "") {
-			$myuser_id = $this->session->userdata('agent_id'); 
+			$myuser_id = $this->session->userdata('admin_id'); 
 			if($myuser_id == ''){
 					$myuser_id = $this->input->cookie('client',true);
 				}

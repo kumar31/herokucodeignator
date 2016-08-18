@@ -85,7 +85,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-               <a href="<?php echo site_url();?>/agent_dashboard/<?php echo $myuser_id; ?>"><img src="<?php echo base_url(); ?>img/logo-pop-transparent.png" class="logoo2 logoo3"></a>
+               <a href="<?php echo site_url();?>/agent_dashboard"><img src="<?php echo base_url(); ?>img/logo-pop-transparent.png" class="logoo2 logoo3"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
