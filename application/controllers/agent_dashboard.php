@@ -15,24 +15,39 @@ public function __construct()
 	}
 	public function index()
 	{
-		$agentid = $this->uri->segment(2); 
-		$userdata = array(
-            'agent_id'  => $agentid,
-        );
-		$this->session->set_userdata($userdata);
-		$myuser_id = $this->session->userdata('agent_id');
+		if($_POST['my_userid'] == "") {
+			$myuser_id = $this->session->userdata('agent_id'); 
+			if($myuser_id == ''){
+					$myuser_id = $this->input->cookie('client',true);
+				}
+		}
+		else {
+			//$agentid = $this->uri->segment(2); 
+			$agentid = $_POST['my_userid'];
+			$userdata = array(
+				'agent_id'  => $agentid,
+			);
+			$this->session->set_userdata($userdata);
+			$myuser_id = $this->session->userdata('agent_id');
+			
+			$cookie= array(
+				'name'   => 'agent',
+				'value'  => $myuser_id,
+				'expire' => '86500'
+			);
+			$this->input->set_cookie($cookie);
+			$data['event_details'] = $this->agent_model->checkin_details($myuser_id); 
+			$data['profit'] = $this->agent_model->profit_details($myuser_id); 
+			$data['revenue'] = $this->agent_model->revenue_details($myuser_id); 
+			$this->load->view('agent_dashboard',$data);
+		}
+		if($myuser_id == "") {
+			redirect('login');
+		}
+		else{
+			$this->load->view('agent_dashboard');
+		}
 		
-		$cookie= array(
-			'name'   => 'agent',
-			'value'  => $myuser_id,
-			'expire' => '86500'
-		);
-		$this->input->set_cookie($cookie);
-		
-		$data['event_details'] = $this->agent_model->checkin_details($myuser_id); 
-		$data['profit'] = $this->agent_model->profit_details($myuser_id); 
-		$data['revenue'] = $this->agent_model->revenue_details($myuser_id); 
-		$this->load->view('agent_dashboard',$data);
 	}
 	
 }
