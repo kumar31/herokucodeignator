@@ -10,7 +10,7 @@ require APPPATH.'/libraries/variableconfig.php';
 		$this->load->helper('cookie');
 		$client_id = $this->session->userdata('client_id');
 		if($client_id == ''){
-			$client_id = $this->input->cookie('client',true);
+			$client_id = $this->input->cookie('client',true); 
 		}
 		$this->db->select('stripe_id');
 		$this->db->where('client_id',$client_id);
