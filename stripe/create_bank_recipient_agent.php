@@ -1,18 +1,19 @@
 <?php
 require(dirname(__FILE__) . '/lib/Stripe.php');
 //require 'lib/Stripe.php';
-Stripe::setApiKey("sk_test_l8FVfiAVF7kbHq3oGOD2hCkL");
+require 'config.php';
 
-error_reporting(0);			 
+error_reporting(E_ALL);			 
  
   try{
 			 
+	
 		$customer = Stripe_Customer::create(array(
 			'email'    => $_REQUEST['email'],
 			'description' => "bank"
 		 ));
 		
-		echo "hi";
+		//echo "hi";
 		$customerId = $customer->id; 
 	       
 			
@@ -57,22 +58,14 @@ error_reporting(0);
 		$account_number = $_REQUEST['account_number'];
 		$tax_id = $_REQUEST['tax_id'];
 		
-		$servername = $_ENV['DB_HOST'];
-		$username = $_ENV['DB_USER'];
-		$password = $_ENV['DB_PASS'];
-		$dbname = $_ENV['DB_NAME'];
 		
-		// Create connection
-		$conn = mysql_connect($servername, $username, $password);
-		// Check connection
-		
-		mysql_select_db($dbname);
 		$update=mysql_query("UPDATE `agent_details` SET `stripe_id`='".$customerId."',`bank_id`='".$account_id."',`recp_id`='".$rec_id."',`card_fname`='".$fname."',`card_lname`='".$lname."',`routing_number`='".$routing_number."',`account_number`='".$account_number."',`tax_id`='".$tax_id."' WHERE `agent_id`='".$agent_id."'");
 		
 		echo '1';
 
 		}
 		catch (Exception $e) {
+		echo $e;
 		$error = "false,".$e->getMessage();
 		echo '0';
 		}

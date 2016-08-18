@@ -12,7 +12,7 @@ class client_registration_model extends CI_Model {
 	function index()
 	{
 		if($_POST['profile_url'] == "") {
-			$profile_url = "https://testawsout.herokuapp.com/nectorimg/default-profile.png";
+			$profile_url = getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/default-profile.png';
 		}
 		else {
 			$profile_url = $_POST['profile_url'];

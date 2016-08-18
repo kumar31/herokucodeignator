@@ -105,11 +105,11 @@ $(document).ready(function() {
              <div class="w-section inverse blog-grid">
 					
 					<div class="" id="results">
-						
-					</div>
-					<div class="animation_image"  align="center" style="display:none">						
+						<div class="animation_image"  align="center" style="display:none">						
 							<img src="<?php echo base_url();?>css/ajax-loader.gif" style="width:60px; height:60px;">				
 						</div>
+					</div>
+					
 					<?php 
 						if($get_total_rows == 0) { 
 						

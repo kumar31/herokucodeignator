@@ -94,8 +94,8 @@ include('client_header.php'); ?>
 				<tbody>
 				  <tr>
 					<td>
-					  <a target="_blank" href="https://testawsout.herokuapp.com/html2pdf_v4.03/examples/adv.php?event_id=<?php echo $val['event_id']; ?>"><?php echo $val['transaction_id']; ?>
-					  </a>					  
+					  <a target="_blank" href="<?php getenv( 'SOIREE_BASE_URL' ) ?>/html2pdf_v4.03/examples/adv.php?event_id=<?php echo $val['event_id']; ?>"><?php echo $val['transaction_id']; ?>
+					  </a>
 					</td>
 					<td><?php echo $val['event_name']; ?>
 					</td>

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'https://testawsout.herokuapp.com/';
+$config['base_url']	= getenv( 'SOIREE_BASE_URL' );
 date_default_timezone_set("UTC");
 /*
 |--------------------------------------------------------------------------

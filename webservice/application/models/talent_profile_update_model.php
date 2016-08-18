@@ -59,8 +59,8 @@ class talent_profile_update_model extends CI_Model {
 			'height' 				=> $_POST['height'],
 			'languages' 			=> $_POST['languages'],
 			'profile_url' 			=> $profile_url,
-			'pic1' 					=> $_POST['pic1'],
-			'pic2' 					=> $_POST['pic2'],
+			'pic1' 					=> $pic1,
+			'pic2' 					=> $pic2,
 			'latitude' 				=> $_POST['latitude'],
 			'longitude' 			=> $_POST['longitude']
 		);

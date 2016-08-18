@@ -38,7 +38,7 @@ class talent_checkin_model extends CI_Model {
 		$event_contact_name = $this->event_model->firstname($_POST['event_id']);
 		$subject = "Outfit - Checked In for event"; 
 		$message ="<p>Hi ".$to_name.",</p>";
-		$message .="<p>You have been checked in by ".$event_contact_name." for ".$event_name." event at ".$timeNdate.".Please click here to confirm or amend time https://testawsout.herokuapp.com/index.php/login .</p>";
+		$message .="<p>You have been checked in by ".$event_contact_name." for ".$event_name." event at ".$timeNdate.".Please click here to confirm or amend time " . getenv( 'SOIREE_BASE_URL' ) . "/index.php/login .</p>";
 		$message .="<p>Regards,<br>Outfit Admin</p>";	
 		
 		//$this->events_mail_model->email($to_email,$to_name,$subject,$message);
@@ -46,7 +46,7 @@ class talent_checkin_model extends CI_Model {
 		// sms noitification
 		$event_name = urlencode($event_name);
 		$phone = $this->talent_model->phone_number($_POST['talent_id']);
-		$text = "You have been checked in by ".$event_contact_name." for ".$event_name." event at ".$timeNdate.".Please click here to confirm or amend time https://testawsout.herokuapp.com/website/index.php/login .";
+		$text = "You have been checked in by ".$event_contact_name." for ".$event_name." event at ".$timeNdate.".Please click here to confirm or amend time " . getenv( 'SOIREE_BASE_URL' ) . "/website/index.php/login .";
 		$text = urlencode($text);
 		$events_smsurl = $this->variableconfig_model->events_smsurl();
 		file_get_contents("".$events_smsurl."?number=".$phone."&event_name=".$event_name."&text=".$text);

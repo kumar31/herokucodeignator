@@ -123,7 +123,7 @@ public function __construct()
 		}
 		
 		if($search != ""){
-			$select .= ' AND (`email`= "'.$search.'" OR `first_name`= "'.$search.'" OR `last_name`= "'.$search.'")';
+			$select .= ' AND (`email`= "'.$search.'" OR `first_name`= "'.$search.'" OR `last_name`= "'.$search.'" OR `user_name`= "'.$search.'")';
 		}
 		
 		

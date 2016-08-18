@@ -24,10 +24,10 @@ require 'config.php';
 		
 		
 		
-		$servername = $_ENV['DB_HOST'];
-		$username = $_ENV['DB_USER'];
-		$password = $_ENV['DB_PASS'];
-		$dbname = $_ENV['DB_NAME'];
+		$servername = getenv( 'DB_HOST' );
+		$username = getenv( 'DB_USER' );
+		$password = getenv( 'DB_PASS' );
+		$dbname = getenv( 'DB_NAME' );
 		
 		// Create connection
 		$conn = mysql_connect($servername, $username, $password);

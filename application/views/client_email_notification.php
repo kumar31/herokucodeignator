@@ -25,6 +25,7 @@ include('client_header.php'); ?>
             <div class="row">
               <div class="col-xs-12">
                 <hr>
+				<h4 class="text-danger" id="alertmsg"></h4>
                 <h4>Change Email
                 </h4>     
               </div> 
@@ -98,6 +99,7 @@ include('client_header.php'); ?>
 						}
 						else {
 							var alertmessage = JSON.stringify(data['message']);
+							var alertmessage = alertmessage.replace(/\"/g, "");
 							$("#alertmsg").text(alertmessage);
 							$("html, body").animate({ scrollTop: 0 }, "slow");
 						}

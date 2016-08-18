@@ -26,7 +26,13 @@
 	input[type="password"] {
 		color: #000 !important;
 	}
-	
+	.navbar-inverse {
+		background-color: rgba(255, 255, 255, 1.0);
+		border: 0;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

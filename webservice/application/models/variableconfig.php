@@ -8,11 +8,11 @@ class variableconfig extends CI_Model {
 	
 	
 	function smsurl() {
-			return "https://testawsout.herokuapp.com/twilio/Services/sms.php";
+			return getenv( 'SOIREE_BASE_URL' ) . '/twilio/Services/sms.php';
 	}
 	
 	function events_smsurl() {
-			return "https://testawsout.herokuapp.com/twilio/Services/sms_events.php";
+			return getenv( 'SOIREE_BASE_URL' ) . '/twilio/Services/sms_events.php';
 	}
 	
 }

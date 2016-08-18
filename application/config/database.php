@@ -51,10 +51,10 @@ $active_record = TRUE;
 
 
 
-define('DB_HOST', $_ENV['DB_HOST']);
-define('DB_DATABASE', $_ENV['DB_NAME']);
-define('DB_USER', $_ENV['DB_USER']);
-define('DB_PASS', $_ENV['DB_PASS']);
+define('DB_HOST', getenv( 'DB_HOST' ));
+define('DB_DATABASE', getenv( 'DB_NAME' ));
+define('DB_USER', getenv( 'DB_USER' ));
+define('DB_PASS', getenv( 'DB_PASS' ));
 
 
 $db['default']['hostname'] = constant("DB_HOST");

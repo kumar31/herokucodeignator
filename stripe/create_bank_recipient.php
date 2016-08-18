@@ -57,16 +57,7 @@ error_reporting(0);
 		$account_number = $_REQUEST['account_number'];
 		$tax_id = $_REQUEST['tax_id'];
 		
-		$servername = $_ENV['DB_HOST'];
-		$username = $_ENV['DB_USER'];
-		$password = $_ENV['DB_PASS'];
-		$dbname = $_ENV['DB_NAME'];
 		
-		// Create connection
-		$conn = mysql_connect($servername, $username, $password);
-		// Check connection
-		
-		mysql_select_db($dbname);
 		$update=mysql_query("UPDATE `talent_details` SET `stripe_id`='".$customerId."',`bank_id`='".$account_id."',`recp_id`='".$rec_id."',`card_fname`='".$fname."',`card_lname`='".$lname."',`routing_number`='".$routing_number."',`account_number`='".$account_number."',`tax_id`='".$tax_id."' WHERE `talent_id`='".$talent_id."'");
 		
 		echo '1';

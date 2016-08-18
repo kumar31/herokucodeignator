@@ -56,7 +56,7 @@ include('reg_header.php'); ?>
 						<br>
 					<?php	} 
 					else { ?>
-					<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="https://testawsout.herokuapp.com/nectorimg/default-profile.png">
+					<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="<?php getenv( 'SOIREE_BASE_URL' ) ?>/nectorimg/default-profile.png">
 					<br>
 				<?php				
 				}
@@ -179,7 +179,7 @@ include('reg_header.php'); ?>
 				</label> 
 				<h5 style="color: red;" id="agreemessage"></h5>
 			   <input class="form-control" type='file' id="uploadw9" />
-			   <span class="detail"><a href="https://testawsout.herokuapp.com/nectorimg/w9.pdf" target="_blank">How to fill out the W9 form?</a></span>
+			   <span class="detail"><a href="<?php getenv( 'SOIREE_BASE_URL' ) ?>/nectorimg/w9.pdf" target="_blank">How to fill out the W9 form?</a></span>
 			   <span class="detail pull-right"><a href="http://signw9.com/" target="_blank">www.signw9.com</a></span> 
 				<input type='hidden' id="img_urlw9" /> 
 			</div>
@@ -646,6 +646,7 @@ include('reg_header.php'); ?>
 						}
 						else {
 							var alertmessage = JSON.stringify(data['message']);
+							var alertmessage = alertmessage.replace(/\"/g, "");
 							$("#alertmsg").text(alertmessage);
 							$("html, body").animate({ scrollTop: 0 }, "slow");
 						}
@@ -771,6 +772,28 @@ include('reg_header.php'); ?>
 	// popover demo
 	$("[data-toggle=popover]")
 	.popover({html:true})
+	</script>
+	<script>
+	$(document).ready(function(){
+		var type = 2; 
+		var typeid = 1; 
+			
+			var url = '<?php echo $webserviceurl; ?>index.php/type';
+			
+			$.ajax({
+				'type' : 'POST',
+				'url': url,
+				'data': {'typeid':typeid,'type':type},
+				//'dataType': 'json',
+				success: function(data) {
+					var message = JSON.stringify(data['StatusCode']);
+					var message = message.replace(/\"/g, "");
+					//alert(JSON.stringify(data['Message']));
+					
+				}
+			
+			});
+	});
 	</script>
 	<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
 	<script>

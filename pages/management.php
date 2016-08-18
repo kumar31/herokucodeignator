@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+
+<html class="no-js" lang="">
+<!--<![endif]-->
+<?php
+
+require '../settings.php';
+
+
+?>
+
+<head>
+    <?php 
+
+        echo file_get_contents($root . 'protocols/header.php');
+
+        ?>
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script>
+    window.jQuery || document.write('<script src="<?php echo $root . 'js/vendor/jquery-1.11.2.min.js'; ?>"><\/script>')
+    </script>
+
+    <title>
+    </title>
+</head><?php 
+
+echo file_get_contents($root . 'protocols/menu.php');
+
+?>
+
+<body>
+    <div class="container">
+        <div class="row orangehead">
+            <div class="col-md-10">
+                <header class="clearfix">
+                    <h1 class="event-title">johnny walker birthday bash
+
+
+                    <aside class="below">
+                        12th Jan 2017 6:00 PM - 13th Jan 2017 1:00 AM
+                    </aside></h1>
+                </header>
+
+                 <div class="dashboard_tab_wrapper">
+                    <div class="dashboard_tab bring-forward clicked">
+                      <a href="management.php">Management</a>
+                    </div>
+
+                            <?php 
+
+                echo file_get_contents($root . 'protocols/employersearchmenu.php');
+
+                ?>
+
+                   </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+
+<!-- Start of white box -->
+            <div class="col-sm-8 whiteBG invitebox topmargin">
+                <div>
+
+           
+                    <!-- single Person -->
+
+    <div id="my-tab-content" class="tab-content">
+    
+            <div class="tab-pane active">
+                
+            		   <div class="person">
+                        <div class="row persona">
+                            <div class="col-xs-3 col-sm-3 text-center">
+                            <img src="http://placebeard.it/g/150/150">
+                            </div>
+
+
+
+                            <div class="col-xs-9 col-sm-6">
+
+
+                                <h3>Gerald Allen</h3>
+
+
+                                <h4>Waiter, bartender</h4>
+
+
+                                <h4>Male - Brown hair, green eyes, 5ft 11</h4>
+
+
+                                <div class="row uppercase">
+                                    <div class="col-xs-6">
+                                        <p><span class=
+                                        "glyphicon glyphicon-pushpin"></span>new
+                                        york</p>
+                                    </div>
+
+
+                                    <div class="col-xs-6">
+                                        <p><span class=
+                                        "glyphicon glyphicon-thumbs-up"></span>1
+                                        review - 100%</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-12 col-sm-3">
+                                <div>
+                                    <h3 id="texthired">Hired</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                    </div>
+                    <!-- End of single person -->
+                    <!-- single Person -->
+
+
+                    <div class="person">
+                        <div class="row persona">
+                            <div class="col-xs-3 col-sm-3 text-center">
+                            <img src="http://placebeard.it/g/150/150">
+                            </div>
+
+
+                            <div class="col-xs-9 col-sm-6">
+                                <h3>Gerald Allen</h3>
+
+
+                                <h4>Waiter, bartender</h4>
+
+
+                                <h4>Male - Brown hair, green eyes, 5ft 11</h4>
+
+
+                                <div class="row uppercase">
+                                    <div class="col-xs-6">
+                                        <p><span class=
+                                        "glyphicon glyphicon-pushpin"></span>new
+                                        york</p>
+                                    </div>
+
+
+                                    <div class="col-xs-6">
+                                        <p><span class=
+                                        "glyphicon glyphicon-thumbs-up"></span>1
+                                        review - 100%</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-12 col-sm-3">
+                                <div >
+                                     <h3 id="texthired">Hired</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                    </div>
+                    <!-- End of single person -->
+                    <!-- single Person -->
+
+
+                    <div class="person">
+                        <div class="row persona">
+                            <div class="col-xs-3 col-sm-3 text-center">
+                            <img src="http://placebeard.it/g/150/150">
+                            </div>
+
+
+                            <div class="col-xs-9 col-sm-6">
+                                <h3>Gerald Allen</h3>
+
+
+                                <h4>Waiter, bartender</h4>
+
+
+                                <h4>Male - Brown hair, green eyes, 5ft 11</h4>
+
+
+                                <div class="row uppercase">
+                                    <div class="col-xs-6">
+                                        <p><span class=
+                                        "glyphicon glyphicon-pushpin"></span>new
+                                        york</p>
+                                    </div>
+
+
+                                    <div class="col-xs-6">
+                                        <p><span class=
+                                        "glyphicon glyphicon-thumbs-up"></span>1
+                                        review - 100%</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-12 col-sm-3">
+                                <div>
+                                     <h3 id="texthired">Hired</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                    </div>
+                    <!-- End of single person -->
+
+
+            </div>
+          
+        </div>
+
+
+
+
+
+                </div>
+            </div>
+<!-- End of white box -->
+
+            <div class="col-sm-4 topmargin listings-invitebar">
+                <section class="clearfix whiteBG classWithPadLeft">
+
+                                <div class="text-center">
+                                	<h2>Info</h2>
+                                </div>
+
+                                <hr>
+
+
+
+									<div class="row proposaldata">
+									  <div class="col-xs-6">
+									  <h3 id="number">3</h3>
+                                        <p id="subtext">hired</p>
+									  </div>
+									  <div class="col-xs-6">
+									  	<h3 id="number">$960</h3>
+									  	<p id="subtext">estimated price</p>
+									  </div>
+									</div>
+                           
+
+                </section>
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer Start -->
+
+
+    <div class="container">
+        <hr>
+        <?php 
+
+                echo file_get_contents($root . 'protocols/footer.php');
+
+
+                ?>
+    </div>
+    <!-- /container -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="<?php echo $root . 'js/vendor/jquery-1.11.2.min.js'; ?>"><\/script>')</script>
+
+        <script src="<?php echo $root . 'js/vendor/bootstrap.min.js'; ?>"></script>
+
+        <script src="<?php echo $root . 'js/main.js';?>"></script>
+</body>
+</html>

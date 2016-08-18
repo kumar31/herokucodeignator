@@ -13,20 +13,22 @@ class talent_registration_model extends CI_Model {
 	function index()
 	{
 		if (!filter_var($_POST['profile_url'], FILTER_VALIDATE_URL) === false) {
-			$profile_url = "https://testawsout.herokuapp.com/nectorimg/default-profile.png";
+			$profile_url = getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/default-profile.png';
 		} else if($_POST['profile_url'] == "") {
-			$profile_url = "https://testawsout.herokuapp.com/nectorimg/default-profile.png";
+			$profile_url = getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/default-profile.png';
 		}
 		else {
 			$profile_url = $_POST['profile_url']; 
 		}
 		
+		$user_name = $_POST['first_name'].' '.$_POST['last_name'];
 		
 		$data = array(
 			'email' 	   		=> $_POST['email'],
 			'password' 			=> $_POST['password'],
 			'first_name' 		=> $_POST['first_name'],
 			'last_name' 		=> $_POST['last_name'],
+			'user_name' 		=> $user_name,
 			'phone_number' 		=> $_POST['phone_number'],
 			'profile_url' 		=> $profile_url,
 			'w9_form' 			=> $_POST['w9_form'],

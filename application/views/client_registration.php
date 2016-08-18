@@ -54,7 +54,7 @@ include('reg_header.php'); ?>
 						<br>
 				<?php	}
 				else { ?>
-					<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="https://testawsout.herokuapp.com/nectorimg/default-profile.png">
+					<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="<?php getenv( 'SOIREE_BASE_URL' ) ?>/nectorimg/default-profile.png">
 					<br>
 				<?php				
 				}
@@ -369,6 +369,7 @@ include('reg_header.php'); ?>
 						}
 						else {
 							var alertmessage = JSON.stringify(data['message']);
+							var alertmessage = alertmessage.replace(/\"/g, "");
 							$("#alertmsg").text(alertmessage);
 							$("html, body").animate({ scrollTop: 0 }, "slow");
 						}

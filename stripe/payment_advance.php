@@ -18,16 +18,7 @@ if((isset($_POST['stripe_id']))){
 			
 			$transaction_id = $payment_result['id'];
 			
-			$servername = $_ENV['DB_HOST'];
-			$username = $_ENV['DB_USER'];
-			$password = $_ENV['DB_PASS'];
-			$dbname = $_ENV['DB_NAME'];
 			
-			// Create connection
-			$conn = mysql_connect($servername, $username, $password);
-			// Check connection
-			
-			mysql_select_db($dbname);
 			$date = date('Y-m-d H:i:s');
 			$update = mysql_query("update event_detail set is_advance_paid = 1  where event_id = ".$event_id."");
 			$update = mysql_query("INSERT INTO client_payment_details ( client_id, event_id,no_of_talents_requested,transaction_id,amount,datetime,description ) VALUES 

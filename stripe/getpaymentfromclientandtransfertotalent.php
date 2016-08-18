@@ -12,18 +12,6 @@ require 'config.php';
 		$recipient = $_POST['recipient'];
 		$destination = $_POST['destination'];
 		
-		
-		$servername = $_ENV['DB_HOST'];
-		$username = $_ENV['DB_USER'];
-		$password = $_ENV['DB_PASS'];
-		$dbname = $_ENV['DB_NAME'];
-		
-		// Create connection
-		$conn = mysql_connect($servername, $username, $password);
-		// Check connection
-		
-		mysql_select_db($dbname);
-		
 		//Client details
 		$querys=mysql_query("select stripe_id from `client_details` WHERE `client_id`='$client_id'");
 		$rows = mysql_fetch_array($querys);

@@ -37,7 +37,7 @@ class create_event_model extends CI_Model {
 			}
 		
 		if($_POST['event_pic'] == "") {
-			$event_pic = "https://testawsout.herokuapp.com/nectorimg/default-event.png";
+			$event_pic = getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/default-event.png';
 		}
 		else {
 			$event_pic = $_POST['event_pic'];
