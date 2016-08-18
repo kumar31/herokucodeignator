@@ -7,7 +7,7 @@ class events_mail_model extends CI_Model {
 	}
 	
 	
-	function email_herok($to_email,$to_name,$subject,$message){
+	function email_hero($to_email,$to_name,$subject,$message){
 	
 	   $from_email = "support@beta.outfitstaff.com";
 	  
@@ -22,7 +22,7 @@ class events_mail_model extends CI_Model {
 	 
 	}
 	
-	function email($to_email,$to_name,$subject,$message){
+	function email($to_email,$subject,$message){
 	
 		$mail             = new PHPMailer();
     	$body             = $message;
