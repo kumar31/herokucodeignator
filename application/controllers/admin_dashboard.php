@@ -14,19 +14,32 @@ public function __construct()
 	}
 	public function index()
 	{
-		$adminid = $this->uri->segment(2); 
-		$userdata = array(
-                   'admin_id'  => $adminid,
-        );
-		$this->session->set_userdata($userdata);
-		$myuser_id = $this->session->userdata('admin_id');
-		$cookie= array(
-			'name'   => 'admin',
-			'value'  => $myuser_id,
-			'expire' => '86500'
-		);
-		$this->input->set_cookie($cookie);
-		$this->load->view('admin_dashboard',$myuser_id);
+		if($_POST['my_userid'] == "") {
+			$myuser_id = $this->session->userdata('agent_id'); 
+			if($myuser_id == ''){
+					$myuser_id = $this->input->cookie('client',true);
+				}
+		}
+		else {
+			$adminid = $_POST['my_userid']; 
+			$userdata = array(
+					   'admin_id'  => $adminid,
+			);
+			$this->session->set_userdata($userdata);
+			$myuser_id = $this->session->userdata('admin_id');
+			$cookie= array(
+				'name'   => 'admin',
+				'value'  => $myuser_id,
+				'expire' => '86500'
+			);
+			$this->input->set_cookie($cookie);
+		}
+		if($myuser_id == "") {
+			redirect('admin_login');
+		}
+		else{
+			$this->load->view('admin_dashboard',$myuser_id);
+		}
 	}
 	
 }

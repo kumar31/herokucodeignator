@@ -121,7 +121,9 @@
 				</div>
 			</div>
 	</div>
-	
+	<form id="adminlogin" action="<?php echo base_url();?>index.php/admin_dashboard" method="POST">
+		<input type="hidden" name="my_userid" id="adminid"> 
+	  </form>
 	<script src="<?php echo base_url(); ?>js/vendor/jquery-1.11.2.min.js">
     </script>
     <script src="<?php echo base_url(); ?>js/vendor/bootstrap.min.js">
@@ -150,8 +152,10 @@
 					if(message == "1") {						
 						var adminid = JSON.stringify(data['result']['admin_id']);
 						var adminid = adminid.replace(/\"/g, ""); 
+						$('#adminid').val(adminid);
+						$( "#adminlogin" ).submit();
 						/*session(id);*/
-						window.location.assign("<?php echo base_url();?>index.php/admin_dashboard/"+adminid );												
+						//window.location.assign("<?php echo base_url();?>index.php/admin_dashboard/"+adminid );												
 					}
 					else {
 						var alertmessage = JSON.stringify(data['message']);

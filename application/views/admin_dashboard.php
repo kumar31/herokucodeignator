@@ -1,7 +1,7 @@
 <?php 
 error_reporting(0);
 include('admin_header.php'); ?>
-<?php $adminid = $this->uri->segment(2);  ?>
+<?php $adminid = $myuser_id;  ?>
 <style>
 	table th {
 		text-align: center;
