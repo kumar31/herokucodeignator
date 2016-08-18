@@ -28,17 +28,21 @@ class mail_model extends CI_Model {
     	$body             = $message;
     	$body             = eregi_replace("[\]",'',$body);
     	$mail->IsSMTP(); // telling the class to use SMTP
-    	$mail->Host       = "smtp.mailgun.org"; // SMTP server
+		$SMTP_HOST = getenv( 'SMTP_HOST' );
+		$SMTP_USERNAME = getenv( 'SMTP_USERNAME' );
+		$SMTP_PASSWORD = getenv( 'SMTP_PASSWORD' );
+		$SMTP_FROM = getenv( 'SMTP_FROM' );
+    	$mail->Host       = $SMTP_HOST; // SMTP server
     	//$mail->SMTPDebug  = 2;           // enables SMTP debug information (for testing)
     	                                 // 1 = errors and messages
     	                                 // 2 = messages only
     	$mail->SMTPAuth   = true;        // enable SMTP authentication
-    	$mail->Host       = "smtp.mailgun.org"; // sets the SMTP server
+    	$mail->Host       = $SMTP_HOST; // sets the SMTP server
     	$mail->Port       = 25;                    // set the SMTP port for the GMAIL server
-    	$mail->Username   = "smaatapp@auto.outfitstaff.com"; // SMTP account username
-    	$mail->Password   = ")2gNYK3Ed9K*3Z9Q4n{mWJp#Eb/rTCRq";        // SMTP account password
-    	$mail->SetFrom('support@beta.outfitstaff.com', 'outfitstaff');
-    	$mail->AddReplyTo("support@beta.outfitstaff.com","outfitstaff");
+    	$mail->Username   = $SMTP_USERNAME; // SMTP account username
+    	$mail->Password   = $SMTP_PASSWORD;        // SMTP account password
+    	$mail->SetFrom($SMTP_FROM, 'outfitstaff');
+    	$mail->AddReplyTo($SMTP_FROM,"outfitstaff");
     	$mail->Subject    = $subject;
     	$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
     	$mail->MsgHTML($body);
