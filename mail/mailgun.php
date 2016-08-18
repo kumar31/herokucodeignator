@@ -6,7 +6,7 @@
 
 <?php
 //error_reporting(E_ALL);
-error_reporting(E_STRICT);
+error_reporting(0);
 date_default_timezone_set('America/Toronto');
 require_once('class.phpmailer.php');
 //include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
@@ -34,9 +34,9 @@ $mail->AddAddress($address, "John Doe");
 //$mail->AddAttachment("images/phpmailer.gif");      // attachment
 //$mail->AddAttachment("images/phpmailer_mini.gif"); // attachment
 if(!$mail->Send()) {
-  echo "Mailer Error: " . $mail->ErrorInfo;
+  //echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-  echo "Message sent!";
+ // echo "Message sent!";
 }
 ?>
 
