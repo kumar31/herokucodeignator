@@ -1,7 +1,7 @@
 
 <?php 
-
- Stripe::setApiKey("sk_test_l8FVfiAVF7kbHq3oGOD2hCkL");
+$SECRET_KEY = getenv( 'SECRET_KEY' );
+ Stripe::setApiKey($SECRET_KEY);
 
 	$servername = getenv( 'DB_HOST' );
 	$username = getenv( 'DB_USER' );
