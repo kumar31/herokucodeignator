@@ -1,7 +1,7 @@
 <?php 
 error_reporting(0);
 include('agent_header.php'); ?>
-<?php $agentid = $this->uri->segment(2);  ?>
+<?php $agentid = $myuser_id;  ?>
 <style>
 	table th {
 		text-align: center;
