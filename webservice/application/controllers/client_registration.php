@@ -54,8 +54,8 @@ class client_registration extends REST_Controller {
 							$this->form_validation->set_rules('password', 'password', 'trim|required|min_length[3]|max_length[30]');
 						}
 						
-						$this->form_validation->set_rules('first_name', 'first_name', 'trim|required');
-						$this->form_validation->set_rules('last_name', 'last_name', 'trim|required');
+						$this->form_validation->set_rules('first_name', 'first name', 'trim|required');
+						$this->form_validation->set_rules('last_name', 'last name', 'trim|required');
 						//$this->form_validation->set_rules('phone_number', 'phone_number', 'trim|required');
 						//$this->form_validation->set_rules('gender', 'gender', 'trim|required');
 						

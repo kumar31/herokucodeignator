@@ -49,8 +49,8 @@ class talent_profile_update extends REST_Controller {
 					{
 						
 						$this->form_validation->set_rules('talent_id', 'talent_id', 'trim|required');
-						$this->form_validation->set_rules('first_name', 'first_name', 'trim|required');
-						$this->form_validation->set_rules('last_name', 'last_name', 'trim|required');
+						$this->form_validation->set_rules('first_name', 'first name', 'trim|required');
+						$this->form_validation->set_rules('last_name', 'last name', 'trim|required');
 						//$this->form_validation->set_rules('phone_number', 'phone_number', 'trim|required');
 						$this->form_validation->set_rules('address', 'address', 'trim|required');
 						$this->form_validation->set_rules('gender', 'gender', 'trim|required');

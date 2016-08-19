@@ -53,7 +53,7 @@ class create_agent extends REST_Controller {
 						$this->form_validation->set_rules('password', 'password', 'trim|required');
 						$this->form_validation->set_rules('percentage', 'percentage', 'trim|required|greater_than[0]|less_than[100]');
 						$this->form_validation->set_rules('address', 'address', 'trim|required');
-						$this->form_validation->set_rules('outfit_fee', 'outfit_fee', 'trim|required|greater_than[0]|less_than[100]');
+						$this->form_validation->set_rules('outfit_fee', 'outfit fee', 'trim|required|greater_than[0]|less_than[100]');
 						
 						if($this->form_validation->run() == FALSE)
 						{ 

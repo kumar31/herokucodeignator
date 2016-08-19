@@ -50,20 +50,20 @@ class create_event extends REST_Controller {
 						
 						$this->form_validation->set_rules('client_id', 'client_id', 'trim|required');
 						//$this->form_validation->set_rules('first_name', 'first_name', 'trim|required');
-						$this->form_validation->set_rules('event_name', 'event_name', 'trim|required');
-						$this->form_validation->set_rules('event_contact', 'event_contact', 'trim|required');
-						$this->form_validation->set_rules('start_datetime', 'start_datetime', 'trim|required');
-						$this->form_validation->set_rules('end_datetime', 'end_datetime', 'trim|required');
+						$this->form_validation->set_rules('event_name', 'event name', 'trim|required');
+						$this->form_validation->set_rules('event_contact', 'event contact', 'trim|required');
+						$this->form_validation->set_rules('start_datetime', 'start datetime', 'trim|required');
+						$this->form_validation->set_rules('end_datetime', 'end datetime', 'trim|required');
 						$this->form_validation->set_rules('location', 'location', 'trim|required');
 						/*$this->form_validation->set_rules('district', 'district', 'trim|required');
 						$this->form_validation->set_rules('state', 'state', 'trim|required');
 						$this->form_validation->set_rules('country', 'country', 'trim|required');*/
 						//$this->form_validation->set_rules('postalcode', 'postalcode', 'trim|required');
-						$this->form_validation->set_rules('number_of_guests', 'number_of_guests', 'trim|required');
+						$this->form_validation->set_rules('number_of_guests', 'number of guests', 'trim|required');
 						$this->form_validation->set_rules('uniform', 'uniform', 'trim|required'); 
 						//$this->form_validation->set_rules('uniform_description', 'uniform_description', 'trim|required');
-						$this->form_validation->set_rules('uniform_provided', 'uniform_provided', 'trim|required');
-						$this->form_validation->set_rules('number_of_waiters', 'number_of_waiters', 'trim|required');
+						$this->form_validation->set_rules('uniform_provided', 'uniform provided', 'trim|required');
+						$this->form_validation->set_rules('number_of_waiters', 'number of waiters', 'trim|required');
 						
 						if($this->form_validation->run() == FALSE)
 						{ 
