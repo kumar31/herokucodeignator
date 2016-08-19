@@ -184,6 +184,7 @@ foreach($blogs as $key=>$val)
 					  <label for="rejectreason">Reject Reason</label>
 					  <input type="text" class="form-control" id="rejectreason">
 					</div>-->
+					<p>Are you sure ?</p>
 					<input type="hidden" value="<?php echo $talent['talent_id']; ?>" id="reject<?php echo $talent['talent_id']; ?>">					  
 						<a class=
 					   "btn btn-danger btn-lg largeHeight once-only btn_rejects" value="<?php echo $talent['talent_id']; ?>"
