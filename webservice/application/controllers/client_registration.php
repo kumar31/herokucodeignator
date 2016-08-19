@@ -109,7 +109,7 @@ class client_registration extends REST_Controller {
 		$message .= "<p>Kindly click on the Below button to verify your account</p>";
 		$message .= "<a href=".$mailurl.$client_id."/".$type."><button >Verify</button></a>"; 	   
 		$message .="<p>Yours,<br>Outfit </p>";	   
-		$this->mail_model->send($to_email,$subject,$message,$from_email);
+		$this->mail_model->send($to_email,$subject,$message);
 		
 		
 	}
