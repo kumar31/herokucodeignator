@@ -69,7 +69,7 @@ class talent_registration extends REST_Controller {
 							$first_name = $_POST['first_name'];
 							$talent_id = $result;
 							
-							$this->email($email,$first_name,$talent_id);
+							//$this->email($email,$first_name,$talent_id);
 							
 							$result = $validationandresult->successmessagewithresult($result);
 							$this->response($result, 200);
