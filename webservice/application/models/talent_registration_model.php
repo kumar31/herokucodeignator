@@ -13,9 +13,9 @@ class talent_registration_model extends CI_Model {
 	function index()
 	{
 		if (!filter_var($_POST['profile_url'], FILTER_VALIDATE_URL) === false) {
-			$profile_url = getenv( 'SOIREE_BASE_URL' ) . 'nectorimg/default-profile.png';
+			$profile_url = getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/default-profile.png';
 		} else if($_POST['profile_url'] == "") {
-			$profile_url = getenv( 'SOIREE_BASE_URL' ) . 'nectorimg/default-profile.png';
+			$profile_url = getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/default-profile.png';
 		}
 		else {
 			$profile_url = $_POST['profile_url']; 
@@ -50,10 +50,7 @@ class talent_registration_model extends CI_Model {
 		$this->db->insert('talent_details',$data);
 		
 		$talent_id = $this->db->insert_id();
-		if(($_POST['i9_form'] != '') && ($_POST['w4_form'] != '')){
-			$agent_id = $_POST['agency'];
-			$this->email($agent_id);
-		}
+		
 		
 		return $talent_id;
 	}
