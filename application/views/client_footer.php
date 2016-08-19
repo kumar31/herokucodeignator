@@ -9,7 +9,7 @@
     </div>
     
     <!-- /container -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script>
     <script src="<?php echo base_url(); ?>js/vendor/jquery-1.11.2.min.js">
     </script>
@@ -19,12 +19,12 @@
 	</script>
 	<script src="<?php echo base_url(); ?>js/star-rating.js">
 	</script>
-	<script type="text/javascript" src="http://cdn.jsdelivr.net/momentjs/latest/moment.min.js">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js">
 	  </script>
 	  <!-- Include Date Range Picker -->
-	  <script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js">
+	  <script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js">
 	  </script>
-	  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+	  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 	<script src="<?php echo base_url(); ?>js/validator.js"></script>
 	<script src="<?php echo base_url(); ?>js/jquery-scrollToTop.js"></script>
 	  <script type="text/javascript">

@@ -18,7 +18,7 @@ public function __construct()
 	}
 	public function index()
 	{
-		echo $myuser_id = $this->session->userdata('client_id'); 
+		$myuser_id = $this->session->userdata('client_id'); 
 		if($myuser_id == ''){
 			$myuser_id = $this->input->cookie('client',true);
 		}
@@ -77,7 +77,7 @@ public function __construct()
 				$data['events'] = $this->invite_model->invite_details($result);
 				$data['stripe_id'] = $this->client_model->client_stripe_id($myuser_id);
 				//$data['events'] = $this->invite_model->invited_details_event($result);
-				print_r($data['events']); "<pre>"; 
+				//print_r($data['events']); "<pre>";
 				$this->load->view('myevents_list_view',$data);
 				
 			}
