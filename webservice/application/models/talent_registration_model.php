@@ -4,7 +4,7 @@ class talent_registration_model extends CI_Model {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('events_mail_model');
+		$this->load->model('mail_model');
 		$this->load->model('agent_model');
 	}
 	
@@ -71,7 +71,7 @@ class talent_registration_model extends CI_Model {
 		$message .="<p><a href=".$_POST['i9_form'].">i9_form</a></p>";
 		$message .="<p>Regards,<br>Outfit Admin</p>";	
 		
-		$this->events_mail_model->email($to_email,$subject,$message);
+		$this->mail_model->send($to_email,$subject,$message);
 		
 	}
 	
