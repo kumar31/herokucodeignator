@@ -163,7 +163,7 @@ foreach($invited_events as $key=>$val)
 					  <h4 class="modal-title">Reject</h4>
 					</div>
 					<div class="modal-body">
-					 
+					 <p>Are you sure ?</p>
 					<input type="hidden" value="<?php echo $val['event_id']; ?>" id="reject<?php echo $val['event_id']; ?>">					  
 						<a class=
 					   "btn btn-danger btn-lg largeHeight once-only btn_rejects" value="<?php echo $val['event_id']; ?>"
