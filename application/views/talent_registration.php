@@ -617,7 +617,7 @@ include('reg_header.php'); ?>
 			}
 			
 				var url = '<?php echo $webserviceurl; ?>index.php/talent_registration';
-				
+				alert(url);
 				$.ajax({
 					'type' : 'POST',
 					'url': url,
