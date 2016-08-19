@@ -13,7 +13,7 @@ class fb extends CI_Controller
     {
         error_reporting(E_ALL);
 		 session_start();
-		
+		echo "as"; die; 
          $this->load->library('facebook', array(
             'appId' => '503794236476725',
             'secret' => 'f172b63c03783da5cca792df77550c84'
