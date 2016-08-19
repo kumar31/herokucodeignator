@@ -50,7 +50,7 @@
     }
  
   function getUserInfo() {
-        FB.api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email', function(response) {
+        FB.api('/me?fields=id,first_name,last_name,picture?type=normal,email', function(response) {
 		alert(JSON.stringify(response));
       var str="<b>Name</b> : "+response.name+"<br>";
           str +="<b>Link: </b>"+response.link+"<br>";
