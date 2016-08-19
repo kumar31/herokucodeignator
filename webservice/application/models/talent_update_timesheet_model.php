@@ -6,7 +6,7 @@ class talent_update_timesheet_model extends CI_Model {
 		parent::__construct();
 		$this->load->model('client_model');
 		$this->load->model('event_model');
-		$this->load->model('events_mail_model');
+		$this->load->model('mail_model');
 		$this->load->model('talent_model');
 		$this->load->model('variableconfig_model');
 	}
@@ -63,7 +63,7 @@ class talent_update_timesheet_model extends CI_Model {
 		$message .="<p>".$talent_name." has accepted timesheet for ".$event_name." event attended.</p>";
 		$message .="<p>Regards,<br>Outfit Admin</p>";	
 		
-		$this->events_mail_model->email($to_email,$to_name,$subject,$message);
+		$this->mail_model->send($to_email,$subject,$message);
 		
 		// sms noitification
 		$event_name = urlencode($event_name);
