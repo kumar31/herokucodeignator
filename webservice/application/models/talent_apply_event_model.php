@@ -26,7 +26,7 @@ class talent_apply_event_model extends CI_Model {
 		$query = $this->db->get();
 		$results = $query->result_array();
 		
-		if(empty($result)) {
+		if(empty($results)) {
 		
 			$dateFormat="Y-m-d H:i:s";
 			$timeNdate=gmdate($dateFormat, time());	
