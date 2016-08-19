@@ -160,7 +160,7 @@ require APPPATH.'/libraries/variableconfig.php';
 		var card_month = $( "#card_month option:selected" ).text();	
 		var card_year = $( "#card_year option:selected" ).text();	
 		var url = '<?php echo $stripeurl.'create_customer.php'; ?>';
-			
+			alert(client_id);alert(firstname);alert(cardnumber);alert(cvc);alert(card_month);alert(card_year);alert(url);
 			$.ajax({
 				'type' : 'POST',
 				'url': url,
