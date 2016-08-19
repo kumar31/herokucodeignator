@@ -569,7 +569,7 @@ include('reg_header.php'); ?>
 			
 		}
 		function reg(){
-			alert("ji");
+			
 			var email = $("#inputEmail").val();
 			var password = $("#inputPassword").val();
 			var firstname = $("#firstname").val();
@@ -616,8 +616,9 @@ include('reg_header.php'); ?>
 				var reg_type = $("input[name='reg_type']:checked").val();
 			}
 			
-				var url = '<?php echo $webserviceurl; ?>index.php/talent_registration';
-				
+				//var url = '<?php echo $webserviceurl; ?>index.php/talent_registration';
+				var url = 'https://staf.herokuapp.com/webservice/index.php/talent_registration';
+				alert(url);
 				$.ajax({
 					'type' : 'POST',
 					'url': url,
