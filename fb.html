@@ -50,13 +50,14 @@
     }
  
   function getUserInfo() {
-        FB.api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email', function(response) {
-		alert(JSON.stringify(response));
+       FB.api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email', function(response) {
+		alert(JSON.stringify(response.picture.data.url));
       var str="<b>Name</b> : "+response.name+"<br>";
           str +="<b>Link: </b>"+response.link+"<br>";
           str +="<b>Username:</b> "+response.username+"<br>";
           str +="<b>id: </b>"+response.id+"<br>";
           str +="<b>Email:</b> "+response.email+"<br>";
+		  str +="<br/><b>Pic</b> : <img src='"+response.picture.data.url+"'/>";
           str +="<input type='button' value='Get Photo' onclick='getPhoto();'/>";
           str +="<input type='button' value='Logout' onclick='Logout();'/>";
           document.getElementById("status").innerHTML=str;
