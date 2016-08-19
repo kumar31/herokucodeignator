@@ -616,7 +616,7 @@ include('reg_header.php'); ?>
 				var reg_type = $("input[name='reg_type']:checked").val();
 			}
 			
-				var url = '<?php echo $webserviceurl.'index.php/talent_registration'; ?>;
+				var url = '<?php echo $webserviceurl; ?>index.php/talent_registration';
 				
 				$.ajax({
 					'type' : 'POST',
@@ -634,7 +634,6 @@ include('reg_header.php'); ?>
 				   },
 					success: function(data) {
 						//alert(JSON.stringify(data));
-						alert(data);
 						var message = JSON.stringify(data['StatusCode']);
 						var message = message.replace(/\"/g, "");
 						
