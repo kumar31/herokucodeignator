@@ -10,7 +10,7 @@ date_default_timezone_set('Asia/Kolkata');
 //error_reporting(E_PARSE);
 error_reporting(0);
 require APPPATH.'/libraries/REST_Controller.php';
-require APPPATH.'/libraries/variableconfig.php';
+//require APPPATH.'/libraries/variableconfig.php';
 require APPPATH.'/libraries/validationandresult.php';
 
 class talent_registration extends REST_Controller {
@@ -20,7 +20,7 @@ class talent_registration extends REST_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('form_validation');
-		$this->load->model('talent_registration_model');
+		//$this->load->model('talent_registration_model');
 		$this->load->model('mail_model');
 		$this->form_validation->set_error_delimiters('', '');
 	}
