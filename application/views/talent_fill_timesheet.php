@@ -5,6 +5,11 @@ include('talent_header.php'); ?>
 		$variableconfig = new variableconfig();
 		$webserviceurl = $variableconfig->webserviceurl(); 
 		$stripeurl = $variableconfig->stripeurl(); 
+		
+		$talent_id = $this->session->userdata('talent_id'); 
+		if($talent_id == ''){
+			$talent_id = $this->input->cookie('talent',true);
+		}
  ?>
 <body>
 <div style="display: none;" class="se-pre-con"></div>
@@ -274,7 +279,7 @@ include('talent_header.php'); ?>
 		function timesheet(status){
 			
 			var event_id = <?php echo $event_detail[0]['event_id']; ?>;  
-			var talent_id = <?php echo $this->session->userdata('talent_id'); ?>; 
+			var talent_id = <?php echo $talent_id; ?>; 
 
 			var number_of_days = $("#total_days").val(); 
 			var number_of_hours = $("#total_hrs").val(); 
@@ -326,7 +331,7 @@ include('talent_header.php'); ?>
 		function recheck(){
 			
 			var event_id = <?php echo $event_detail[0]['event_id']; ?>;  
-			var talent_id = <?php echo $this->session->userdata('talent_id'); ?>; 
+			var talent_id = <?php echo $talent_id; ?>; 
 			
 			var days = $( "#days option:selected" ).val(); 
 			var hours = $( "#hours option:selected" ).val(); 
@@ -390,7 +395,7 @@ include('talent_header.php'); ?>
 	
 	<script>
 		function update_pay_status(event_id,client_id){
-			var talent_id = "<?php echo $this->session->userdata('talent_id');  ?>";
+			var talent_id = "<?php echo $talent_id;  ?>";
 			var event_id = event_id; 
 			var client_id = client_id; 
 				
@@ -438,7 +443,7 @@ include('talent_header.php'); ?>
 		  var btn = "#btn-paid"+event_id;
 		  $(btn).attr('disabled', true);
 			
-			var talent_id = "<?php echo $this->session->userdata('talent_id'); ?>"; 
+			var talent_id = "<?php echo $talent_id; ?>"; 
 			var amount = "<?php echo $per_talent_amt; ?>";
 				
 				var url = '<?php echo $stripeurl; ?>getpaymentfromclientandtransfertotalent.php';
