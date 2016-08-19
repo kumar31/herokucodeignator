@@ -10,7 +10,7 @@ date_default_timezone_set('Asia/Kolkata');
 //error_reporting(E_PARSE);
 error_reporting(0);
 require APPPATH.'/libraries/REST_Controller.php';
-//require APPPATH.'/libraries/variableconfig.php';
+require APPPATH.'/libraries/variableconfig.php';
 require APPPATH.'/libraries/validationandresult.php';
 
 class talent_registration extends REST_Controller {
