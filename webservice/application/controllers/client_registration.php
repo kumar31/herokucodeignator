@@ -51,7 +51,7 @@ class client_registration extends REST_Controller {
 						$this->form_validation->set_rules('email', 'email', 'trim|required|valid_email|is_unique[client_details.email]');
 						$this->form_validation->set_message('is_unique', 'This email is already registered - delete old account or use a different email. ');
 						if(($_POST['facebook_id']) == "") {
-							$this->form_validation->set_rules('password', 'password', 'trim|required|min_length[3]|max_length[30]');
+							$this->form_validation->set_rules('password', 'password', 'trim|required|min_length[6]|max_length[30]');
 						}
 						
 						$this->form_validation->set_rules('first_name', 'first name', 'trim|required');
