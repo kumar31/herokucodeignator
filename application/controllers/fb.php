@@ -82,8 +82,8 @@ class fb extends CI_Controller
 						$query = $this->db->get();
 						$results = $query->result_array();					
 					}
-					 session_destroy();
-					 session_start(); 
+					 //session_destroy();
+					 //session_start(); 
 					$sess_array = array();
 					
 					if($typeid == 1) {
@@ -145,8 +145,8 @@ class fb extends CI_Controller
 				
 				
             if (!empty($results)) {
-				  session_destroy();
-				 session_start(); 
+				  //session_destroy();
+				 //session_start(); 
                 $sess_array = array();
 				
 				if($typeid == 1) {
