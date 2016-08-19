@@ -13,13 +13,14 @@ class fb extends CI_Controller
     {
         error_reporting(E_ALL);
 		 session_start();
-		echo "as"; die; 
+		
          $this->load->library('facebook', array(
             'appId' => '503794236476725',
             'secret' => 'f172b63c03783da5cca792df77550c84'
         ));
        
          $this->user = $this->facebook->getUser(); 
+		 echo "as"; die; 
 		 if ($this->user) {
 			
 			 $data['user_profile'] = $this->facebook->api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email'); 
