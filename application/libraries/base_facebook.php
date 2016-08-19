@@ -614,7 +614,7 @@ abstract class BaseFacebook
    *
    * @param array $params Provide custom parameters
    * @return string The URL for the login flow
-   */
+   */ 
   public function getLoginUrl($params=array()) { 
     $this->establishCSRFTokenState();
     $currentUrl = $this->getCurrentUrl();
