@@ -52,7 +52,7 @@ class talent_registration_model extends CI_Model {
 		$talent_id = $this->db->insert_id();
 		if(($_POST['i9_form'] != '') && ($_POST['w4_form'] != '')){
 			$agent_id = $_POST['agency'];
-			//$this->email($agent_id); 
+			$this->email($agent_id);
 		}
 		
 		return $talent_id;
@@ -71,7 +71,7 @@ class talent_registration_model extends CI_Model {
 		$message .="<p><a href=".$_POST['i9_form'].">i9_form</a></p>";
 		$message .="<p>Regards,<br>Outfit Admin</p>";	
 		
-		$this->events_mail_model->email($to_email,$subject,$message);
+		$this->events_mail_model->email($to_email,$to_name,$subject,$message);
 		
 	}
 	
