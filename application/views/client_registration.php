@@ -11,7 +11,7 @@ include('reg_header.php'); ?>
 		$email = $this->input->cookie('email',true);
 		$first_name = $this->input->cookie('first_name',true);
 		$last_name = $this->input->cookie('last_name',true);
-		$url = $this->input->cookie('url',true);
+		$profile_url = $this->input->cookie('profile_url',true);
 		
  ?>
 <div style="display: none;" class="se-pre-con"></div>
@@ -47,7 +47,7 @@ include('reg_header.php'); ?>
             </div>
           </div>
 		  
-		  <input type="hidden" value="<?php echo $profile['facebook_id']; ?>" class="form-control " name="" id="facebook_id" type="text"> 
+		  <input type="hidden" value="<?php echo $facebook_id; ?>" class="form-control " name="" id="facebook_id" type="text"> 
 		  <input type="hidden" value="<?php echo $profile['login_type']; ?>" class="form-control " name="" id="login_type" type="text"> 
 		  <input type="hidden" value="<?php echo $profile['date']; ?>" class="form-control " name="" id="date" type="text"> 
 		  
@@ -69,7 +69,7 @@ include('reg_header.php'); ?>
 				?>
 			
            <input class="form-control my-form-control" type='file' id="upload" />
-			<input value="<?php echo $profile['profile_url']; ?>" type='hidden' id="img_url" />
+			<input value="<?php echo $profile_url; ?>" type='hidden' id="img_url" />
           </div>
 		  
           <div class="prepend-top form-group">
