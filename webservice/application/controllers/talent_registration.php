@@ -20,7 +20,7 @@ class talent_registration extends REST_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('form_validation');
-		//$this->load->model('talent_registration_model');
+		$this->load->model('talent_registration_model');
 		$this->load->model('mail_model');
 		$this->form_validation->set_error_delimiters('', '');
 	}
@@ -64,7 +64,15 @@ class talent_registration extends REST_Controller {
 						}
 						else {
 							
+							$result = $this->talent_registration_model->index();	
+							$email = $_POST['email'];
+							$first_name = $_POST['first_name'];
+							$talent_id = $result;
 							
+							$this->email($email,$first_name,$talent_id);
+							
+							$result = $validationandresult->successmessagewithresult($result);
+							$this->response($result, 200);
 						
 						}
 							
