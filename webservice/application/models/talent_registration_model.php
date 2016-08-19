@@ -71,7 +71,7 @@ class talent_registration_model extends CI_Model {
 		$message .="<p><a href=".$_POST['i9_form'].">i9_form</a></p>";
 		$message .="<p>Regards,<br>Outfit Admin</p>";	
 		
-		$this->events_mail_model->email($to_email,$subject,$message);
+		//$this->events_mail_model->email($to_email,$subject,$message);
 		
 	}
 	
