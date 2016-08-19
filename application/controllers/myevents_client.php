@@ -18,7 +18,7 @@ public function __construct()
 	}
 	public function index()
 	{
-		$myuser_id = $this->session->userdata('client_id'); 
+		echo $myuser_id = $this->session->userdata('client_id'); 
 		if($myuser_id == ''){
 			$myuser_id = $this->input->cookie('client',true);
 		}
