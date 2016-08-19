@@ -4,7 +4,7 @@ class talent_registration_model extends CI_Model {
 	public function __construct()
 	{
 		parent::__construct();
-		//$this->load->model('events_mail_model');
+		$this->load->model('events_mail_model');
 		$this->load->model('agent_model');
 	}
 	
