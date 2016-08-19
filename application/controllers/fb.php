@@ -7,9 +7,121 @@ class fb extends CI_Controller
     {
         parent::__construct();
 		 $this->load->helper('url'); 
-		  //$this->load->model('pro_model');
+		 $this->load->helper('cookie');
+		 //$this->load->model('pro_model');
     }
     function index()
+    {
+        if(isset($_POST)){
+			
+			if($_POST['usertype'] == 1){
+				
+				$this->db->select('*');		
+				$this->db->where('email', $_POST['email']);
+				$this->db->where('facebook_id', $_POST['id']);
+				$this->db->from('client_details');
+				$query = $this->db->get();	
+				$results = $query->result_array();
+				
+				if(!empty($results)){	
+					$user_profile = array(
+						'client_id' => $results[0]['client_id']
+						
+					);
+					
+					
+					$this->session->set_userdata($user_profile);
+					$myuser_id = $this->session->userdata('client_id');
+					$cookie= array(
+						'name'   => 'client',
+						'value'  => $myuser_id,
+						'expire' => '86500'
+					   );
+					   $this->input->set_cookie($cookie);
+					echo "1";
+				}
+				else{
+					
+					$this->cookies();
+				   echo "3";
+				}
+				
+			}
+			
+			if($_POST['usertype'] == 2){
+				
+				$this->db->select('*');		
+				$this->db->where('email', $_POST['email']);
+				$this->db->where('facebook_id', $_POST['id']);
+				$this->db->from('talent_details');
+				$query = $this->db->get();
+				$results = $query->result_array();
+				if(!empty($results)){
+					
+					$user_profile = array(
+						'talent_id' => $results[0]['talent_id'],
+						
+					);
+				
+					$this->session->set_userdata($user_profile);
+					$myuser_id = $this->session->userdata('talent_id');
+					$cookie= array(
+						'name'   => 'talent',
+						'value'  => $myuser_id,
+						'expire' => '86500'
+					   );
+					   $this->input->set_cookie($cookie);
+					echo "2";
+				}else{
+					$this->cookies();
+					echo "4";
+				}
+			}
+			
+			
+			
+		}
+	}
+	
+	function cookies(){
+			
+			$facebook_id= array(
+				'name'   => 'facebook_id',
+				'value'  => $_POST['id'],
+				'expire' => '86500'
+			   );
+			   $this->input->set_cookie($facebook_id);
+			   
+			   $email= array(
+				'name'   => 'email',
+				'value'  => $_POST['email'],
+				'expire' => '86500'
+			   );
+			   $this->input->set_cookie($email);
+			   
+			   $first_name= array(
+				'name'   => 'first_name',
+				'value'  => $_POST['first_name'],
+				'expire' => '86500'
+			   );
+			   $this->input->set_cookie($first_name);
+
+			   $last_name= array(
+				'name'   => 'last_name',
+				'value'  => $_POST['last_name'],
+				'expire' => '86500'
+			   );
+			   $this->input->set_cookie($last_name);
+			   
+			   $url= array(
+				'name'   => 'profile_url',
+				'value'  => $_POST['url'],
+				'expire' => '86500'
+			   );
+			   $this->input->set_cookie($url);
+		
+	}
+	function index_old()
     {
         error_reporting(E_ALL);
 		 //session_start();
@@ -23,7 +135,7 @@ class fb extends CI_Controller
 		 print_r($this->user);
 		 if ($this->user) {
 			
-			 $data['user_profile'] = $this->facebook->api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email'); 
+			 $_POST['user_profile'] = $this->facebook->api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email'); 
 			 
 				$this->db->select('*');		
 				$this->db->from('type');
@@ -31,12 +143,12 @@ class fb extends CI_Controller
 				$result = $query->result_array();
 				$typeid = $result[0]['type'];
 				
-			// print_r($data['user_profile']); print_r($typeid);  die;
+			// print_r($_POST['user_profile']); print_r($typeid);  die;
 			
-				$data['status']       = "1";
+				$_POST['status']       = "1";
 				
 				// Get logout url of facebook
-				$data['logout_url']   = $this->facebook->getLogoutUrl(array(
+				$_POST['logout_url']   = $this->facebook->getLogoutUrl(array(
 					'next' => base_url() . 'index.php/fb/logout'
 				));
 				
@@ -45,22 +157,22 @@ class fb extends CI_Controller
 				
 				if($typeid == 1) {
 					$this->db->select('*');		
-					$this->db->where('email', $data['user_profile']['email']);
-					$this->db->where('facebook_id', $data['user_profile']['id']);
+					$this->db->where('email', $_POST['user_profile']['email']);
+					$this->db->where('facebook_id', $_POST['user_profile']['id']);
 					$this->db->from('client_details');
 					$query = $this->db->get();					
 				}
 				if($typeid == 2) {
 					$this->db->select('*');		
-					$this->db->where('email', $data['user_profile']['email']);
-					$this->db->where('facebook_id', $data['user_profile']['id']);
+					$this->db->where('email', $_POST['user_profile']['email']);
+					$this->db->where('facebook_id', $_POST['user_profile']['id']);
 					$this->db->from('talent_details');
 					$query = $this->db->get();					
 				}
 				
 				/*$this->db->select('*');
-				$this->db->where('email', $data['user_profile']['email']);
-				$this->db->where('facebook_id', $data['user_profile']['id']);
+				$this->db->where('email', $_POST['user_profile']['email']);
+				$this->db->where('facebook_id', $_POST['user_profile']['id']);
 				$this->db->from('user');
 				$query = $this->db->get();*/
 				
@@ -68,16 +180,16 @@ class fb extends CI_Controller
 					
 					if($typeid == 1) {
 						$this->db->select('*');		
-						$this->db->where('email', $data['user_profile']['email']);
-						$this->db->where('facebook_id', $data['user_profile']['id']);
+						$this->db->where('email', $_POST['user_profile']['email']);
+						$this->db->where('facebook_id', $_POST['user_profile']['id']);
 						$this->db->from('client_details');
 						$query = $this->db->get();	
 						$results = $query->result_array();
 					}
 					if($typeid == 2) {
 						$this->db->select('*');		
-						$this->db->where('email', $data['user_profile']['email']);
-						$this->db->where('facebook_id', $data['user_profile']['id']);
+						$this->db->where('email', $_POST['user_profile']['email']);
+						$this->db->where('facebook_id', $_POST['user_profile']['id']);
 						$this->db->from('talent_details');
 						$query = $this->db->get();
 						$results = $query->result_array();					
@@ -95,8 +207,8 @@ class fb extends CI_Controller
 							);
 						}
 						
-						$this->session->set_userdata($user_profile);
-						$myuser_id = $this->session->userdata('client_id'); 
+						$this->session->set_user_POST($user_profile);
+						$myuser_id = $this->session->user_POST('client_id'); 
 						$this->load->view('client_dashboard');
 					}
 					
@@ -109,35 +221,35 @@ class fb extends CI_Controller
 							);
 						}
 						
-						$this->session->set_userdata($user_profile);
-						$myuser_id = $this->session->userdata('talent_id'); 
+						$this->session->set_user_POST($user_profile);
+						$myuser_id = $this->session->user_POST('talent_id'); 
 						$this->load->view('talent_dashboard');
 					}
 					
 				}
 				else{
 				
-					$user_name = explode("@", $data['user_profile']['email']);
+					$user_name = explode("@", $_POST['user_profile']['email']);
 					
-					$datas     = array(
+					$_POSTs     = array(
 							
-							'facebook_id' => $data['user_profile']['id'],
+							'facebook_id' => $_POST['user_profile']['id'],
 							'login_type' => 'facebook',
-							'email' => $data['user_profile']['email'],
-							'first_name' => $data['user_profile']['first_name'],
-							'last_name' => $data['user_profile']['last_name'],
-							'profile_url' => $data['user_profile']['picture']['data']['url'],
+							'email' => $_POST['user_profile']['email'],
+							'first_name' => $_POST['user_profile']['first_name'],
+							'last_name' => $_POST['user_profile']['last_name'],
+							'profile_url' => $_POST['user_profile']['picture']['_POST']['url'],
 							'latitude' => 40.703985468162934,
 							'longitude' => -73.87580507441407,
 							'date' => $timeNdate,
 							'typeid' => $typeid
 						);
-						$this->db->insert('fb', $datas);
+						$this->db->insert('fb', $_POSTs);
 					
 				
 					$this->db->select('*');		
-					$this->db->where('email', $data['user_profile']['email']);
-					$this->db->where('facebook_id', $data['user_profile']['id']);
+					$this->db->where('email', $_POST['user_profile']['email']);
+					$this->db->where('facebook_id', $_POST['user_profile']['id']);
 					$this->db->from('fb');
 					$query = $this->db->get();
 					$results = $query->result_array();
@@ -206,7 +318,7 @@ class fb extends CI_Controller
 		 }
 	   
 	   else {
-				$authUrl= $data['login_url'] = $this->facebook->getLoginUrl(array(
+				$authUrl= $_POST['login_url'] = $this->facebook->getLoginUrl(array(
                 'scope' => 'email'
 				));
 				redirect($authUrl);
@@ -215,6 +327,7 @@ class fb extends CI_Controller
 	   
         
     }
+	
     public function logout()
     {
 		session_destroy();

@@ -41,7 +41,112 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({
+		  appId      : '1762686114002525', // Set YOUR APP ID
+		  channelUrl : 'https://staf.herokuapp.com/index.php/login', // Channel File
+		  status     : true, // check login status
+		  cookie     : true, // enable cookies to allow the server to access the session
+		  xfbml      : true  // parse XFBML
+		});
+	 
+		FB.Event.subscribe('auth.authResponseChange', function(response) 
+		{
+		 if (response.status === 'connected') 
+		{
+			document.getElementById("message").innerHTML +=  "<br>Connected to Facebook";
+			//SUCCESS
+	 
+		}    
+		else if (response.status === 'not_authorized') 
+		{
+			document.getElementById("message").innerHTML +=  "<br>Failed to Connect";
+	 
+			//FAILED
+		} else 
+		{
+			document.getElementById("message").innerHTML +=  "<br>Logged Out";
+	 
+			//UNKNOWN ERROR
+		}
+		}); 
+	 
+		};
+	 
+		function Login()
+		{
+	 
+			FB.login(function(response) {
+			   if (response.authResponse) 
+			   {
+					getUserInfo();
+				} else 
+				{
+				 console.log('User cancelled login or did not fully authorize.');
+				}
+			 },{scope: 'email,user_photos,user_videos'});
+	 
+		}
+	 
+	  function getUserInfo() {
+	   
+			FB.api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email', function(response) {
+	  
+	   var usertype = $("input[name='user']:checked").val();
 
+	   if(typeof usertype === "undefined") {
+	   var usertype = ''; 
+	   }
+	   else {
+	   var usertype = $("input[name='user']:checked").val();
+	   }
+		var url = 'https://staf.herokuapp.com/index.php/fb';
+	   
+	   $.ajax({
+		
+		'type' : 'POST',
+		'url': url,
+		'data': {'usertype':usertype,'email':response.email,'id':response.id,'first_name':response.first_name,'last_name':response.last_name,'url':response.picture.data.url},
+		//'dataType': 'json',
+		success: function(data) {
+		 
+		 if(data == '1'){
+		  window.location.assign("<?php echo base_url();?>index.php/client_dashboard");
+		 }
+		 if(data == '2'){
+		  window.location.assign("<?php echo base_url();?>index.php/talent_dashboard");
+		 }
+		 if(data == '3'){
+		  window.location.assign("<?php echo base_url();?>index.php/client_registration");
+		 }
+		 if(data == '4'){
+		  window.location.assign("<?php echo base_url();?>index.php/talent_registration");
+		 }
+		}
+
+	   });
+	   
+		});
+	 
+		}
+		
+		function Logout()
+		{
+			FB.logout(function(){document.location.reload();});
+		}
+	 
+	  // Load the SDK asynchronously
+	  (function(d){
+		 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement('script'); js.id = id; js.async = true;
+		 js.src = "//connect.facebook.net/en_US/all.js";
+		 ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	 
+	</script>
 </head>
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();
@@ -455,6 +560,15 @@ The right Outfit makes a party. <br><br>
   </script>
   <script>
   function checktype() {
+	   if (!$("input[name='user']:checked").val()) {
+		 var alertmessage = "Select user type";
+		 $("#alertmsg").text(alertmessage);
+	  }
+	  else {
+		Login();
+	  }
+  }
+  /*function checktype() {
 	  if (!$("input[name='user']:checked").val()) {
 		   var alertmessage = "Select user type";
 		   $("#alertmsg").text(alertmessage);
@@ -462,7 +576,7 @@ The right Outfit makes a party. <br><br>
 		else {
 		  window.location.assign("<?php echo base_url();?>index.php/fb");
 		}
-  }
+  }*/
   
   function signupchk() {
 	  if (!$("input[name='user']:checked").val()) {
