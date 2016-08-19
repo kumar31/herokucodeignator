@@ -4,8 +4,8 @@ class talent_registration_model extends CI_Model {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('events_mail_model');
-		$this->load->model('agent_model');
+		//$this->load->model('events_mail_model');
+		//$this->load->model('agent_model');
 	}
 	
 	
@@ -50,7 +50,10 @@ class talent_registration_model extends CI_Model {
 		$this->db->insert('talent_details',$data);
 		
 		$talent_id = $this->db->insert_id();
-		
+		if(($_POST['i9_form'] != '') && ($_POST['w4_form'] != '')){
+			$agent_id = $_POST['agency'];
+			$this->email($agent_id);
+		}
 		
 		return $talent_id;
 	}
