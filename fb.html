@@ -50,7 +50,7 @@
     }
  
   function getUserInfo() {
-        FB.api('/me?fields=id,first_name,last_name,picture?type=normal,email', function(response) {
+        FB.api('/me/picture?fields=id,first_name,last_name,picture.width(800).height(800),email', function(response) {
 		alert(JSON.stringify(response));
       var str="<b>Name</b> : "+response.name+"<br>";
           str +="<b>Link: </b>"+response.link+"<br>";
@@ -59,7 +59,6 @@
           str +="<b>Email:</b> "+response.email+"<br>";
           str +="<input type='button' value='Get Photo' onclick='getPhoto();'/>";
           str +="<input type='button' value='Logout' onclick='Logout();'/>";
-		  str +="<br/><b>Pic</b> : <img src='"+response.data.url+"'/>";
           document.getElementById("status").innerHTML=str;
  
     });
