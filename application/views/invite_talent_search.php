@@ -402,13 +402,7 @@ $(document).ready(function() {
 					<div class="" id="results">
 						
 					</div>
-					<?php 
-						if($get_total_rows == 0) { ?>
-							 <div class="col-md-12">
-								<h4 class="text-center text-warning">No matching talent found</h4>
-							 </div>
-						<?php }
-					?>
+					
 					<div class="animation_image"  align="center" style="display:none">						
 							<img src="<?php echo base_url();?>css/ajax-loader.gif" style="width:60px; height:60px;">						
 					</div>
