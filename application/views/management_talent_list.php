@@ -9,7 +9,10 @@
 date_default_timezone_set("UTC");
 //print"<pre>";
 //print_r($events); die;
-$myuser_id = $this->session->userdata('client_id'); 
+$myuser_id = $this->session->userdata('client_id');
+	if($myuser_id == ''){
+			$myuser_id = $this->input->cookie('client',true);
+		} 
 $event_id = $this->uri->segment(3);
 $datetimestring = "%Y-%m-%d  %h:%i %A";
 $datestring = "%h:%i %a";
