@@ -51,7 +51,7 @@ class invite_talent_model extends CI_Model {
 			$message .="<p>".$event_contact_name." wants you for an upcoming event. ".$event_name." on ".$event_start_datetime.". Please click this link for details and to accept the invitation " . getenv( 'SOIREE_BASE_URL' ) . '/index.php/login .</p>';
 			$message .="<p>Regards,<br>Outfit Admin</p>";	
 			
-			$this->mail_model->send($to_email,$to_name,$subject,$message);
+			$this->mail_model->send($to_email,$subject,$message);
 			
 			// sms noitification
 			$event_name = urlencode($event_name);

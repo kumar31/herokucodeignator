@@ -51,7 +51,7 @@ class talent_apply_event_model extends CI_Model {
 			$message .="<p>".$talent_name." has applied for ".$event_name." event.</p>";
 			$message .="<p>Regards,<br>Outfit Admin</p>";	
 			
-			$this->mail_model->send($to_email,$to_name,$subject,$message);
+			$this->mail_model->send($to_email,$subject,$message);
 			
 			// sms noitification
 			$event_name = urlencode($event_name);
