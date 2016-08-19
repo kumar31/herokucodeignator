@@ -22,6 +22,9 @@ public function __construct()
 	{
 		
 		$myuser_id = $this->session->userdata('talent_id'); 
+		if($myuser_id == ''){
+			$myuser_id = $this->input->cookie('talent',true);
+		}
 		if($myuser_id!="") {
 			$invited_event_list['get_total_rows'] =$this->gettotalrows($myuser_id); 
 			$invited_event_list['items_per_group']='5';	
@@ -62,7 +65,10 @@ public function __construct()
 				//get current starting point of records
 				$position = ($group_number * $items_per_group);
 				
-				$myuser_id = $this->session->userdata('talent_id');
+				$myuser_id = $this->session->userdata('talent_id'); 
+				if($myuser_id == ''){
+					$myuser_id = $this->input->cookie('talent',true);
+				}
 				$status = array(1,3);
 				
 				$this->db->select('invite_talent_to_event.*');
