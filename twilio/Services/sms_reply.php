@@ -54,7 +54,7 @@
 		$account_sid = 'ACccb5c16886095e63fa3d78c58e72518f'; 
 		$auth_token = '2a4f28e45833e2a3a076518f09d94b76'; 
 		$client = new Services_Twilio($account_sid, $auth_token); 
-		$to_number = "+91".urldecode($phone);
+		$to_number = "+1".urldecode($phone);
 		$event_name = urldecode($event_name);
 		$text = urldecode($text);
 		 
