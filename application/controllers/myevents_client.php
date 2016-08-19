@@ -63,6 +63,9 @@ public function __construct()
 				$position = ($group_number * $items_per_group);
 				
 				$myuser_id = $this->session->userdata('client_id'); 
+				if($myuser_id == ''){
+					$myuser_id = $this->input->cookie('client',true);
+				}
 				
 				$this->db->select('*');			
 				$this->db->where('client_id',$myuser_id);		
