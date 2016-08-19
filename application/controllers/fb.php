@@ -18,7 +18,7 @@ class fb extends CI_Controller
             'appId' => '503794236476725',
             'secret' => 'f172b63c03783da5cca792df77550c84'
         ));
-       echo "as"; die;
+      
          $this->user = $this->facebook->getUser(); 
 		 
 		 if ($this->user) {
