@@ -617,7 +617,7 @@ include('reg_header.php'); ?>
 			}
 			
 				var url = '<?php echo $webserviceurl.'index.php/talent_registration'; ?>;
-				alert(url);
+				
 				$.ajax({
 					'type' : 'POST',
 					'url': url,
@@ -634,6 +634,7 @@ include('reg_header.php'); ?>
 				   },
 					success: function(data) {
 						//alert(JSON.stringify(data));
+						alert(data);
 						var message = JSON.stringify(data['StatusCode']);
 						var message = message.replace(/\"/g, "");
 						
