@@ -49,7 +49,7 @@ foreach($blogs as $key=>$val)
                       <p>
                         <span class=
                               "glyphicon glyphicon-pushpin">
-                        </span><?php echo $talent['city']; ?>
+                        </span><?php echo $talent['address']; ?>
                       </p>
                     </div>
                     <div class="col-xs-8">
