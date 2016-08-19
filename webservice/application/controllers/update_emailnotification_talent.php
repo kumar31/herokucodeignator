@@ -48,7 +48,7 @@ class update_emailnotification_talent extends REST_Controller {
 					{
 						
 						$this->form_validation->set_rules('talent_id', 'talent_id', 'trim|required');
-						$this->form_validation->set_rules('email', 'email', 'trim|required');
+						$this->form_validation->set_rules('email', 'email', 'trim|required|valid_email');
 						
 						if($this->form_validation->run() == FALSE)
 						{ 

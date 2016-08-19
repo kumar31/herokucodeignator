@@ -48,7 +48,7 @@ class update_emailnotification_client extends REST_Controller {
 					{
 						
 						$this->form_validation->set_rules('client_id', 'client_id', 'trim|required');
-						$this->form_validation->set_rules('email', 'email', 'trim|required');
+						$this->form_validation->set_rules('email', 'email', 'trim|required|valid_email');
 						
 						if($this->form_validation->run() == FALSE)
 						{ 
