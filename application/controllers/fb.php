@@ -12,7 +12,7 @@ class fb extends CI_Controller
     function index()
     {
         error_reporting(E_ALL);
-		 session_start();
+		 //session_start();
 		
          $this->load->library('facebook', array(
             'appId' => '503794236476725',
