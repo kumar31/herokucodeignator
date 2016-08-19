@@ -20,7 +20,7 @@ class fb extends CI_Controller
         ));
       
          $this->user = $this->facebook->getUser(); 
-		 
+		 print_r($this->user);
 		 if ($this->user) {
 			
 			 $data['user_profile'] = $this->facebook->api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email'); 
