@@ -338,7 +338,7 @@ include('reg_header.php'); ?>
 			var lat = $("#lat").val();
 			var lng = $("#lng").val();
 			var facebook_id = $("#facebook_id").val();
-			var login_type = $("#login_type").val();
+			//var login_type = $("#login_type").val();
 			var date = $("#date").val();
 			var gender = $("input[name='gender']:checked").val();
 			
@@ -355,10 +355,10 @@ include('reg_header.php'); ?>
 					'type' : 'POST',
 					'url': url,
 					'data': {'email':email,'password':password,'first_name':firstname,'last_name':lastname,'company':company,'profile_url':profile_url,
-					'address':address,'postal_code':postal_code,'latitude':lat,'longitude':lng,'facebook_id':facebook_id,'login_type':login_type,'date':date},
+					'address':address,'postal_code':postal_code,'latitude':lat,'longitude':lng,'facebook_id':facebook_id,'date':date},
 					//'dataType': 'json',
 					beforeSend: function(){
-					 $(".se-pre-con").show();
+					 $(".se-pre-con").show(); 
 				   },
 				   complete: function(){
 					 $(".se-pre-con").hide();

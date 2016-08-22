@@ -18,6 +18,13 @@ class client_registration_model extends CI_Model {
 			$profile_url = $_POST['profile_url'];
 		}
 		
+		if($_POST['facebook_id'] != "") {
+			$login_type = "facebook";
+		}
+		else {
+			$login_type = ""; 
+		}
+		
 		$data = array(
 			'email' 	   		=> $_POST['email'],
 			'password' 			=> $_POST['password'],
@@ -27,7 +34,7 @@ class client_registration_model extends CI_Model {
 			'profile_url' 		=> $profile_url,
 			'address' 			=> $_POST['address'],
 			'facebook_id' 		=> $_POST['facebook_id'],
-			'login_type' 		=> $_POST['login_type'],
+			'login_type' 		=> $login_type,
 			'date' 				=> $_POST['date'],
 			'postal_code' 		=> $_POST['postal_code'],
 			'latitude' 			=> $_POST['latitude'],

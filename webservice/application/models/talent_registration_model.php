@@ -23,6 +23,13 @@ class talent_registration_model extends CI_Model {
 		
 		$user_name = $_POST['first_name'].' '.$_POST['last_name'];
 		
+		if($_POST['facebook_id'] != "") {
+			$login_type = "facebook"; 
+		}
+		else {
+			$login_type = "";
+		}
+		
 		$data = array(
 			'email' 	   		=> $_POST['email'],
 			'password' 			=> $_POST['password'],
@@ -39,7 +46,7 @@ class talent_registration_model extends CI_Model {
 			'gender' 			=> $_POST['gender'],
 			'address' 			=> $_POST['address'],
 			'facebook_id' 		=> $_POST['facebook_id'],
-			'login_type' 		=> $_POST['login_type'],
+			'login_type' 		=> $login_type,
 			'date' 				=> $_POST['date'],
 			'special_skills' 	=> $_POST['special_skills'],
 			'dob' 				=> $_POST['dob'],

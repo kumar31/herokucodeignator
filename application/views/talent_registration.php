@@ -131,16 +131,8 @@ include('reg_header.php'); ?>
             </div>
           </div>
 		  
+		  <input type="hidden" value="<?php echo $facebook_id; ?>" class="form-control " name="" id="facebook_id" type="text">
 		  
-		  <?php if($facebook_id != "") { ?>
-		   <input type="hidden" value="<?php echo $facebook_id; ?>" class="form-control " name="" id="facebook_id" type="text">
-		  <?php
-		  }
-		  else {
-			?>
-			<input type="hidden" value="facebook" class="form-control " name="" id="login_type" type="text"> 
-		 <?php } ?>
-			
 		  <input type="hidden" value="<?php echo $profile['date']; ?>" class="form-control " name="" id="date" type="text"> 
 		  
           <div class="prepend-top form-group">
@@ -682,7 +674,7 @@ include('reg_header.php'); ?>
 			var lat = $("#lat").val();
 			var lng = $("#lng").val();
 			var facebook_id = $("#facebook_id").val();
-			var login_type = $("#login_type").val();
+			//var login_type = $("#login_type").val();
 			var date = $("#date").val();
 			var skills = $("input[name='skills']:checked").map( function() {
 				return this.value;
@@ -721,7 +713,7 @@ include('reg_header.php'); ?>
 					'data': {'email':email,'password':password,'first_name':firstname,'last_name':lastname,'phone_number':phone,
 					'gender':gender,'address':address,'dob':dob,'profile_url':profile_url,'w9_form':w9_form,'w4_form':w4_form,
 					'i9_form':i9_form,'special_skills':skills,'latitude':lat,'longitude':lng,'longitude':lng,'longitude':lng,'longitude':lng,
-					'facebook_id':facebook_id,'login_type':login_type,'date':date,'reg_type':reg_type,'agency':agency},
+					'facebook_id':facebook_id,'date':date,'reg_type':reg_type,'agency':agency}, 
 					//'dataType': 'json',
 					beforeSend: function(){
 					 $(".se-pre-con").show();
