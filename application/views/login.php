@@ -5,6 +5,7 @@ if($protocol == "http"){
 	echo '<script type="text/javascript">
            window.location = "https://staf.herokuapp.com/"
       </script>';
+	  die;
 }
 ?>
 <!DOCTYPE html>
