@@ -169,7 +169,7 @@ require APPPATH.'/libraries/variableconfig.php';
 				success: function(data) {
 					//alert(data);
 					if(data == 1) {
-						$("#alertmsgs").text('success card updated');
+						$("#alertmsgs").text('Success card updated');
 						window.location.reload();
 					}
 					else {
