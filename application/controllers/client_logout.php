@@ -20,6 +20,11 @@ public function __construct()
 		$this->session->unset_userdata($client_id);
 		$this->session->sess_destroy();
 		delete_cookie('client');
+		delete_cookie('facebook_id');
+		delete_cookie('email');
+		delete_cookie('first_name');
+		delete_cookie('last_name');
+		delete_cookie('profile_url');
 		$this->load->view('login');
 	}
 	
