@@ -36,7 +36,7 @@ class talent_registration extends REST_Controller {
 					
 					
 					// Empty key checking.
-					$pre_key = array('email','password','first_name','last_name','phone_number','gender','address','profile_url','w9_form','dob','special_skills','latitude','longitude','facebook_id','login_type','date');
+					$pre_key = array('email','password','first_name','last_name','phone_number','gender','address','profile_url','w9_form','dob','special_skills','latitude','longitude','facebook_id','date');
 					
 					$result = $validationandresult->keyvalidation($pre_key);
 					

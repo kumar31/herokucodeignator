@@ -36,7 +36,7 @@ class client_registration extends REST_Controller {
 					
 					
 					// Empty key checking.
-					$pre_key = array('email','password','first_name','last_name','company','address','postal_code','profile_url','latitude','longitude','facebook_id','login_type','date');
+					$pre_key = array('email','password','first_name','last_name','company','address','postal_code','profile_url','latitude','longitude','facebook_id','date');
 					
 					$result = $validationandresult->keyvalidation($pre_key);
 					
