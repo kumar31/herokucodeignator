@@ -132,7 +132,10 @@ include('reg_header.php'); ?>
           </div>
 		  
 		  <input type="hidden" value="<?php echo $facebook_id; ?>" class="form-control " name="" id="facebook_id" type="text"> 
-		  <input type="hidden" value="<?php echo $profile['login_type']; ?>" class="form-control " name="" id="login_type" type="text"> 
+		  <?php if($facebook_id != "") { ?>
+				<input type="hidden" value="facebook" class="form-control " name="" id="login_type" type="text"> 
+		  <?php
+		  } ?>
 		  <input type="hidden" value="<?php echo $profile['date']; ?>" class="form-control " name="" id="date" type="text"> 
 		  
           <div class="prepend-top form-group">
@@ -674,7 +677,7 @@ include('reg_header.php'); ?>
 			var lat = $("#lat").val();
 			var lng = $("#lng").val();
 			var facebook_id = $("#facebook_id").val();
-			var login_type = "2";
+			var login_type = $("#login_type").val();
 			var date = $("#date").val();
 			var skills = $("input[name='skills']:checked").map( function() {
 				return this.value;
