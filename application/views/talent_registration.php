@@ -53,40 +53,10 @@ include('reg_header.php'); ?>
 	  function getUserInfo() {
 	   
 			FB.api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email', function(response) {
-	  
-	   var usertype = $("input[name='user']:checked").val();
+				alert(response.email);
+	  		//'data': {'usertype':usertype,'email':response.email,'id':response.id,'first_name':response.first_name,'last_name':response.last_name,'url':response.picture.data.url},
 
-	   if(typeof usertype === "undefined") {
-	   var usertype = ''; 
-	   }
-	   else {
-	   var usertype = $("input[name='user']:checked").val();
-	   }
-		var url = 'https://staf.herokuapp.com/index.php/fb';
-	   
-	   $.ajax({
-		
-		'type' : 'POST',
-		'url': url,
-		'data': {'usertype':usertype,'email':response.email,'id':response.id,'first_name':response.first_name,'last_name':response.last_name,'url':response.picture.data.url},
-		//'dataType': 'json',
-		success: function(data) {
-		 
-		 if(data == '1'){
-		  window.location.assign("<?php echo base_url();?>index.php/client_dashboard");
-		 }
-		 if(data == '2'){
-		  window.location.assign("<?php echo base_url();?>index.php/talent_dashboard");
-		 }
-		 if(data == '3'){
-		  window.location.assign("<?php echo base_url();?>index.php/client_registration");
-		 }
-		 if(data == '4'){
-		  window.location.assign("<?php echo base_url();?>index.php/talent_registration");
-		 }
-		}
-
-	   });
+	 
 	   
 		});
 	 
