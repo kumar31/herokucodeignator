@@ -1,7 +1,7 @@
 <?php 
 error_reporting(0);
 include('reg_header.php'); ?>
-<script src="<?php echo base_url(); ?>js/vendor/jquery-1.11.2.min.js"></script>
+
 	<script>
 	  window.fbAsyncInit = function() {
 		FB.init({
