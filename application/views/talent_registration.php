@@ -6,7 +6,7 @@ include('reg_header.php'); ?>
 	  window.fbAsyncInit = function() {
 		FB.init({
 		  appId      : '1762686114002525', // Set YOUR APP ID
-		  channelUrl : 'https://staf.herokuapp.com/index.php/talent_registration', // Channel File
+		  channelUrl : '<?php echo base_url();?>index.php/talent_registration', // Channel File
 		  status     : true, // check login status
 		  cookie     : true, // enable cookies to allow the server to access the session
 		  xfbml      : true  // parse XFBML

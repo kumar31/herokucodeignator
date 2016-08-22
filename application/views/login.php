@@ -46,7 +46,7 @@
 	  window.fbAsyncInit = function() {
 		FB.init({
 		  appId      : '1762686114002525', // Set YOUR APP ID
-		  channelUrl : 'https://staf.herokuapp.com/index.php/login', // Channel File
+		  channelUrl : '<?php echo base_url();?>index.php/login', // Channel File
 		  status     : true, // check login status
 		  cookie     : true, // enable cookies to allow the server to access the session
 		  xfbml      : true  // parse XFBML
@@ -102,7 +102,7 @@
 	   else {
 	   var usertype = $("input[name='user']:checked").val();
 	   }
-		var url = 'https://staf.herokuapp.com/index.php/fb';
+		var url = '<?php echo base_url();?>index.php/fb';
 	   
 	   $.ajax({
 		
