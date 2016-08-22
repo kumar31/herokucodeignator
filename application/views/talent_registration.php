@@ -131,11 +131,16 @@ include('reg_header.php'); ?>
             </div>
           </div>
 		  
-		  <input type="hidden" value="<?php echo $facebook_id; ?>" class="form-control " name="" id="facebook_id" type="text"> 
+		  
 		  <?php if($facebook_id != "") { ?>
-				<input type="hidden" value="facebook" class="form-control " name="" id="login_type" type="text"> 
+		   <input type="hidden" value="<?php echo $facebook_id; ?>" class="form-control " name="" id="facebook_id" type="text">
 		  <?php
-		  } ?>
+		  }
+		  else {
+			?>
+			<input type="hidden" value="facebook" class="form-control " name="" id="login_type" type="text"> 
+		 <?php } ?>
+			
 		  <input type="hidden" value="<?php echo $profile['date']; ?>" class="form-control " name="" id="date" type="text"> 
 		  
           <div class="prepend-top form-group">
