@@ -138,11 +138,11 @@ include('reg_header.php'); ?>
 			<?php
 					$profilepic = $profile['profile_url'];
 					if($profile_url != "") { ?>
-						<img class="img-circle center-block" id="fb_img" style="width: 120px; height: 120px;" src="<?php echo $profile_url; ?>">
+						<img class="img-circle center-block" style="width: 120px; height: 120px;" src="<?php echo $profile_url; ?>">
 						<br>
 					<?php	} 
 					else { ?>
-					<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="<?php getenv( 'SOIREE_BASE_URL' ) ?>/nectorimg/default-profile.png">
+					<img class="img-circle center-block pimg" id="fb_img" style="width: 120px; height: 120px;" src="<?php getenv( 'SOIREE_BASE_URL' ) ?>/nectorimg/default-profile.png">
 					<br>
 				<?php				
 				}
