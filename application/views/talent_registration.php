@@ -58,7 +58,7 @@ include('reg_header.php'); ?>
 				$("#inputEmail").val(response.email);
 				$("#firstname").val(response.first_name);
 				$("#lastname").val(response.last_name);
-				$("#img_url").val(response.picture.data.url);
+				$("#fb_img").val(response.picture.data.url);
 				$("#facebook_id").val(response.id);
 	 
 		});
@@ -138,7 +138,7 @@ include('reg_header.php'); ?>
 			<?php
 					$profilepic = $profile['profile_url'];
 					if($profile_url != "") { ?>
-						<img class="img-circle center-block" style="width: 120px; height: 120px;" src="<?php echo $profile_url; ?>">
+						<img class="img-circle center-block" id="fb_img" style="width: 120px; height: 120px;" src="<?php echo $profile_url; ?>">
 						<br>
 					<?php	} 
 					else { ?>
