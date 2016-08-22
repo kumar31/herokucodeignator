@@ -53,9 +53,9 @@ include('reg_header.php'); ?>
 	  function getUserInfo() {
 	   
 			FB.api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email', function(response) {
-				alert(response.email);
+				//alert(response.email);
 	  		//'data': {'usertype':usertype,'email':response.email,'id':response.id,'first_name':response.first_name,'last_name':response.last_name,'url':response.picture.data.url},
-
+				$("#inputEmail").text(response.email);
 	 
 	   
 		});
