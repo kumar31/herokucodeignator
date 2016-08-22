@@ -1,7 +1,7 @@
 <?php 
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http";
 if($protocol == "http"){
-	echo $protocol;
+
 	echo '<script type="text/javascript">
            window.location = "https://staf.herokuapp.com/"
       </script>';
