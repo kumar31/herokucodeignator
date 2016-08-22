@@ -1,7 +1,7 @@
 <?php 
 error_reporting(0);
 include('reg_header.php'); ?>
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script>
 	  window.fbAsyncInit = function() {
 		FB.init({
@@ -137,7 +137,7 @@ include('reg_header.php'); ?>
 		<div class="col-md-4">
 		<form target="_top" data-toggle="validator" id="myForm" action="">
 		<div class="prepend-top clearfix form-group">
-			<a style="cursor: pointer;" role="button" onclick="Login();"><img class="center-block" src="<?php echo base_url(); ?>img/fb-logo-signup.png"></a>
+			<a style="cursor: pointer;" role="button" href="<?php echo base_url();?>index.php/fb"><img class="center-block" src="<?php echo base_url(); ?>img/fb-logo-signup.png"></a>
 		</div>
 		
 		<div class="prepend-top clearfix form-group">
@@ -504,8 +504,7 @@ include('reg_header.php'); ?>
       </p>
     </footer>
   </div> 
-  <!-- /container -->     
-  
+  <!-- /container -->        
   <script src="<?php echo base_url(); ?>js/vendor/bootstrap.min.js">
   </script>
   <script src="<?php echo base_url(); ?>js/main.js">
