@@ -1,6 +1,112 @@
 <?php 
 error_reporting(0);
 include('reg_header.php'); ?>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({
+		  appId      : '1762686114002525', // Set YOUR APP ID
+		  channelUrl : 'https://staf.herokuapp.com/index.php/talent_registration', // Channel File
+		  status     : true, // check login status
+		  cookie     : true, // enable cookies to allow the server to access the session
+		  xfbml      : true  // parse XFBML
+		});
+	 
+		FB.Event.subscribe('auth.authResponseChange', function(response) 
+		{
+		 if (response.status === 'connected') 
+		{
+			document.getElementById("message").innerHTML +=  "<br>Connected to Facebook";
+			//SUCCESS
+	 
+		}    
+		else if (response.status === 'not_authorized') 
+		{
+			document.getElementById("message").innerHTML +=  "<br>Failed to Connect";
+	 
+			//FAILED
+		} else 
+		{
+			document.getElementById("message").innerHTML +=  "<br>Logged Out";
+	 
+			//UNKNOWN ERROR
+		}
+		}); 
+	 
+		};
+	 
+		function Login()
+		{
+	 
+			FB.login(function(response) {
+			   if (response.authResponse) 
+			   {
+					getUserInfo();
+				} else 
+				{
+				 console.log('User cancelled login or did not fully authorize.');
+				}
+			 },{scope: 'email,user_photos,user_videos'});
+	 
+		}
+	 
+	  function getUserInfo() {
+	   
+			FB.api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email', function(response) {
+	  
+	   var usertype = $("input[name='user']:checked").val();
+
+	   if(typeof usertype === "undefined") {
+	   var usertype = ''; 
+	   }
+	   else {
+	   var usertype = $("input[name='user']:checked").val();
+	   }
+		var url = 'https://staf.herokuapp.com/index.php/fb';
+	   
+	   $.ajax({
+		
+		'type' : 'POST',
+		'url': url,
+		'data': {'usertype':usertype,'email':response.email,'id':response.id,'first_name':response.first_name,'last_name':response.last_name,'url':response.picture.data.url},
+		//'dataType': 'json',
+		success: function(data) {
+		 
+		 if(data == '1'){
+		  window.location.assign("<?php echo base_url();?>index.php/client_dashboard");
+		 }
+		 if(data == '2'){
+		  window.location.assign("<?php echo base_url();?>index.php/talent_dashboard");
+		 }
+		 if(data == '3'){
+		  window.location.assign("<?php echo base_url();?>index.php/client_registration");
+		 }
+		 if(data == '4'){
+		  window.location.assign("<?php echo base_url();?>index.php/talent_registration");
+		 }
+		}
+
+	   });
+	   
+		});
+	 
+		}
+		
+		function Logout()
+		{
+			FB.logout(function(){document.location.reload();});
+		}
+	 
+	  // Load the SDK asynchronously
+	  (function(d){
+		 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement('script'); js.id = id; js.async = true;
+		 js.src = "//connect.facebook.net/en_US/all.js";
+		 ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	 
+	</script>
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();
 		$webserviceurl = $variableconfig->webserviceurl(); 
@@ -31,7 +137,7 @@ include('reg_header.php'); ?>
 		<div class="col-md-4">
 		<form target="_top" data-toggle="validator" id="myForm" action="">
 		<div class="prepend-top clearfix form-group">
-			<a style="cursor: pointer;" role="button" href="<?php echo base_url();?>index.php/fb"><img class="center-block" src="<?php echo base_url(); ?>img/fb-logo-signup.png"></a>
+			<a style="cursor: pointer;" role="button" onclick="Login();"><img class="center-block" src="<?php echo base_url(); ?>img/fb-logo-signup.png"></a>
 		</div>
 		
 		<div class="prepend-top clearfix form-group">
