@@ -58,7 +58,7 @@ include('reg_header.php'); ?>
 				$("#inputEmail").val(response.email);
 				$("#firstname").val(response.first_name);
 				$("#lastname").val(response.last_name);
-				$("#fb_img").attr(response.picture.data.url);
+				$("#fb_img").attr('src', response.picture.data.url);
 				$("#facebook_id").val(response.id);
 	 
 		});
