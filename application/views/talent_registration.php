@@ -109,9 +109,12 @@ include('reg_header.php'); ?>
 		</div>
 		<div class="col-md-4">
 		<form target="_top" data-toggle="validator" id="myForm" action="">
-		<div class="prepend-top clearfix form-group">
-			<a style="cursor: pointer;" role="button" onclick="Login();"><img class="center-block" src="<?php echo base_url(); ?>img/fb-logo-signup.png"></a>
-		</div>
+		<?php if($facebook_id == "") { ?>
+			<div class="prepend-top clearfix form-group">
+				<a style="cursor: pointer;" role="button" onclick="Login();"><img class="center-block" src="<?php echo base_url(); ?>img/fb-logo-signup.png"></a>
+			</div>
+			<?php
+		} ?>
 		
 		<div class="prepend-top clearfix form-group">
             <div class="row">
