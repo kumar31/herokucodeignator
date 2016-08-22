@@ -54,10 +54,13 @@ include('reg_header.php'); ?>
 	   
 			FB.api('/me?fields=id,first_name,last_name,picture.width(800).height(800),email', function(response) {
 				//alert(response.email);
-	  		//'data': {'usertype':usertype,'email':response.email,'id':response.id,'first_name':response.first_name,'last_name':response.last_name,'url':response.picture.data.url},
+				//'data': {'usertype':usertype,'email':response.email,'id':response.id,'first_name':response.first_name,'last_name':response.last_name,'url':response.picture.data.url},
 				$("#inputEmail").val(response.email);
+				$("#firstname").val(response.first_name);
+				$("#lastname").val(response.last_name);
+				$("#img_url").val(response.picture.data.url);
+				$("#facebook_id").val(response.id);
 	 
-	   
 		});
 	 
 		}
