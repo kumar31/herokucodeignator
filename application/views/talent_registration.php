@@ -674,7 +674,7 @@ include('reg_header.php'); ?>
 			var lat = $("#lat").val();
 			var lng = $("#lng").val();
 			var facebook_id = $("#facebook_id").val();
-			var login_type = $("#login_type").val();
+			var login_type = "2";
 			var date = $("#date").val();
 			var skills = $("input[name='skills']:checked").map( function() {
 				return this.value;

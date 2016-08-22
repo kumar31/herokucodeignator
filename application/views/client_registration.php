@@ -338,7 +338,7 @@ include('reg_header.php'); ?>
 			var lat = $("#lat").val();
 			var lng = $("#lng").val();
 			var facebook_id = $("#facebook_id").val();
-			var login_type = $("#login_type").val();
+			var login_type = "1";
 			var date = $("#date").val();
 			var gender = $("input[name='gender']:checked").val();
 			
