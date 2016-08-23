@@ -32,7 +32,7 @@ foreach($blogs as $key=>$val)
 			$gender = "Male";
 		}
 		if($val['gender'] == 0) {
-			$gender = "Female";
+			$gender = "Female"; 
 		}
 	 
 	 ?>
@@ -40,10 +40,10 @@ foreach($blogs as $key=>$val)
 	         <div id="person" class="person">
               <div class="row persona">
                 <div class="col-xs-4 col-sm-3 text-center">
-                  <a href="<?php echo base_url();?>/index.php/talent_detail/<?php echo $val['talent_id']; ?>"><img style="width: 120px; height: 120px;" src="<?php echo $val['profile_url']; ?>"></a>
+                  <a href="<?php echo base_url();?>index.php/talent_detail/<?php echo $val['talent_id']; ?>"><img style="width: 120px; height: 120px;" src="<?php echo $val['profile_url']; ?>"></a>
                 </div>
                 <div class="col-xs-8 col-sm-6">
-                  <a href="<?php echo base_url();?>/index.php/talent_detail/<?php echo $val['talent_id']; ?>">
+                  <a href="<?php echo base_url();?>index.php/talent_detail/<?php echo $val['talent_id']; ?>">
 				  <h3><span class="text-capitalize"><?php echo $val['first_name']; ?></span> <?php echo $val['last_name']; ?>
                   </h3></a>
 				  <?php if($val['reg_type'] == 3) { ?>
