@@ -1,6 +1,11 @@
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();
 		$webserviceurl = $variableconfig->webserviceurl(); 
+		
+		$client_id = $this->session->userdata('client_id');
+		if($client_id == ''){
+			$client_id = $this->input->cookie('client',true); 
+		}
  ?>
 <div id="masonryWr" class="row" >
  
@@ -185,7 +190,7 @@ foreach($blogs as $key=>$val)
 	
 	function add(talentid){
 		var talent_id = talentid; 
-		var client_id = <?php echo $this->session->userdata('client_id'); ?>; 
+		var client_id = <?php echo $client_id; ?>; 
 			
 			var url = '<?php echo $webserviceurl; ?>index.php/add_talents';
 			
@@ -207,7 +212,7 @@ foreach($blogs as $key=>$val)
 	
 	function remove(talent_id){
 		var talent_id = talent_id; 
-		var client_id = <?php echo $this->session->userdata('client_id'); ?>; 
+		var client_id = <?php echo $client_id; ?>; 
 			
 			var url = '<?php echo $webserviceurl; ?>index.php/uncheck_talents';
 			
