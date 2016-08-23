@@ -3,7 +3,11 @@
 		$stripeurl = $variableconfig->stripeurl(); 
  ?>
 <div id="masonryWr" class="row" >
-<?php $myuserid = $this->session->userdata('client_id');  ?>
+<?php $myuserid = $this->session->userdata('client_id');
+	  if($myuserid == ''){
+			$myuserid = $this->input->cookie('client',true);
+		}
+  ?>
 
 <?php
 
