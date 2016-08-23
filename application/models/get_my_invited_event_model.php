@@ -14,6 +14,9 @@ class get_my_invited_event_model extends CI_Model {
 	{		
 		
 		$myuser_id = $this->session->userdata('talent_id'); 
+		if($myuser_id == ''){
+			$myuser_id = $this->input->cookie('talent',true);
+		}
 		$this->db->select('*');		
 		$this->db->where('talent_id',$myuser_id);
 		$this->db->where('status','0');

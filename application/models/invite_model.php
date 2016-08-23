@@ -58,6 +58,9 @@ class invite_model extends CI_Model {
 				$event_id = $val['event_id'];
 				$client_id = $val['client_id'];
 				$talent_id = $this->session->userdata('talent_id');
+				if($talent_id == ''){
+					$talent_id = $this->input->cookie('talent',true);
+				}
 				
 				$this->db->select('*');		
 				$this->db->where('event_id',$event_id);				
@@ -86,6 +89,9 @@ class invite_model extends CI_Model {
 				$event_id = $val['event_id'];
 				$client_id = $val['client_id'];
 				$talent_id = $this->session->userdata('talent_id');
+				if($talent_id == ''){
+					$talent_id = $this->input->cookie('talent',true);
+				}
 				
 				$this->db->select('*');		
 				$this->db->where('event_id',$event_id);				
@@ -114,6 +120,9 @@ class invite_model extends CI_Model {
 				$event_id = $val['event_id'];
 				$client_id = $val['client_id'];
 				$talent_id = $this->session->userdata('talent_id');
+				if($talent_id == ''){
+					$talent_id = $this->input->cookie('talent',true);
+				}
 				
 				$this->db->select('*');		
 				$this->db->where('event_id',$event_id);				
