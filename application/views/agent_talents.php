@@ -2,6 +2,9 @@
 error_reporting(0);
 include('agent_header.php'); ?>
 <?php 	$agentid = $this->session->userdata('agent_id');
+		if($agentid == ''){
+			$agentid = $this->input->cookie('agent',true);
+		}
 		$eventid = $this->uri->segment(2);  ?>
 <style>
 	table th {

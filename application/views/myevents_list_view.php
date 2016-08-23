@@ -14,7 +14,10 @@ a:hover, a:focus {
 }
 </style>
 <!-- Stripe Payment -->
-<?php $myuserid = $this->session->userdata('client_id');  ?>
+<?php $myuserid = $this->session->userdata('client_id');
+		if($myuserid == ''){
+				$myuserid = $this->input->cookie('client',true);
+			} ?>
 <?php
 
 foreach($events as $key=>$val)

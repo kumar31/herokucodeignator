@@ -18,7 +18,7 @@ public function __construct()
 		if($_POST['my_userid'] == "") {
 			$myuser_id = $this->session->userdata('agent_id'); 
 			if($myuser_id == ''){
-					$myuser_id = $this->input->cookie('client',true);
+					$myuser_id = $this->input->cookie('agent',true);
 				}
 		}
 		else {

@@ -4,6 +4,11 @@ include('talent_header.php'); ?>
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();
 		$webserviceurl = $variableconfig->webserviceurl(); 
+		
+		$talent_id = $this->session->userdata('talent_id');
+		if($talent_id == ''){
+			$talent_id = $this->input->cookie('talent',true);
+		}
  ?>
 <body>
 <div style="display: none;" class="se-pre-con"></div>
@@ -289,7 +294,7 @@ include('talent_header.php'); ?>
 	 });
 	
   function applytoevent(textbox_val){
-		var talent_id = "<?php echo $this->session->userdata('talent_id');  ?>"; 
+		var talent_id = "<?php echo $talent_id;  ?>"; 
 		var event_id = textbox_val; 
 			
 			var url = '<?php echo $webserviceurl; ?>index.php/talent_apply_event';

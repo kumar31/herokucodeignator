@@ -4,6 +4,11 @@ include('talent_header.php'); ?>
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();
 		$webserviceurl = $variableconfig->webserviceurl(); 
+		
+		$talent_id = $this->session->userdata('talent_id');
+		if($talent_id == ''){
+			$talent_id = $this->input->cookie('talent',true);
+		}
  ?>
 <body>
   <?php 
@@ -144,7 +149,7 @@ include('talent_header.php'); ?>
 	 
 	
   function verify(){
-		var talent_id = "<?php echo $this->session->userdata('talent_id');  ?>";
+		var talent_id = "<?php echo $talent_id;  ?>";
 		var type = 2;
 			
 			var url = '<?php echo $webserviceurl; ?>index.php/mobile_verify';
@@ -175,7 +180,7 @@ include('talent_header.php'); ?>
 	 
 	
   function verifynum(){
-		var talent_id = "<?php echo $this->session->userdata('talent_id');  ?>";
+		var talent_id = "<?php echo $talent_id;  ?>";
 		var type = 2;
 		var code = $("#code").val();
 			
@@ -215,7 +220,7 @@ include('talent_header.php'); ?>
 	 
 	
   function verifyemail(){
-		var talent_id = "<?php echo $this->session->userdata('talent_id');  ?>"; 
+		var talent_id = "<?php echo $talent_id;  ?>"; 
 		var email = "<?php echo $talent_profile[0]['email']; ?>"; 
 		var first_name = "<?php echo $talent_profile[0]['first_name']; ?>"; 
 			

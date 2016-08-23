@@ -2,6 +2,11 @@
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();
 		$webserviceurl = $variableconfig->webserviceurl(); 
+		
+		$talent_id = $this->session->userdata('talent_id');
+		if($talent_id == ''){
+			$talent_id = $this->input->cookie('talent',true);
+		}
  ?>
 <div id="masonryWr" class="row" >
 <style>
@@ -124,7 +129,7 @@ foreach($invited_events as $key=>$val)
 	 
 	
   function rejectevent(textbox_val2){
-		var talent_id = "<?php echo $this->session->userdata('talent_id');  ?>";
+		var talent_id = "<?php echo $talent_id;  ?>";
 		var event_id = textbox_val2;
 		//var reason = $("#rejectreason").val(); 
 			

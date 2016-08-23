@@ -19,6 +19,9 @@ a:hover, a:focus {
 <?php
 //print"<pre>";print_r($blogs);print"<pre>"; 
 $myuser_id = $this->session->userdata('client_id'); 
+if($myuser_id == ''){
+		$myuser_id = $this->input->cookie('client',true);
+	}
 $event_id = $this->uri->segment(3);
 foreach($blogs as $key=>$val)
 {

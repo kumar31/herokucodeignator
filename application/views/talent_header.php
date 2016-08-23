@@ -8,7 +8,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <?php $url = $this->uri->segment(1); ?>
-  <?php $myuser_id = $this->session->userdata('talent_id');  ?>
+  <?php $myuser_id = $this->session->userdata('talent_id');
+		if($myuser_id == ''){
+			$myuser_id = $this->input->cookie('talent',true);
+		}
+  ?>
 	<?php 
 		if($url == 'talent_dashboard'){ ?>
     <title>Talent Dashboard </title>

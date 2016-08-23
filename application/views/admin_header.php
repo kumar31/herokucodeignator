@@ -10,7 +10,10 @@
     <meta name="author" content="">
 	
 	<?php $url = $this->uri->segment(1); ?>
-    <?php $myuser_id = $this->session->userdata('admin_id');  ?>
+    <?php $myuser_id = $this->session->userdata('admin_id');
+		   if($myuser_id == ''){
+				$myuser_id = $this->input->cookie('admin',true);
+			} ?>
 	
 	<?php if($url == 'admin_dashboard') { ?>
 			<title>OUTFIT - Agents List</title>

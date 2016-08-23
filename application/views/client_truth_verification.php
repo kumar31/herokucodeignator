@@ -4,6 +4,11 @@ include('client_header.php'); ?>
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();
 		$webserviceurl = $variableconfig->webserviceurl(); 
+		
+		$myuser_id = $this->session->userdata('client_id'); 
+		if($myuser_id == ''){
+				$myuser_id = $this->input->cookie('client',true);
+			}
  ?>
 <body>
   <?php 
@@ -145,7 +150,7 @@ include('client_header.php'); ?>
 	 
 	
   function verify(){
-		var client_id = "<?php echo $this->session->userdata('client_id');  ?>";
+		var client_id = "<?php echo $myuser_id;  ?>";
 		var type = 1;
 			
 			var url = '<?php echo $webserviceurl; ?>index.php/mobile_verify';
@@ -176,7 +181,7 @@ include('client_header.php'); ?>
 	 
 	
   function verifynum(){
-		var client_id = "<?php echo $this->session->userdata('client_id');  ?>";
+		var client_id = "<?php echo $myuser_id;  ?>";
 		var type = 1;
 		var code = $("#code").val();
 			
@@ -216,7 +221,7 @@ include('client_header.php'); ?>
 	 
 	
   function verifyemail(){
-		var client_id = "<?php echo $this->session->userdata('client_id');  ?>"; 
+		var client_id = "<?php echo $myuser_id;  ?>"; 
 		var email = "<?php echo $client_profile[0]['email']; ?>"; 
 		var first_name = "<?php echo $client_profile[0]['first_name']; ?>"; 
 			

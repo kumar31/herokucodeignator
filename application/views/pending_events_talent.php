@@ -2,7 +2,10 @@
 error_reporting(0);
 include('talent_header.php'); ?>
 <?php 
-
+$talent_id = $this->session->userdata('talent_id');
+if($talent_id == ''){
+	$talent_id = $this->input->cookie('talent',true);
+}
 $items_per_group;
 $get_total_rows;
 
@@ -122,11 +125,11 @@ $(document).ready(function() {
             <div class="col-xs-9">
               <ul id="tabs" class="nav nav-pills" data-tabs="tabs">
                 <li>
-                  <a class="dashboard_tab bring-forward" href="<?php echo site_url();?>/talent_dashboard/<?php echo $this->session->userdata('talent_id'); ?>">Open events
+                  <a class="dashboard_tab bring-forward" href="<?php echo site_url();?>/talent_dashboard/<?php echo $talent_id; ?>">Open events
                   </a>
                 </li >
                 <li>
-                  <a class="dashboard_tab bring-forward" href="<?php echo site_url();?>/talent_invited_view/<?php echo $this->session->userdata('talent_id');  ?>">Invited events
+                  <a class="dashboard_tab bring-forward" href="<?php echo site_url();?>/talent_invited_view/<?php echo $talent_id;  ?>">Invited events
                   </a>
                 </li>
 				 <li class="active">

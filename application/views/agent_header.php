@@ -10,7 +10,10 @@
     <meta name="author" content="">
 	
 	<?php $url = $this->uri->segment(1); ?>
-    <?php $myuser_id = $this->session->userdata('agent_id');  ?>
+    <?php $myuser_id = $this->session->userdata('agent_id');
+			if($myuser_id == ''){
+				$myuser_id = $this->input->cookie('agent',true);
+			} ?>
 	
 	<?php if($url == 'agent_dashboard') { ?>
 			<title>OUTFIT - Events List</title>
