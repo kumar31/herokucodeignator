@@ -6,6 +6,7 @@ class get_my_invited_event_model extends CI_Model {
 		parent::__construct(); 
 		$this->load->model('client_model');
 		$this->load->model('event_model');
+		$this->load->helper('cookie');
 	}
 	
 	
