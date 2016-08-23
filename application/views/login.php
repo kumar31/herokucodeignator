@@ -633,6 +633,10 @@ The right Outfit makes a party. <br><br>
 
 	}
   </script>
+  <script>
+	  if (window.location.protocol != "https:")
+		window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+  </script>
 </body>
 
 </html>
