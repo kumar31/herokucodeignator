@@ -138,8 +138,7 @@ include('reg_header.php'); ?>
           <div class="prepend-top form-group">
 		  <label for="" class="required">Profile Picture
                 </label> 
-			<?php
-					$profilepic = $profile['profile_url'];
+			<?php	
 					if($profile_url != "") { ?>
 						<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="<?php echo $profile_url; ?>">
 						<br>
