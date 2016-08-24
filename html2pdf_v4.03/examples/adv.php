@@ -4,7 +4,7 @@
 
 
 
-$AdID=$_GET['event_id'];
+echo $AdID=$_GET['event_id']; die;
 //$currency=$_GET['currency'];	
 			
 
