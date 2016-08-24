@@ -141,7 +141,7 @@ include('reg_header.php'); ?>
 			<?php
 					$profilepic = $profile['profile_url'];
 					if($profile_url != "") { ?>
-						<img class="img-circle center-block" style="width: 120px; height: 120px;" src="<?php echo $profile_url; ?>">
+						<img class="img-circle center-block pimg" style="width: 120px; height: 120px;" src="<?php echo $profile_url; ?>">
 						<br>
 					<?php	} 
 					else { ?>
