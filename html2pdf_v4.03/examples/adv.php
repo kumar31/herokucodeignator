@@ -2,7 +2,7 @@
 
 
 
-
+echo "hi"; die;
 
 $AdID=$_GET['event_id']; 
 //$currency=$_GET['currency'];	
@@ -25,7 +25,7 @@ $AdID=$_GET['event_id'];
    
 	include(dirname(__FILE__).'/res/adv.php');
     $content = ob_get_clean();
-echo "hi"; die;
+
     // convert in PDF
     require_once(dirname(__FILE__).'/../html2pdf.class.php');
     try
