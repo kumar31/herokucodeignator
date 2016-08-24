@@ -25,9 +25,9 @@ $AdID=$_GET['event_id'];
    
 	include(dirname(__FILE__).'/res/adv.php');
     $content = ob_get_clean();
-echo "hi"; die;
+
     // convert in PDF
-    require_once(dirname(__FILE__).'/../html2pdf.class.php');
+    require_once(dirname(__FILE__).'/../html2pdf.class.php');echo "hi"; die;
     try
     {
         $html2pdf = new HTML2PDF('P', 'A4', 'fr');
