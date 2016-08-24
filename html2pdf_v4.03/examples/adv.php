@@ -27,7 +27,7 @@ $AdID=$_GET['event_id'];
     $content = ob_get_clean();
 
     // convert in PDF
-    require_once(dirname(__FILE__).'/../html2pdf.class.php');echo "hi"; die;
+    require_once(dirname(__FILE__).'/../html2pdf.class.php');
     try
     {
         $html2pdf = new HTML2PDF('P', 'A4', 'fr');
@@ -39,7 +39,7 @@ $AdID=$_GET['event_id'];
 		$path='../../invoice/adv'.$AdID.'.pdf';
 		$html2pdf->Output($path, 'F');
 		$html2pdf->Output("adv.pdf");
-		 
+		 echo "hi"; die;
     }
     catch(HTML2PDF_exception $e) {
         echo $e;
