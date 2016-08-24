@@ -6,7 +6,8 @@
         <input type='text' id="img_url" />
 		
 </html>
-<script src="https://demo.phpgang.com/upload-multiple-images-jquery-ajax-using-php/js/jquery-1.8.0.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+	  </script>
 
 <script>
 $('#upload').on('change', function() { 
