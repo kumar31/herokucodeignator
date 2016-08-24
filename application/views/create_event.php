@@ -620,12 +620,12 @@ Changes to this Agreement and the Service</p>
 	<script src="<?php echo base_url(); ?>js/bootstrap-datetimepicker.min.js"></script>
 	<script src="<?php echo base_url(); ?>js/main.js">
 	</script>
-  <script type="text/javascript" src="http://cdn.jsdelivr.net/momentjs/latest/moment.min.js">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js">
   </script>
   <!-- Include Date Range Picker -->
-  <script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js">
   </script>
-  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
    <script src="<?php echo base_url(); ?>js/validator.js"></script>
    <script type="text/javascript">
   
