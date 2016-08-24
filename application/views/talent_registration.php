@@ -58,7 +58,7 @@ include('reg_header.php'); ?>
 				$("#inputEmail").val(response.email);
 				$("#firstname").val(response.first_name);
 				$("#lastname").val(response.last_name);
-				//$("#fb_img").attr('src', response.picture.data.url);
+				$("#fb_img").attr('src', response.picture.data.url);
 				$("#img_url").val(response.picture.data.url);
 				$("#facebook_id").val(response.id);
 	 
@@ -145,7 +145,7 @@ include('reg_header.php'); ?>
 						<br>
 					<?php	} 
 					else { ?>
-					<img class="img-circle center-block pimg" id="" style="width: 120px; height: 120px;" src="<?php getenv( 'SOIREE_BASE_URL' ) ?>/nectorimg/default-profile.png">
+					<img class="img-circle center-block pimg" id="fb_img" style="width: 120px; height: 120px;" src="<?php getenv( 'SOIREE_BASE_URL' ) ?>/nectorimg/default-profile.png">
 					<br>
 				<?php				
 				}
