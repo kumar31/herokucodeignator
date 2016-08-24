@@ -910,7 +910,7 @@ Changes to this Agreement and the Service</p>
 					success: function(php_script_response){
 						//alert(php_script_response); // display response from the PHP script, if any
 					$('.eimg').attr('src', php_script_response);
-			 $('#img_url').val(php_script_response); 
+					$('#img_url').val(php_script_response); 
 			 
 						}
 		 });
