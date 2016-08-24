@@ -777,6 +777,32 @@ include('reg_header.php'); ?>
 		 });
 	});
 	
+	var file_data = $('#upload').prop('files')[0];   
+		var form_data = new FormData();                  
+		form_data.append('file', file_data);
+		//alert(form_data);                             
+		$.ajax({
+					url: '<?php echo base_url(); ?>index.php/upload', // point to server-side PHP script 
+					dataType: 'text',  // what to expect back from the PHP script, if anything
+					cache: false,
+					contentType: false,
+					processData: false,
+					data: form_data,                         
+					type: 'post',
+					beforeSend: function(){
+					 $(".se-pre-con").show();
+				   },
+				   complete: function(){
+					 $(".se-pre-con").hide();
+				   },
+					success: function(php_script_response){
+						//alert(php_script_response); // display response from the PHP script, if any
+					$('.pimg').attr('src', php_script_response);
+					$('#img_url').val(php_script_response);
+			 
+						}
+		 });
+	
 	$('#uploadw9').on('change', function() { 
 		var file_data = $('#uploadw9').prop('files')[0];   
 		var form_data = new FormData();                  
