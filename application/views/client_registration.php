@@ -69,7 +69,11 @@ include('reg_header.php'); ?>
 				?>
 			
            <input class="form-control my-form-control" type='file' id="upload" />
-			<input value="" type='hidden' id="img_url" />
+		   <?php if($profile_url != "") { ?>
+				<input value="<?php echo $profile_url; ?>" type='hidden' id="img_url" />
+		   <?php } else { ?>
+			   <input value="" type='hidden' id="img_url" />
+		   <?php } ?>
           </div>
 		  
           <div class="prepend-top form-group">
