@@ -34,7 +34,11 @@ $AdID=$_GET['event_id'];
 //      $html2pdf->setModeDebug();
         $html2pdf->setDefaultFont('Arial');
         $html2pdf->writeHTML($content, isset($_GET['vuehtml'],$AdID));echo "hi"; die;
-		
+		$my_string = substr(str_shuffle(MD5(microtime())), 0, 6); 
+       // $html2pdf->Output("invoice.pdf"); 
+		$path='../../invoice/adv'.$AdID.'.pdf';
+		$html2pdf->Output($path, 'F');
+		$html2pdf->Output("adv.pdf");
 		 
     }
     catch(HTML2PDF_exception $e) {
