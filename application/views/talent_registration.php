@@ -630,7 +630,7 @@ include('reg_header.php'); ?>
 			
 			if($("#already").is(':checked')){
 				$("#agreemessagei9").hide();
-				$("#agreemessagew4").hide();
+				$("#agreemessagew4").hide(); 
 				reg();
 			}
 			else
