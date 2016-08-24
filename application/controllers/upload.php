@@ -19,7 +19,6 @@ public function index() {
       echo 'Error: ' . $_FILES['file']['error'] . '<br>';
     }
     else {
-      
       move_uploaded_file($_FILES['file']['tmp_name'], "nectorimg/".$rand.".png");
 	   echo getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/'.$rand.'.png';
     }
