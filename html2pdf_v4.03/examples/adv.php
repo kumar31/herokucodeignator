@@ -23,11 +23,11 @@ $AdID=$_GET['event_id'];
     require_once(dirname(__FILE__).'/../html2pdf.class.php');
     try
     {
-		ob_clean();
         $html2pdf = new HTML2PDF('P', 'A4', 'fr');
 //      $html2pdf->setModeDebug();
         $html2pdf->setDefaultFont('Arial'); 
         $html2pdf->writeHTML($content,$AdID); 
+		ob_flush();
 		$my_string = substr(str_shuffle(MD5(microtime())), 0, 6); 
        // $html2pdf->Output("invoice.pdf");
 		$path='../../invoice/adv'.$AdID.'.pdf';		
