@@ -17,7 +17,7 @@ $AdID=$_GET['event_id'];
     ob_start();
    
 	include(dirname(__FILE__).'/res/adv.php');
-    $content = ob_get_clean();
+    $content = ob_flush();
 
     // convert in PDF
     require_once(dirname(__FILE__).'/../html2pdf.class.php');
