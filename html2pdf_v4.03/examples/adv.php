@@ -9,13 +9,7 @@ $AdID=$_GET['event_id'];
 			
 
 /**
- * HTML2PDF Librairy - example
- *
- * HTML => PDF convertor
- * distributed under the LGPL License
- *
- * @author      Laurent MINGUET <webmaster@html2pdf.fr>
- *
+ 
  * isset($_GET['vuehtml']) is not mandatory
  * it allow to display the result in the HTML format
  */
@@ -34,9 +28,8 @@ $AdID=$_GET['event_id'];
         $html2pdf->setDefaultFont('Arial'); 
         $html2pdf->writeHTML($content,$AdID); 
 		$my_string = substr(str_shuffle(MD5(microtime())), 0, 6); 
-       // $html2pdf->Output("invoice.pdf"); 
-		//$path='../../invoice/adv'.$AdID.'.pdf';
-		$path=$AdID.'.pdf';
+       // $html2pdf->Output("invoice.pdf");
+		$path='../../invoice/adv'.$AdID.'.pdf';
 		$html2pdf->Output($path, 'F');
 		$html2pdf->Output("adv.pdf");
 		 
