@@ -23,7 +23,7 @@ $AdID=$_GET['event_id'];
     require_once(dirname(__FILE__).'/../html2pdf.class.php');
     try
     {
-        $html2pdf = new HTML2PDF('P', 'A4', 'fr', true, 'UTF-8', 0);
+        $html2pdf = new HTML2PDF('P', 'A4', 'fr');
 //      $html2pdf->setModeDebug();
         $html2pdf->setDefaultFont('Arial'); 
 		ob_get_clean();
