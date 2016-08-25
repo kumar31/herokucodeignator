@@ -23,11 +23,11 @@ $AdID=$_GET['event_id'];
     // get the HTML http://smaatapps.com/Myshul/website_dev/index.php/invoicewithtax/index/3/
     ob_start();
    
-	include(dirname(__FILE__).'/res/adv.php');
+	include(dirname(__FILE__).'res/adv.php');
     $content = ob_get_clean();
 
     // convert in PDF
-    require_once(dirname(__FILE__).'/../html2pdf.class.php');
+    require_once(dirname(__FILE__).'html2pdf.class.php');
     try
     {
         $html2pdf = new HTML2PDF('P', 'A4', 'fr');
