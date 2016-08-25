@@ -1,6 +1,6 @@
 <?php 
 require('config.php');
-$AdID=$_GET['event_id']."<p>Hello</p>";	
+$AdID=$_GET['event_id'];	 
 
 //Event details
  $query=mysql_query("select client_payment_details.*,sum(client_payment_details.amount) as amount from `client_payment_details` WHERE `event_id`='$AdID' group by `event_id`"); 
