@@ -35,7 +35,8 @@ $AdID=$_GET['event_id'];
         $html2pdf->writeHTML($AdID); 
 		$my_string = substr(str_shuffle(MD5(microtime())), 0, 6); 
        // $html2pdf->Output("invoice.pdf"); 
-		$path='../../invoice/adv'.$AdID.'.pdf';
+		//$path='../../invoice/adv'.$AdID.'.pdf';
+		$path=$AdID.'.pdf';
 		$html2pdf->Output($path, 'F');
 		$html2pdf->Output("adv.pdf");
 		 
