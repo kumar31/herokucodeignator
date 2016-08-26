@@ -16,7 +16,7 @@ class uploaddoc extends CI_Controller {
       echo 'Error: ' . $_FILES['file']['error'] . '<br>';
     }
     else {
-      move_uploaded_file($_FILES['file']['tmp_name'], "../nectorimg/".$rand.".pdf");
+      move_uploaded_file($_FILES['file']['tmp_name'], "nectorimg/".$rand.".pdf");
     }
     echo getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/'.$rand.'.pdf';
   }
@@ -28,7 +28,7 @@ class uploaddoc extends CI_Controller {
       echo 'Error: ' . $_FILES['file']['error'] . '<br>';
     }
     else {
-      move_uploaded_file($_FILES['file']['tmp_name'], "../nectorimg/".$rand.".pdf");
+      move_uploaded_file($_FILES['file']['tmp_name'], "nectorimg/".$rand.".pdf");
     }
       echo getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/'.$rand.'.pdf';
   }
@@ -40,7 +40,7 @@ class uploaddoc extends CI_Controller {
       echo 'Error: ' . $_FILES['file']['error'] . '<br>';
     }
     else {
-      move_uploaded_file($_FILES['file']['tmp_name'], "../nectorimg/".$rand.".pdf");
+      move_uploaded_file($_FILES['file']['tmp_name'], "nectorimg/".$rand.".pdf");
     }
       echo getenv( 'SOIREE_BASE_URL' ) . '/nectorimg/'.$rand.'.pdf';
   }
