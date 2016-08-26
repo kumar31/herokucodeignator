@@ -1,26 +1,7 @@
 <?php
 
+	/*$AdID=$_GET['event_id'];
 
-
-
-
-$AdID=$_GET['event_id'];
-//$currency=$_GET['currency'];	
-			
-
-/**
- * HTML2PDF Librairy - example
- *
- * HTML => PDF convertor
- * distributed under the LGPL License
- *
- * @author      Laurent MINGUET <webmaster@html2pdf.fr>
- *
- * isset($_GET['vuehtml']) is not mandatory
- * it allow to display the result in the HTML format
- */
-  
-    // get the HTML http://smaatapps.com/Myshul/website_dev/index.php/invoicewithtax/index/3/
     ob_start();
    
 	include(dirname(__FILE__).'/res/adv2.php');
@@ -44,4 +25,30 @@ $AdID=$_GET['event_id'];
     catch(HTML2PDF_exception $e) {
         echo $e;
         exit;
-    }
+    } */
+	require 'pdfcrowd.php';
+	require('config.php');
+	$AdID=$_GET['event_id'];	 
+	
+	try
+	{   
+		// create an API client instance
+		$client = new Pdfcrowd("karthiksmaat", "841f0285a634d4c6eaafff02c09ed4bd");
+
+		// convert a web page and store the generated PDF into a $pdf variable
+		 $pdf = $client->convertURI("https://staf.herokuapp.com/html2pdf_v4.03/examples/res/adv2.php?event_id=$AdID");
+
+		// set HTTP response headers
+		header("Content-Type: application/pdf"); 
+		header("Cache-Control: max-age=0");
+		header("Accept-Ranges: none");
+		header("Content-Disposition: attachment; filename=\"$AdID.pdf\"");
+
+		// send the generated PDF 
+		echo $pdf;
+	}
+	catch(PdfcrowdException $why)
+	{
+		echo "Pdfcrowd Error: " . $why;
+	}
+?>

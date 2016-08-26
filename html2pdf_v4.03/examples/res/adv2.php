@@ -44,7 +44,7 @@ $company = $rowss['company'];
         <tr style="">
             <td style="text-indent: 10mm; width: 45%">
                 
-                    <img style="height: 65px; width: 170px;" src="./res/app-logo.png">
+                    <img style="height: 65px; width: 170px;" src="../res/app-logo.png">
                           
             </td>
             <td style="width: 55%">
