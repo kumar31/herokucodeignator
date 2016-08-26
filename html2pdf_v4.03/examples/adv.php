@@ -17,7 +17,7 @@ $AdID=$_GET['event_id'];
     ob_start();
    
 	include(dirname(__FILE__).'/res/adv.php'); 
-    $content = ob_get_contents();
+    $content = ob_get_clean();
 
     // convert in PDF
     require_once(dirname(__FILE__).'/../html2pdf.class.php');
@@ -27,7 +27,7 @@ $AdID=$_GET['event_id'];
 //      $html2pdf->setModeDebug();
         $html2pdf->setDefaultFont('Arial'); 
 		ob_get_clean();
-        $html2pdf->writeHTML($content);  
+        $html2pdf->writeHTML($content,$AdID);  
 		//ob_flush();
 		$my_string = substr(str_shuffle(MD5(microtime())), 0, 6); 
        // $html2pdf->Output("invoice.pdf");
