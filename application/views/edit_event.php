@@ -223,19 +223,19 @@ include('client_header.php'); ?>
 			<div class="form-group">
 				<div class="">
 				  <label>
-					<input type="checkbox" name="skills" value="bartending" <?php if(isset($event_detail[0]['talent_requested_for'])) { if(($event_detail[0]['talent_requested_for'] == "bartending") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress,personality,host")) { echo "checked";} }  ?>>
+					<input type="checkbox" name="skills" value="bartending" <?php if(isset($event_detail[0]['talent_requested_for'])) { if(($event_detail[0]['talent_requested_for'] == "bartending") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress,personality,host") || ($event_detail[0]['talent_requested_for'] == "bartending,personality,host")) { echo "checked";} }  ?>>
 					Bartender
 				  </label>
 				</div>
 				<div class="">
 				  <label>
-					<input type="checkbox" name="skills" value="waiter,waitress" <?php if(isset($event_detail[0]['talent_requested_for'])) { if(($event_detail[0]['talent_requested_for'] == "waiter,waitress") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress,personality,host")) { echo "checked";} }  ?>>
+					<input type="checkbox" name="skills" value="waiter,waitress" <?php if(isset($event_detail[0]['talent_requested_for'])) { if(($event_detail[0]['talent_requested_for'] == "waiter,waitress") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress,personality,host") || ($event_detail[0]['talent_requested_for'] == "waiter,waitress,personality,host")) { echo "checked";} }  ?>>
 					Waiter/waitress
 				  </label>
 				</div>
 				<div class="">
 				  <label>
-					<input type="checkbox" name="skills" value="personality,host" <?php if(isset($event_detail[0]['talent_requested_for'])) { if(($event_detail[0]['talent_requested_for'] == "personality,host") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress,personality,host")) { echo "checked";} }  ?>>
+					<input type="checkbox" name="skills" value="personality,host" <?php if(isset($event_detail[0]['talent_requested_for'])) { if(($event_detail[0]['talent_requested_for'] == "personality,host") || ($event_detail[0]['talent_requested_for'] == "bartending,personality,host") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress,personality,host") || ($event_detail[0]['talent_requested_for'] == "waiter,waitress,personality,host")) { echo "checked";} }  ?>>
 					Personality/Host
 				  </label>
 				</div>
