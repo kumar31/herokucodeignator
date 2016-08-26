@@ -34,7 +34,7 @@
 	{   
 		
 		// convert a web page and store the generated PDF into a $pdf variable
-		 $pdf = $client->convertURI("https://staf.herokuapp.com/html2pdf_v4.03/examples/res/adv2.php?event_id=$AdID");
+		 $pdf = $client->convertURI("$SOIREE_BASE_URL/html2pdf_v4.03/examples/res/adv2.php?event_id=$AdID");
 
 		// set HTTP response headers
 		header("Content-Type: application/pdf"); 

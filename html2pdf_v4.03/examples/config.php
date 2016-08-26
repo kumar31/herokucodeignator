@@ -3,7 +3,8 @@
 	$username = getenv( 'DB_USER' );
 	$password = getenv( 'DB_PASS' );
 	$dbname = getenv( 'DB_NAME' );
-
+	$SOIREE_BASE_URL = getenv( 'SOIREE_BASE_URL' );
+	
 	// Create connection
 	$conn = mysql_connect($servername, $username, $password);
 	// Check connection
