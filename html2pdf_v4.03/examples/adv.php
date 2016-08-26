@@ -4,7 +4,7 @@
 
 
 
-$AdID="hello"; 
+$AdID=$_GET['event_id']; 
 //$currency=$_GET['currency'];	
 			
 
@@ -16,7 +16,7 @@ $AdID="hello";
   
     ob_start();
    
-	include('../res/adv.php');
+	include(dirname(__FILE__).'/res/adv.php');
     $content = ob_get_clean();
 
     // convert in PDF
@@ -27,7 +27,7 @@ $AdID="hello";
 //      $html2pdf->setModeDebug();
         $html2pdf->setDefaultFont('Arial'); 
 		ob_get_clean();
-        $html2pdf->writeHTML($AdID);  
+        $html2pdf->writeHTML($content);  
 		//ob_flush();
 		$my_string = substr(str_shuffle(MD5(microtime())), 0, 6); 
        // $html2pdf->Output("invoice.pdf");
