@@ -4,7 +4,7 @@
 
 
 
-$AdID=file_get_contents('https://www.google.co.in/');
+$AdID=file_get_contents('/res/adv.php');
 //$currency=$_GET['currency'];	
 			
 
