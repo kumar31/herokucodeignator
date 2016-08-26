@@ -37,37 +37,14 @@
 	require 'pdfcrowd.php';
 	require('config.php');
 	$AdID=$_GET['event_id'];	 
-
-	//Event details
-	 $query=mysql_query("select client_payment_details.*,sum(client_payment_details.amount) as amount from `client_payment_details` WHERE `event_id`='$AdID' group by `event_id`"); 
-	$row = mysql_fetch_array($query);
-	$event_id = $row['event_id'];
-	$client_id = $row['client_id'];
-	$transaction_id = $row['transaction_id'];
-
-	$description = $row['description'];
-	$amount = $row['amount'];
-	$date = $row['datetime'];
-	$date = date('d M Y', strtotime($date));
-	 
-	$query=mysql_query("select * from `event_detail` WHERE `event_id`='$event_id'");
-	$rows = mysql_fetch_array($query); 
-	$event_name = $rows['event_name'];
-
-	$query=mysql_query("select * from `client_details` WHERE `client_id`='$client_id'");
-	$rowss = mysql_fetch_array($query); 
-	$first_name = $rowss['first_name'];
-	$last_name = $rowss['last_name'];
-	$address = $rowss['address'];
-	$company = $rowss['company']; echo "hi"; die;
-			
+	
 	try
 	{   
 		// create an API client instance
 		$client = new Pdfcrowd("karthiksmaat", "841f0285a634d4c6eaafff02c09ed4bd");
 
 		// convert a web page and store the generated PDF into a $pdf variable
-		 $pdf = $client->convertFile("/res/adv.php");
+		 $pdf = $client->convertFile("/res/adv.php?$AdID");
 
 		// set HTTP response headers
 		header("Content-Type: application/pdf");
