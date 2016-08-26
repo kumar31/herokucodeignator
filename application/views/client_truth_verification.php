@@ -77,12 +77,16 @@ include('client_header.php'); ?>
             </div>                
           </div>
 		  <?php
+			$phone_number = $client_profile[0]['phone_number'];
 			$phone_verification = $client_profile[0]['phone_verification']; 
 			if($phone_verification == 1) {
 				$phoneverification = "Verified";
 			}
 			if($phone_verification == 0) {
 				$phoneverification = "Not Verified";
+			}
+			if(($phone_number == "") && ($phone_verification == 0)) {
+				$phoneverification = "Add Phone number to verify.";
 			}
 		  ?>
           <div class="row">
