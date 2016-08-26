@@ -54,12 +54,9 @@ class forgotpassword extends REST_Controller {
 						}else{
 						
 							$result = $this->forgotpassword_model->index();
-							
-							if($result != ""){
-							$message = "A reset password link is sent to your registered Email ID.";
-							$result = $validationandresult->custommessage($message);
-							}
-							
+							$result = Array ( "result" => "" );
+							$result = array("StatusCode" => "1","message" => $message,"result" => $result);
+			
 							$this->response($result, 200);
 						}
 							
