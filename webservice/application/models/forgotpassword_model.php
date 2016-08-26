@@ -49,7 +49,7 @@ class forgotpassword_model extends CI_Model {
 			and any disclosure &#x2F; misuse of this information is strictly prohibited, and may be unlawful.
 			If you have received this mail by mistake, Please delete this mail immediately.</p>";
 			
-			$this->mail_model->send($to_email,$subject,$message,$from_email);
+			$this->mail_model->send($to_email,$subject,$message);
 			return $to_email;
 	}
 	
