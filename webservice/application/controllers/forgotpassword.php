@@ -7,7 +7,7 @@
 */
 
 //error_reporting(E_PARSE);
-error_reporting(0);
+error_reporting(E_ALL);
 require APPPATH.'/libraries/REST_Controller.php';
 require APPPATH.'/libraries/variableconfig.php';
 require APPPATH.'/libraries/validationandresult.php';
@@ -56,7 +56,7 @@ class forgotpassword extends REST_Controller {
 							$result = $this->forgotpassword_model->index();
 							if($result == ""){
 							$message = "Your Email ID is not registered with us. Please enter a valid Email ID.";
-							$result = $validationandresult->custommessage($message);
+							$result = $validationandresult->custommessagez($message);
 							}else{
 							$message = "A reset password link is sent to your registered Email ID.";
 							$result = $validationandresult->custommessage($message);
