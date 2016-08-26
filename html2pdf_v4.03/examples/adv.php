@@ -44,7 +44,7 @@
 		$client = new Pdfcrowd("karthiksmaat", "841f0285a634d4c6eaafff02c09ed4bd");
 
 		// convert a web page and store the generated PDF into a $pdf variable
-		 $pdf = $client->convertFile("https://staf.herokuapp.com/html2pdf_v4.03/examples/res/adv.php?event_id=$AdID");
+		 $pdf = $client->convertFile("advtest.php");
 
 		// set HTTP response headers
 		header("Content-Type: application/pdf");
