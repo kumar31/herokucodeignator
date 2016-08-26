@@ -4,7 +4,7 @@
 
 
 
-$AdID=file_get_contents('https://staf.herokuapp.com/html2pdf_v4.03/examples/res/adv.php?event_id=2');
+$AdID=file_get_contents('https://staf.herokuapp.com/html2pdf_v4.03/examples/res/adv.php');
 //$currency=$_GET['currency'];	
 			
 
