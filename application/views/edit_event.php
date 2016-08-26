@@ -214,7 +214,7 @@ include('client_header.php'); ?>
               </option>
             </select>
           </div>
-		  <?php echo $event_detail[0]['talent_requested_for']; ?>
+		  
 		  <div class="prepend-top clearfix">
 			<div class="form-group clearfix">
 			  <label class="pull-left" for="">Talent expertise needed
@@ -229,7 +229,7 @@ include('client_header.php'); ?>
 				</div>
 				<div class="">
 				  <label>
-					<input type="checkbox" name="skills" value="waiter,waitress" <?php if(isset($event_detail[0]['talent_requested_for'])) { if($event_detail[0]['talent_requested_for'] == "waiter,waitress") { echo "checked";} }  ?>>
+					<input type="checkbox" name="skills" value="waiter,waitress" <?php if(isset($event_detail[0]['talent_requested_for'])) { if(($event_detail[0]['talent_requested_for'] == "waiter,waitress") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress")) { echo "checked";} }  ?>>
 					Waiter/waitress
 				  </label>
 				</div>
