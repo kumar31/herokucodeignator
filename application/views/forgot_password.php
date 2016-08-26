@@ -118,8 +118,8 @@ include('reg_header.php'); ?>
 					var message = message.replace(/\"/g, "");
 					
 					if(message == "1") {
-							$("#alertmsg").text("A reset link has been sent to your mail id.");	
-							$(".form-group").hide();
+						$("#alertmsg").text("A reset link has been sent to your mail id.");	
+						$(".form-group").hide();
 					}
 					else {						
 						$("#alertmsg").text("Your Email ID is not registered with us. Please enter a valid Email ID.");
