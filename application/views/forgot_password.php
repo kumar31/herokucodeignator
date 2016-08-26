@@ -121,10 +121,8 @@ include('reg_header.php'); ?>
 							$("#alertmsg").text("A reset link has been sent to your mail id.");	
 							$(".form-group").hide();
 					}
-					else {
-						var alertmessage = JSON.stringify(data['message']);
-						var alertmessage = alertmessage.replace(/\"/g, "");
-						$("#alertmsg").text(alertmessage);
+					else {						
+						$("#alertmsg").text("Your Email ID is not registered with us. Please enter a valid Email ID.");
 						$("html, body").animate({ scrollTop: 0 }, "slow");
 					}
 				}
