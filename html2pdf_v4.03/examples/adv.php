@@ -59,7 +59,7 @@
 	$first_name = $rowss['first_name'];
 	$last_name = $rowss['last_name'];
 	$address = $rowss['address'];
-	$company = $rowss['company'];
+	$company = $rowss['company']; echo "hi"; die;
 			
 	try
 	{   
@@ -205,7 +205,7 @@
 		header("Content-Type: application/pdf");
 		header("Cache-Control: max-age=0");
 		header("Accept-Ranges: none");
-		header("Content-Disposition: attachment; filename=\"'.$AdID.'.pdf\"");
+		header("Content-Disposition: attachment; filename=\"$AdID.pdf\"");
 
 		// send the generated PDF 
 		echo $pdf;
