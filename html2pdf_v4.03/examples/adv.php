@@ -44,7 +44,7 @@
 		$client = new Pdfcrowd("karthiksmaat", "841f0285a634d4c6eaafff02c09ed4bd");
 
 		// convert a web page and store the generated PDF into a $pdf variable
-		 $pdf = $client->convertFile("res/adv.php?$AdID");
+		 $pdf = $client->convertFile("/res/adv.php");
 
 		// set HTTP response headers
 		header("Content-Type: application/pdf");
