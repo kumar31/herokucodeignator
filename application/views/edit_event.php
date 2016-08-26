@@ -223,7 +223,7 @@ include('client_header.php'); ?>
 			<div class="form-group">
 				<div class="">
 				  <label>
-					<input type="checkbox" name="skills" value="bartending" <?php if(isset($event_detail[0]['talent_requested_for'])) { if($event_detail[0]['talent_requested_for'] == "bartending") { echo "checked";} }  ?>>
+					<input type="checkbox" name="skills" value="bartending" <?php if(isset($event_detail[0]['talent_requested_for'])) { if(($event_detail[0]['talent_requested_for'] == "bartending") || ($event_detail[0]['talent_requested_for'] == "bartending,waiter,waitress")) { echo "checked";} }  ?>>
 					Bartender
 				  </label>
 				</div>
