@@ -17,7 +17,13 @@ $AdID=$_GET['event_id'];
     ob_start();
    
 	include(dirname(__FILE__).'/res/adv.php'); 
-    $content = ob_get_clean();
+    $content = "
+<page>
+    <h1>Exemple d'utilisation</h1>
+    <br>
+    Ceci est un <b>exemple d'utilisation</b>
+    de <a href='http://html2pdf.fr/'>HTML2PDF</a>.<br>
+</page>";
 
     // convert in PDF
     require_once(dirname(__FILE__).'/../html2pdf.class.php');
