@@ -205,7 +205,7 @@
 		header("Content-Type: application/pdf");
 		header("Cache-Control: max-age=0");
 		header("Accept-Ranges: none");
-		header("Content-Disposition: attachment; filename=\"google_com.pdf\"");
+		header("Content-Disposition: attachment; filename=\"'.$AdID.'.pdf\"");
 
 		// send the generated PDF 
 		echo $pdf;
