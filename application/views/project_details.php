@@ -48,7 +48,7 @@ include('client_header.php'); ?>
                 
 				
                <?php 
-					$status = $event_detail[0]['status'];
+					$status = $event_detail[0]['launch_status'];
 					if($status == 0) {
 				  ?>
 				<li>
