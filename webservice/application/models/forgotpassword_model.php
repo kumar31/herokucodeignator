@@ -33,7 +33,7 @@ class forgotpassword_model extends CI_Model {
 				$userid = $result[0]['talent_id'];
 			}
 		
-			echo $to_email = $result[0]['email'];
+			echo $to_email = $result[0]['email']; die;
 			$firstname = $result[0]['first_name']; 
 			$password = $result[0]['password'];
 			$subject = "Outfit - Forgot Password Request";
