@@ -1,11 +1,10 @@
 <?php
-    $content = "
+    $content = '
 <page>
-    <h1>Exemple d'utilisation</h1>
+    <h1>Exemple dutilisation</h1>
     <br>
-    Ceci est un <b>exemple d'utilisation</b>
-    de <a href='http://html2pdf.fr/'>HTML2PDF</a>.<br>
-</page>";
+    Ceci est un <b>exemple dutilisation</b>    
+</page>';
 
     require_once(dirname(__FILE__).'/../html2pdf/html2pdf.class.php');
     $html2pdf = new HTML2PDF('P','A4','fr');
