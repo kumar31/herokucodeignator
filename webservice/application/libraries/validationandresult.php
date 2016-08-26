@@ -55,8 +55,8 @@
 		function custommessagez($message) {
 			
 			$result = array("result" => "");
-			$messages = array("StatusCode" => "0","message" => $message,"result" => $result);
-			return $messages;
+			$message = array("StatusCode" => "0","message" => $message,"result" => $result);
+			return $message;
 			
 			
 		}
