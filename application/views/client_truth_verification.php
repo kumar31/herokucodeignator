@@ -115,9 +115,9 @@ include('client_header.php'); ?>
 				<?php } ?>
 				
 				<?php 
-				if($phone_verification == 0) {
+				if(($phone_verification == 0) && ($phone_number != "")) {
 			  ?>
-               <p class="">		
+               <p class="">
 						<a class=
 					   "btn btn-submit btn-lg largeHeight once-only btn_confirms" value=""
 					   role="button" id="btn4">Verify mobile number
