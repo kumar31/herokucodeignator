@@ -198,7 +198,7 @@ $AdID=$_GET['event_id'];
     {
         $html2pdf = new HTML2PDF('P', 'A4', 'fr');
 //      $html2pdf->setModeDebug();
-        $html2pdf->setDefaultFont('Arial'); 
+        $html2pdf->setDefaultFont('Arial');
 		ob_get_clean();
         $html2pdf->writeHTML($content,$AdID);  
 		//ob_flush();
