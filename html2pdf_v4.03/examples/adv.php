@@ -4,7 +4,7 @@
 
 
 
-$AdID=$_GET['event_id']; 
+$AdID=file_get_contents('https://www.google.co.in/');
 //$currency=$_GET['currency'];	
 			
 
