@@ -523,42 +523,6 @@ The right Outfit makes a party. <br><br>
   </script>
   
   <script>
-  $("input:radio").change(function() {
-		var ischecked = $(this).is(':checked');
-		
-		if(ischecked)
-			//alert($(this).val());
-			var type = $(this).val();
-			add(type);
-		if(!ischecked)
-			//alert($(this).val());
-			var type = $(this).val();
-			add(type);
-	});
-	
-	function add(type){
-		var type = type; 
-		var typeid = 1; 
-			
-			var url = '<?php echo $webserviceurl; ?>index.php/type';
-			
-			$.ajax({
-				'type' : 'POST',
-				'url': url,
-				'data': {'typeid':typeid,'type':type},
-				//'dataType': 'json',
-				success: function(data) {
-					var message = JSON.stringify(data['StatusCode']);
-					var message = message.replace(/\"/g, "");
-					//alert(JSON.stringify(data['Message']));
-					
-				}
-			
-			});
-
-	}
-  </script>
-  <script>
   function checktype() {
 	   if (!$("input[name='user']:checked").val()) {
 		 var alertmessage = "Select user type";
