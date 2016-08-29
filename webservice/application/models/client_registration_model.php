@@ -4,7 +4,7 @@ class client_registration_model extends CI_Model {
 	public function __construct()
 	{
 		parent::__construct();
-		
+		$this->load->library('encrypt');
 	}
 	
 	
@@ -27,7 +27,7 @@ class client_registration_model extends CI_Model {
 		
 		$data = array(
 			'email' 	   		=> $_POST['email'],
-			'password' 			=> $_POST['password'],
+			'password' 			=> $password,
 			'first_name' 		=> $_POST['first_name'],
 			'last_name' 		=> $_POST['last_name'],
 			'company' 			=> $_POST['company'],

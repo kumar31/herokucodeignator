@@ -6,6 +6,7 @@ class talent_registration_model extends CI_Model {
 		parent::__construct();
 		$this->load->model('mail_model');
 		$this->load->model('agent_model');
+		$this->load->library('encrypt');
 	}
 	
 	
@@ -29,10 +30,10 @@ class talent_registration_model extends CI_Model {
 		else {
 			$login_type = "";
 		}
-		
+		$password = $this->encrypt->encode($_POST['password']);
 		$data = array(
 			'email' 	   		=> $_POST['email'],
-			'password' 			=> $_POST['password'],
+			'password' 			=> $password,
 			'first_name' 		=> $_POST['first_name'],
 			'last_name' 		=> $_POST['last_name'],
 			'user_name' 		=> $user_name,

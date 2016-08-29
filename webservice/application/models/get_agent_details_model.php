@@ -4,6 +4,7 @@ class get_agent_details_model extends CI_Model {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->library('encrypt');
 	}
 	
 	
@@ -73,11 +74,11 @@ class get_agent_details_model extends CI_Model {
 		}
 	}
 	function create(){
-		
+		$password = $this->encrypt->encode($_POST['password']);
 		$data = array(
 		'name'      => $_POST['name'],
 		'email'		=> $_POST['email'],
-		'password' 	=> $_POST['password'],
+		'password' 	=> $password,
 		'percentage'=> $_POST['percentage'],
 		'address'	=> $_POST['address'],
 		'outfit_fee'=> $_POST['outfit_fee'],
