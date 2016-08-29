@@ -606,8 +606,7 @@ include('talent_header.php'); ?>
 				   },
 					success: function(php_script_response){
 						//alert(php_script_response); // display response from the PHP script, if any
-				$('.pimg').attr('src', php_script_response);
-				$('.pimg').show(); 
+				$('.pimg').attr('src', php_script_response);				
 				$('#img_url1').val(php_script_response); 
 			 
 						}
@@ -638,6 +637,7 @@ include('talent_header.php'); ?>
 					success: function(php_script_response){
 						//alert(php_script_response); // display response from the PHP script, if any
 				$('.pimg1').attr('src', php_script_response);
+				$('.pimg').show(); 
 				$('#img_url2').val(php_script_response); 
 			 
 						}
