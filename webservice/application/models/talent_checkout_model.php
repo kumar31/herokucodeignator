@@ -125,7 +125,9 @@ class talent_checkout_model extends CI_Model {
 		
 		
 		}
-		$this->emailnotification();
+		if($_POST['agent_id'] == 0) {
+			$this->emailnotification();
+		}
 	
 	}
 	

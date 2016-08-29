@@ -38,15 +38,25 @@ class talent_checkin_model extends CI_Model {
 		$event_contact_name = $this->event_model->firstname($_POST['event_id']);
 		$subject = "Outfit - Checked In for event"; 
 		$message ="<p>Hi ".$to_name.",</p>";
-		$message .="<p>You have been checked in by ".$event_contact_name." for ".$event_name." event at ".$timeNdate.".Please click here to confirm or amend time " . getenv( 'SOIREE_BASE_URL' ) . "/index.php/login .</p>";
+		if($_POST['agent_id'] == 0) {
+			$message .="<p>You have been checked in by ".$event_contact_name." for ".$event_name." event at ".$timeNdate.".Please click here to confirm or amend time " . getenv( 'SOIREE_BASE_URL' ) . "/index.php/login .</p>";
+		}
+		else {
+			$message .="<p>You have been checked in by ".$event_contact_name." for ".$event_name." event at ".$timeNdate.".</p>";
+		}
 		$message .="<p>Regards,<br>Outfit Admin</p>";	
 		
 		$this->mail_model->send($to_email,$subject,$message);
 		
 		// sms noitification
 		$event_name = urlencode($event_name);
-		$phone = $this->talent_model->phone_number($_POST['talent_id']);
-		$text = "You have been checked in by ".$event_contact_name." for ".$event_name." event at ".$timeNdate.".Please click here to confirm or amend time " . getenv( 'SOIREE_BASE_URL' ) . "/website/index.php/login .";
+		$phone = $this->talent_model->phone_number($_POST['talent_id']); 
+		if($_POST['agent_id'] == 0) {
+			$text = "You have been checked in by ".$event_contact_name." for ".$event_name." event at ".$timeNdate.".Please click here to confirm or amend time " . getenv( 'SOIREE_BASE_URL' ) . "/website/index.php/login .";
+		}
+		else {
+			$text = "You have been checked in by ".$event_contact_name." for ".$event_name." event at ".$timeNdate.".";
+		}
 		$text = urlencode($text);
 		$events_smsurl = $this->variableconfig_model->events_smsurl();
 		file_get_contents("".$events_smsurl."?number=".$phone."&event_name=".$event_name."&text=".$text);
