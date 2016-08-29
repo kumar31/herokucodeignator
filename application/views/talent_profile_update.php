@@ -56,9 +56,7 @@ include('talent_header.php'); ?>
 			  <?php if($talent_profile[0]['pic1'] != "") { ?>
 				  <img class="img-thumbnail pimg center-block" style="width: 150px; height: 150px;" src="<?php echo $talent_profile[0]['pic1']; ?>">
 				<br>
-			  <?php } ?>
-			<img hidden class="img-thumbnail pimg center-block" style="width: 150px; height: 150px;" src="<?php echo $talent_profile[0]['pic1']; ?>">
-				<br>			  
+			  <?php } ?>					  
            <input class="form-control my-form-control" type='file' id="upload1" />
 			<input type='hidden' id="img_url1" />
           </div>
@@ -606,7 +604,8 @@ include('talent_header.php'); ?>
 				   },
 					success: function(php_script_response){
 						//alert(php_script_response); // display response from the PHP script, if any
-				$('.pimg').attr('src', php_script_response);				
+				$('.pimg').attr('src', php_script_response);	
+				$('.pimg').show(); 				
 				$('#img_url1').val(php_script_response); 
 			 
 						}
@@ -636,8 +635,7 @@ include('talent_header.php'); ?>
 				   },
 					success: function(php_script_response){
 						//alert(php_script_response); // display response from the PHP script, if any
-				$('.pimg1').attr('src', php_script_response);
-				$('.pimg').show(); 
+				$('.pimg1').attr('src', php_script_response);				
 				$('#img_url2').val(php_script_response); 
 			 
 						}
