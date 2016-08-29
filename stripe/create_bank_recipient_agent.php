@@ -3,7 +3,7 @@ require(dirname(__FILE__) . '/lib/Stripe.php');
 //require 'lib/Stripe.php';
 require 'config.php';
 
-error_reporting(E_ALL);			 
+error_reporting(0);			 
  
   try{
 			 
