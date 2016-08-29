@@ -53,8 +53,10 @@ include('talent_header.php'); ?>
 		  <div class="prepend-top form-group">
 		  <label for="" class="required">Picture 1
               </label>
-		  <img class="img-thumbnail pimg center-block" style="width: 150px; height: 150px;" src="<?php echo $talent_profile[0]['pic1']; ?>">
+			  <?php if($talent_profile[0]['pic1'] != "") { ?>
+				  <img class="img-thumbnail pimg center-block" style="width: 150px; height: 150px;" src="<?php echo $talent_profile[0]['pic1']; ?>">
 				<br>
+			  <?php } ?>		  
            <input class="form-control my-form-control" type='file' id="upload1" />
 			<input type='hidden' id="img_url1" />
           </div>
