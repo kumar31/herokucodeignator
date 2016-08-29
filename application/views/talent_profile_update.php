@@ -64,8 +64,10 @@ include('talent_header.php'); ?>
 		  <div class="prepend-top form-group">
 		  <label for="" class="required">Picture 2
               </label>
+			  <?php if($talent_profile[0]['pic2'] != "") { ?>
 		  <img class="img-thumbnail pimg1 center-block" style="width: 150px; height: 150px;" src="<?php echo $talent_profile[0]['pic2']; ?>">
 			<br>
+			<?php } ?>
            <input class="form-control my-form-control" type='file' id="upload2" />
 			<input type='hidden' id="img_url2" />
           </div>
@@ -603,7 +605,7 @@ include('talent_header.php'); ?>
 					success: function(php_script_response){
 						//alert(php_script_response); // display response from the PHP script, if any
 				$('.pimg').attr('src', php_script_response);
-			 $('#img_url1').val(php_script_response); 
+				$('#img_url1').val(php_script_response); 
 			 
 						}
 		 });
@@ -633,7 +635,7 @@ include('talent_header.php'); ?>
 					success: function(php_script_response){
 						//alert(php_script_response); // display response from the PHP script, if any
 				$('.pimg1').attr('src', php_script_response);
-			 $('#img_url2').val(php_script_response); 
+				$('#img_url2').val(php_script_response); 
 			 
 						}
 		 });
