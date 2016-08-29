@@ -83,10 +83,10 @@ class admin_login extends REST_Controller {
 		else {
 			
 			if($_POST['username'] != ''){
-				$this->form_validation->set_message('emailcheck', 'Invalid username and password.');
+				$this->form_validation->set_message('emailcheck', 'Invalid username or password.');
 			}
 			if($_POST['password'] != ''){
-				$this->form_validation->set_message('emailcheck', 'Invalid username and password.');
+				$this->form_validation->set_message('emailcheck', 'Invalid username or password.');
 			}
 			return false;
 		}
