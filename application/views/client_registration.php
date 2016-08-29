@@ -424,27 +424,6 @@ include('reg_header.php'); ?>
 	});
 	
 	</script>
-	<script>
-	$(document).ready(function(){
-		var type = 1; 
-		var typeid = 1; 
-			
-			var url = '<?php echo $webserviceurl; ?>index.php/type';
-			
-			$.ajax({
-				'type' : 'POST',
-				'url': url,
-				'data': {'typeid':typeid,'type':type},
-				//'dataType': 'json',
-				success: function(data) {
-					var message = JSON.stringify(data['StatusCode']);
-					var message = message.replace(/\"/g, "");
-					//alert(JSON.stringify(data['Message']));
-					
-				}
-			
-			});
-	});
-	</script>
+	
 </body>
 </html>
