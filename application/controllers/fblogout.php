@@ -11,7 +11,7 @@ class fblogout extends CI_Controller
     }
     function index()
     {
-        error_reporting(0);
+        error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 		 session_start();
 		
          $this->load->library('facebook', array(

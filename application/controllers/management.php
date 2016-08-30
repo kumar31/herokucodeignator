@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 date_default_timezone_set("UTC");
 class management extends CI_Controller {
 
