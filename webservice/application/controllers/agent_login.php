@@ -95,15 +95,19 @@ class agent_login extends REST_Controller {
 	}
 	
 	function user() {
-		$password = $this->encrypt->encode($_POST['password']);
+		$password = $_POST['password'];
 		$this->db->select('*');		
 		$this->db->where('email',$_POST['email']);		
-		$this->db->where('password',$password);
+		//$this->db->where('password',$password);
 		$this->db->where('status',1);
 		$this->db->from('agent_details');
 		$query = $this->db->get();
-		$result = $query->result_array();
-		
+		$results = $query->result_array();
+		$db_password = $this->encrypt->decode($results[0]['password']);
+			if($db_password == $password) {
+				$result = $results; 
+			}
+			
 		return $result;
 	}
 	
