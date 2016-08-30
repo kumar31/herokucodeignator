@@ -7,12 +7,10 @@ include('talent_header.php'); ?>
  ?>
 <body>
   <?php 
-	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('talent_settings_menu_xs.php'); ?>
   <div class="container">
     <div class="row">
       <?php 
-	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('talent_settings_menu.php'); ?>
       <div class="col-sm-8 whiteBG invitebox topmargin30 profile">
         <div>
@@ -107,7 +105,8 @@ include('talent_header.php'); ?>
 						var message = JSON.stringify(data['StatusCode']);
 						var message = message.replace(/\"/g, "");
 						
-						if(message == "1") {								
+						if(message == "1") {		
+							$("#alertmsg").text("Password successfully updated.");
 							window.location.reload();
 						}
 						else {
