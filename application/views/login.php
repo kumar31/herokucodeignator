@@ -596,10 +596,11 @@ The right Outfit makes a party. <br><br>
 			});
 
 	}
-  </script>
-  <script>
-	  if (window.location.protocol != "https:")
-		window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+  <?php if ( getenv( 'SOIREE_REQUIRE_TLS' ) == 'true' ) : ?>
+    if ( window.location.protocol != 'https:' ) {
+      window.location.href = "https:" + window.location.href.substring( window.location.protocol.length );
+    }
+  <?php endif; ?>
   </script>
 </body>
 
