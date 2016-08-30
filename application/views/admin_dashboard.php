@@ -49,7 +49,7 @@ include('admin_header.php'); ?>
 							<td><?php echo $val['outfit_fee']; ?>%</td>
 							<td><?php echo $val['address']; ?></td>
 							<td>
-								<button class="btn btn-primary btn-sm" onclick="edit('<?php echo $val['agent_id']; ?>','<?php echo $val['name']; ?>','<?php echo $val['email']; ?>','<?php echo $val['percentage']; ?>','<?php echo $val['password']; ?>','<?php echo $val['agent_id']; ?>','<?php echo $val['address']; ?>','<?php echo $val['outfit_fee']; ?>')">Edit
+								<button class="btn btn-primary btn-sm" onclick="edit('<?php echo $val['agent_id']; ?>','<?php echo $val['name']; ?>','<?php echo $val['email']; ?>','<?php echo $val['percentage']; ?>','<?php echo $val['agent_id']; ?>','<?php echo $val['address']; ?>','<?php echo $val['outfit_fee']; ?>')">Edit
 								</button>
 								&nbsp;&nbsp;&nbsp;
 								<?php
@@ -145,13 +145,12 @@ include('admin_header.php'); ?>
 						  </div>
 						</div>
 						<script>
-						function edit(id,name,email,percentage,password,agentid,address,outfitfee) {
+						function edit(id,name,email,percentage,agentid,address,outfitfee) {
 							$('#name').val(name);
 							$('#email').val(email);
 							$('#per').val(percentage);
 							$('#address').val(address);
-							$('#outfitper').val(outfitfee);
-							$('#password').val(password);
+							$('#outfitper').val(outfitfee);							
 							$('#agentid').val(agentid);
 							$('#myModal').modal('show');
 						}
