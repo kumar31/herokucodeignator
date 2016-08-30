@@ -126,7 +126,11 @@ class login extends REST_Controller {
 			$this->db->where('password',$password);
 			$this->db->from('talent_details');
 			$query = $this->db->get();
-			$result = $query->result_array();
+			$results = $query->result_array();
+			$db_password = $this->encrypt->decode($results[0]['password']);
+			if($db_password == $password) {
+				$result = $results;
+			}
 		}
 		
 		return $result;
@@ -150,7 +154,7 @@ class login extends REST_Controller {
 	}
 	
 	function checkstatus(){
-		$password = $this->encrypt->decode($_POST['password']);
+		$password = $_POST['password'];
 		$validationandresult = new validationandresult();
 		if($_POST['type'] == 1) {
 			$this->db->select('*');		
@@ -159,7 +163,11 @@ class login extends REST_Controller {
 			$this->db->where('status',2);
 			$this->db->from('client_details');
 			$query = $this->db->get();
-			$result = $query->result_array();
+			$results = $query->result_array();
+			$db_password = $this->encrypt->decode($results[0]['password']);
+			if($db_password == $password) {
+				$result = $results;
+			}
 		}
 		if($_POST['type'] == 2) {
 			$this->db->select('*');		
@@ -168,7 +176,11 @@ class login extends REST_Controller {
 			$this->db->where('status',2);
 			$this->db->from('talent_details');
 			$query = $this->db->get();
-			$result = $query->result_array();
+			$results = $query->result_array();
+			$db_password = $this->encrypt->decode($results[0]['password']);
+			if($db_password == $password) {
+				$result = $results;
+			}
 		}
 		
 		if(!empty($result)){
