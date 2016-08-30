@@ -114,11 +114,11 @@ class login extends REST_Controller {
 			//$this->db->where('password',$password);
 			$this->db->from('client_details');
 			$query = $this->db->get();
-			$result = $query->result_array();
-			echo $db_password = $this->encrypt->decode($result[0]['password']);
+			$results = $query->result_array();
+			$db_password = $this->encrypt->decode($results[0]['password']);
 			if($db_password == $password) {
-				echo "hello";
-			}
+				$result = $results;
+			} 
 		}
 		if($_POST['type'] == 2) {
 			$this->db->select('*');		
