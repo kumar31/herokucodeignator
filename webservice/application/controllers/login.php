@@ -123,7 +123,7 @@ class login extends REST_Controller {
 		if($_POST['type'] == 2) {
 			$this->db->select('*');		
 			$this->db->where('email',$_POST['email']);		
-			$this->db->where('password',$password);
+			//$this->db->where('password',$password);
 			$this->db->from('talent_details');
 			$query = $this->db->get();
 			$results = $query->result_array();
@@ -159,7 +159,7 @@ class login extends REST_Controller {
 		if($_POST['type'] == 1) {
 			$this->db->select('*');		
 			$this->db->where('email',$_POST['email']);		
-			$this->db->where('password',$password);
+			//$this->db->where('password',$password);
 			$this->db->where('status',2);
 			$this->db->from('client_details');
 			$query = $this->db->get();
@@ -172,7 +172,7 @@ class login extends REST_Controller {
 		if($_POST['type'] == 2) {
 			$this->db->select('*');		
 			$this->db->where('email',$_POST['email']);		 
-			$this->db->where('password',$password);
+			//$this->db->where('password',$password);
 			$this->db->where('status',2);
 			$this->db->from('talent_details');
 			$query = $this->db->get();
