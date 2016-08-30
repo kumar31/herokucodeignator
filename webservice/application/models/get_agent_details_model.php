@@ -56,7 +56,18 @@ class get_agent_details_model extends CI_Model {
 	}
 	
 	function update(){
-		$password = $this->encrypt->encode($_POST['password']);
+		if($_POST['password'] == "") {
+			$this->db->select('*');		
+			$this->db->where('agent_id',$_POST['agent_id']);
+			$this->db->from('agent_details');
+			$query = $this->db->get();
+			$result = $query->result_array(); 
+			$password = $result[0]['password'];
+		}
+		else{ 
+			$password = $this->encrypt->encode($_POST['password']);
+		}
+		
 		$data = array(
 		'name'      => $_POST['name'],
 		'email'		=> $_POST['email'],
