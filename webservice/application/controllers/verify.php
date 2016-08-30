@@ -7,7 +7,7 @@
 */
 
 //error_reporting(E_PARSE);
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 class verify extends CI_Controller {
 	
 	public function __construct()
