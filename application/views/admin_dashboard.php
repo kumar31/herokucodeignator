@@ -1,7 +1,7 @@
 <?php 
+$this->load->library('encrypt');
 error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
-include('admin_header.php');
-$this->load->library('encrypt'); ?>
+include('admin_header.php'); ?>
 <?php $adminid = $myuser_id;  ?>
 <style>
 	table th {
