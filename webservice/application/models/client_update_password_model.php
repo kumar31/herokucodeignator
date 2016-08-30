@@ -5,15 +5,16 @@ class client_update_password_model extends CI_Model {
 	{
 		parent::__construct();
 		$this->load->model('client_model');
+		$this->load->library('encrypt');
 	}
 	
 	
 	
 	function index()
 	{
-			
+		$password = $this->encrypt->decode($_POST['new_password']);
 		$data = array(
-			'password' 			=> $_POST['new_password']
+			'password' 			=> $password
 		);
 		
 		$this->db->where('client_id',$_POST['client_id']);

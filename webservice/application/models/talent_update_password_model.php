@@ -5,15 +5,16 @@ class talent_update_password_model extends CI_Model {
 	{
 		parent::__construct();
 		$this->load->model('talent_model');
+		$this->load->library('encrypt');
 	}
 	
 	
 	
 	function index()
 	{
-			
+		$password = $this->encrypt->decode($_POST['new_password']);	
 		$data = array(
-			'password' 			=> $_POST['new_password']
+			'password' 			=> $password
 		);
 		
 		$this->db->where('talent_id',$_POST['talent_id']);

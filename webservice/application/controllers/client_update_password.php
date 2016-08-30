@@ -22,6 +22,7 @@ class client_update_password extends REST_Controller {
 		$this->load->library('form_validation');
 		$this->load->model('client_update_password_model');
 		$this->form_validation->set_error_delimiters('', '');
+		$this->load->library('encrypt');
 	}
 	
 	
@@ -78,10 +79,10 @@ class client_update_password extends REST_Controller {
 	}
 	
 	function passcheck(){
-		
+		$password = $this->encrypt->decode($_POST['current_password']);
 		$this->db->select('*');		
 		$this->db->where('client_id',$_POST['client_id']);
-		$this->db->where('password',$_POST['current_password']);
+		$this->db->where('password',$password);
 		$this->db->from('client_details');
 		$query = $this->db->get();
 		$result = $query->result_array(); 
