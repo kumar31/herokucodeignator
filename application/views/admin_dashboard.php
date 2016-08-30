@@ -49,9 +49,7 @@ include('admin_header.php'); ?>
 							<td><?php echo $val['outfit_fee']; ?>%</td>
 							<td><?php echo $val['address']; ?></td>
 							<td>
-							<?php  $this->load->library('encrypt');
-									$epass = this->encrypt->decode($val['password']); ?>
-								<button class="btn btn-primary btn-sm" onclick="edit('<?php echo $val['agent_id']; ?>','<?php echo $val['name']; ?>','<?php echo $val['email']; ?>','<?php echo $val['percentage']; ?>','<?php echo $epass; ?>','<?php echo $val['agent_id']; ?>','<?php echo $val['address']; ?>','<?php echo $val['outfit_fee']; ?>')">Edit
+								<button class="btn btn-primary btn-sm" onclick="edit('<?php echo $val['agent_id']; ?>','<?php echo $val['name']; ?>','<?php echo $val['email']; ?>','<?php echo $val['percentage']; ?>','<?php echo $val['password']; ?>','<?php echo $val['agent_id']; ?>','<?php echo $val['address']; ?>','<?php echo $val['outfit_fee']; ?>')">Edit
 								</button>
 								&nbsp;&nbsp;&nbsp;
 								<?php
@@ -110,7 +108,7 @@ include('admin_header.php'); ?>
 								  <div class="form-group">
 									<label class="control-label col-sm-2" for="password">Password</label>
 									<div class="col-sm-10"> 
-									  <input type="password" class="form-control" id="password" placeholder="Enter password">
+									  <input type="password" class="form-control" id="password" value="" placeholder="Enter password">
 									  <br>
 									</div>
 								  </div>
