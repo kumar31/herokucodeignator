@@ -12,7 +12,7 @@ class talent_update_password_model extends CI_Model {
 	
 	function index()
 	{
-		$password = $this->encrypt->decode($_POST['new_password']);	
+		$password = $this->encrypt->encode($_POST['new_password']);	
 		$data = array(
 			'password' 			=> $password
 		);
