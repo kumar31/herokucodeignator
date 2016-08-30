@@ -21,6 +21,7 @@ class login extends REST_Controller {
 		$this->load->library('form_validation');
 		//$this->load->model('getprofile_model');
 		$this->form_validation->set_error_delimiters('', '');
+		$this->load->library('encrypt');
 	}
 	
 	
@@ -106,11 +107,11 @@ class login extends REST_Controller {
 	}
 	
 	function user() {
-		
+		$password = $this->encrypt->decode($_POST['password']);
 		if($_POST['type'] == 1) {
 			$this->db->select('*');		
 			$this->db->where('email',$_POST['email']);		
-			$this->db->where('password',$_POST['password']);
+			$this->db->where('password',$password);
 			$this->db->from('client_details');
 			$query = $this->db->get();
 			$result = $query->result_array();
@@ -118,7 +119,7 @@ class login extends REST_Controller {
 		if($_POST['type'] == 2) {
 			$this->db->select('*');		
 			$this->db->where('email',$_POST['email']);		
-			$this->db->where('password',$_POST['password']);
+			$this->db->where('password',$password);
 			$this->db->from('talent_details');
 			$query = $this->db->get();
 			$result = $query->result_array();
@@ -145,11 +146,12 @@ class login extends REST_Controller {
 	}
 	
 	function checkstatus(){
+		$password = $this->encrypt->decode($_POST['password']);
 		$validationandresult = new validationandresult();
 		if($_POST['type'] == 1) {
 			$this->db->select('*');		
 			$this->db->where('email',$_POST['email']);		
-			$this->db->where('password',$_POST['password']);
+			$this->db->where('password',$password);
 			$this->db->where('status',2);
 			$this->db->from('client_details');
 			$query = $this->db->get();
@@ -158,7 +160,7 @@ class login extends REST_Controller {
 		if($_POST['type'] == 2) {
 			$this->db->select('*');		
 			$this->db->where('email',$_POST['email']);		 
-			$this->db->where('password',$_POST['password']);
+			$this->db->where('password',$password);
 			$this->db->where('status',2);
 			$this->db->from('talent_details');
 			$query = $this->db->get();
