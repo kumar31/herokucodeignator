@@ -23,9 +23,7 @@ include('admin_header.php'); ?>
 					$this->db->from('agent_details');
 					$query = $this->db->get();
 					$result = $query->result_array();
-					foreach($result as $vals) {
-						echo $this->encrypt->decode($vals['password']);
-					}
+					
 					?>				
 				<table id="example" class="table table-striped table-bordered text-center" cellspacing="0" width="100%">
 					<thead>
