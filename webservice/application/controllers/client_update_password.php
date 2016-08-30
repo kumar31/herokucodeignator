@@ -79,13 +79,17 @@ class client_update_password extends REST_Controller {
 	}
 	
 	function passcheck(){
-		$password = $this->encrypt->encode($_POST['current_password']);
+		$password = $_POST['current_password'];
 		$this->db->select('*');		
 		$this->db->where('client_id',$_POST['client_id']);
 		$this->db->where('password',$password);
 		$this->db->from('client_details');
 		$query = $this->db->get();
-		$result = $query->result_array(); 
+		$results = $query->result_array(); 
+		$db_password = $this->encrypt->decode($results[0]['password']);
+			if($db_password == $password) {
+				$result = $results;
+			}
 		
 		if(!empty($result)){
 			return true;		
