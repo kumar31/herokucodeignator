@@ -79,7 +79,7 @@ class talent_update_password extends REST_Controller {
 	}
 	
 	function passcheck(){
-		$password = $this->encrypt->decode($_POST['current_password']);
+		$password = $this->encrypt->encode($_POST['current_password']);
 		$this->db->select('*');		
 		$this->db->where('talent_id',$_POST['talent_id']);
 		$this->db->where('password',$password);

@@ -95,7 +95,7 @@ class agent_login extends REST_Controller {
 	}
 	
 	function user() {
-		$password = $this->encrypt->decode($_POST['password']);
+		$password = $this->encrypt->encode($_POST['password']);
 		$this->db->select('*');		
 		$this->db->where('email',$_POST['email']);		
 		$this->db->where('password',$password);

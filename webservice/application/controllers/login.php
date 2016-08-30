@@ -107,7 +107,7 @@ class login extends REST_Controller {
 	}
 	
 	function user() {
-		$password = $this->encrypt->decode($_POST['password']);
+		$password = $this->encrypt->encode($_POST['password']);
 		if($_POST['type'] == 1) {
 			$this->db->select('*');		
 			$this->db->where('email',$_POST['email']);		
@@ -146,7 +146,7 @@ class login extends REST_Controller {
 	}
 	
 	function checkstatus(){
-		$password = $this->encrypt->decode($_POST['password']);
+		$password = $this->encrypt->encode($_POST['password']);
 		$validationandresult = new validationandresult();
 		if($_POST['type'] == 1) {
 			$this->db->select('*');		
