@@ -49,7 +49,6 @@ include('admin_header.php'); ?>
 							<td><?php echo $val['outfit_fee']; ?>%</td>
 							<td><?php echo $val['address']; ?></td>
 							<td>
-							<?php $epassword = $val['password']; ?>
 								<button class="btn btn-primary btn-sm" onclick="edit('<?php echo $val['agent_id']; ?>','<?php echo $val['name']; ?>','<?php echo $val['email']; ?>','<?php echo $val['percentage']; ?>','<?php echo $val['password']; ?>','<?php echo $val['agent_id']; ?>','<?php echo $val['address']; ?>','<?php echo $val['outfit_fee']; ?>')">Edit
 								</button>
 								&nbsp;&nbsp;&nbsp;
