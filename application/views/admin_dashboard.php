@@ -1,6 +1,7 @@
 <?php 
 error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
-include('admin_header.php'); ?>
+include('admin_header.php');
+$this->load->library('encrypt'); ?>
 <?php $adminid = $myuser_id;  ?>
 <style>
 	table th {
@@ -49,7 +50,7 @@ include('admin_header.php'); ?>
 							<td><?php echo $val['outfit_fee']; ?>%</td>
 							<td><?php echo $val['address']; ?></td>
 							<td>
-								<button class="btn btn-primary btn-sm" onclick="edit('<?php echo $val['agent_id']; ?>','<?php echo $val['name']; ?>','<?php echo $val['email']; ?>','<?php echo $val['percentage']; ?>','<?php echo $val['password']; ?>','<?php echo $val['agent_id']; ?>','<?php echo $val['address']; ?>','<?php echo $val['outfit_fee']; ?>')">Edit
+								<button class="btn btn-primary btn-sm" onclick="edit('<?php echo $val['agent_id']; ?>','<?php echo $val['name']; ?>','<?php echo $val['email']; ?>','<?php echo $val['percentage']; ?>','<?php echo $this->encrypt->decode($val['password']); ?>','<?php echo $val['agent_id']; ?>','<?php echo $val['address']; ?>','<?php echo $val['outfit_fee']; ?>')">Edit
 								</button>
 								&nbsp;&nbsp;&nbsp;
 								<?php
