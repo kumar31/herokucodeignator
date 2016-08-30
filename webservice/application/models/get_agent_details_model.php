@@ -56,11 +56,11 @@ class get_agent_details_model extends CI_Model {
 	}
 	
 	function update(){
-		
+		$password = $this->encrypt->encode($_POST['password']);
 		$data = array(
 		'name'      => $_POST['name'],
 		'email'		=> $_POST['email'],
-		'password' 	=> $_POST['password'],
+		'password' 	=> $password,
 		'percentage'=> $_POST['percentage'],
 		'address'	=> $_POST['address'],
 		'outfit_fee'=> $_POST['outfit_fee']
