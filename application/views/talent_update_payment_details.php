@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('talent_header.php'); ?>
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();
@@ -7,12 +7,12 @@ include('talent_header.php'); ?>
  ?>
 <body>
   <?php 
-	error_reporting(0);
+	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('talent_settings_menu_xs.php'); ?>
   <div class="container">
     <div class="row">
       <?php 
-		error_reporting(0);
+		error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 		include('talent_settings_menu.php'); ?>
       <div class="col-sm-8 whiteBG invitebox topmargin30 profile">
 	  <h1>Payment</h1>
@@ -69,7 +69,7 @@ include('talent_header.php'); ?>
     </div>
   </div>
   <?php 
-	error_reporting(0);
+	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('client_footer.php'); ?>
 	<script>
 		

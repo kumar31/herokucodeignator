@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('client_header.php'); ?>
   <body>
     <div class="orangehead">
@@ -61,7 +61,7 @@ include('client_header.php'); ?>
       </div>
     </div>
     <?php 
-	error_reporting(0);
+	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('client_footer.php'); ?>
   </body>
 </html>

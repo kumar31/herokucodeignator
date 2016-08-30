@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('talent_header.php'); ?>
   <body>
     <div class="orangehead">
@@ -59,7 +59,7 @@ include('talent_header.php'); ?>
       </div>
     </div>
     <?php 
-	error_reporting(0);
+	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('talent_footer.php'); ?>
   </body>
 </html>

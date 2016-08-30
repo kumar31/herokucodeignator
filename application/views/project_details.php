@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('client_header.php'); ?>
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();
@@ -268,13 +268,13 @@ include('client_header.php'); ?>
       </div>-->
 	  
 	  <?php 
-		/*error_reporting(0);
+		/*error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 		include('event_booking_info.php');*/ ?>
 		
     </div>
   </div>
   <?php 
-	error_reporting(0);
+	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('client_footer.php'); ?>
 	
 	<script>

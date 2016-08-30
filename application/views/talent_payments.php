@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('talent_header.php'); ?>
 <link href="<?php echo base_url(); ?>css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 <style>
@@ -174,7 +174,7 @@ include('talent_header.php'); ?>
   </div>
   <!-- Footer Start -->
   <?php 
-	error_reporting(0);
+	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('talent_footer.php'); ?>
 	
 	<script src="<?php echo base_url(); ?>js/moment.js"></script>

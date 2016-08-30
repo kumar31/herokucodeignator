@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('client_header.php'); ?>
 <?php 
 
@@ -119,7 +119,7 @@ $(document).ready(function() {
 	
   </div>
   <?php 
-	error_reporting(0);
+	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('client_footer.php'); ?>
 </body>
 </html>

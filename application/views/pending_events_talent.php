@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('talent_header.php'); ?>
 <?php 
 $talent_id = $this->session->userdata('talent_id');
@@ -178,7 +178,7 @@ $(document).ready(function() {
     </div>
   </div>
   <?php 
-	error_reporting(0);
+	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('talent_footer.php'); ?>
 </body>
 </html>

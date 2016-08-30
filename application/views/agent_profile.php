@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('agent_header.php'); ?>
 <?php $agentid = $this->uri->segment(2);  ?>
 <?php require APPPATH.'/libraries/variableconfig.php';

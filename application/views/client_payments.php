@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('client_header.php'); ?>
 <style>
 .table tr td {
@@ -185,7 +185,7 @@ include('client_header.php'); ?>
   </div>
   <!-- Footer Start -->
   <?php 
-	error_reporting(0);
+	error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 	include('client_footer.php'); ?>
 	
 	<script src="<?php echo base_url(); ?>js/moment.js"></script>

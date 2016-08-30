@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('client_header.php'); ?>
 <?php require APPPATH.'/libraries/variableconfig.php';
 		$variableconfig = new variableconfig();

@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('admin_header.php'); ?>
 <?php $adminid = $this->uri->segment(2);  ?>
 <style>

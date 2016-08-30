@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('reg_header.php'); ?>
   <body style="padding-bottom: 0px; background: #FFFFFF;">
     

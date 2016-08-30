@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 include('client_header.php'); ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
 	 <body style="padding-bottom: 0px; background: #FFFFFF;">
