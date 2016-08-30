@@ -10,7 +10,7 @@ public function __construct()
 			$this->load->helper('form');
 			$this->load->helper('cookie');
 			$this->load->library('form_validation');
-			
+			$this->load->library('encrypt');
 	
 	}
 	public function index()
