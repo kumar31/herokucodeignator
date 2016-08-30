@@ -82,7 +82,7 @@ class client_update_password extends REST_Controller {
 		$password = $_POST['current_password'];
 		$this->db->select('*');		
 		$this->db->where('client_id',$_POST['client_id']);
-		$this->db->where('password',$password);
+		//$this->db->where('password',$password);
 		$this->db->from('client_details');
 		$query = $this->db->get();
 		$results = $query->result_array(); 
