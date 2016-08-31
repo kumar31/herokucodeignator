@@ -49,9 +49,13 @@ foreach($events as $key=>$val)
 					
 					<form role="form" method="POST" action="<?php echo base_url();?>index.php/invite_talent_search">
                       <p class="centerText">
+					  <?php if($stripe_id != "") { ?>
 					  <input name="event_id" id="event_id" type="hidden" value="<?php echo $val['event_id']; ?>">
                         <a href="<?php echo base_url();?>index.php/invite_talent_search/<?php echo $val['event_id']; ?>" class="btn btn-submit btn-lg largeHeight" type="button">Invite Talent</a>
-                      </p>	
+						<?php } else { ?>
+								  <a href="" data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-lg largeHeight" type="button">Invite Talent</a>
+							  <?php } ?>
+					  </p>	
 					</form>
 					
                     </div>
@@ -68,7 +72,7 @@ foreach($events as $key=>$val)
 				  <div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Add card details to pay advance</h4>
+					  <h4 class="modal-title">Add card details to invite talent</h4>
 					</div>
 					<div class="modal-body">
 					<!--<div class="form-group">
@@ -77,7 +81,7 @@ foreach($events as $key=>$val)
 					</div>-->
 									  
 						<a class=
-					   "btn btn-danger btn-lg largeHeight once-only btn_rejects" href="<?php echo base_url();?>index.php/client_update_payment_details/1"
+					   "btn btn-danger btn-lg largeHeight" href="<?php echo base_url();?>index.php/client_update_payment_details/1"
 					   role="button" id="">Add now
 					 </a>	
 					</div>

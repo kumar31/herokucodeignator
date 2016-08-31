@@ -139,15 +139,29 @@ foreach($blogs as $key=>$val)
                 <div class="col-xs-12 col-sm-3"> 
 					<?php 
 						$launch_status = $event_detail[0]['launch_status'];
+						
+						$this->db->select('*');			
+						$this->db->where('client_id',$myuser_id);					
+						$this->db->from('client_details');
+						$query = $this->db->get();			
+						$results = $query->result_array(); 
+						
+						$stripe_id = $results[0]['stripe_id'];						
 						if($launch_status == 0) {
 					  ?>
                    <div class="checkbox checkbox-warning"> 
 				   <input type="hidden" value="<?php echo $talent['talent_id']; ?>" id="apply<?php echo $talent['talent_id']; ?>">
-				   
+						<?php if($stripe_id != "") { ?>
                         <a class=
                            "btn btn-submit btn-lg largeHeight once-only btn_confirms" value="<?php echo $talent['talent_id']; ?>"
                            role="button" id="btn1" textbox_id="#apply<?php echo $talent['talent_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hire&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						 </a>
+						<?php } else { ?>
+							<a class=
+							   "btn btn-submit btn-lg largeHeight" value="" data-toggle="modal" data-target="#myModalcard"
+							   role="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hire&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 </a>
+						<?php } ?>
 						<a role="button" class="btn btn-danger btn-lg largeHeight" data-toggle="modal" data-target="#myModal">&nbsp;&nbsp;&nbsp;&nbsp;Reject&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     </div>
 					<?php } ?>
@@ -192,6 +206,35 @@ foreach($blogs as $key=>$val)
 						<a class=
 					   "btn btn-danger btn-lg largeHeight once-only btn_rejects" value="<?php echo $talent['talent_id']; ?>"
 					   role="button" id="btn2" textbox_id2="#reject<?php echo $talent['talent_id']; ?>">Reject
+					 </a>	
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+				  
+				</div>
+			  </div>
+			  
+			  <!-- Modal card -->
+			  <div class="modal fade" id="myModalcard" role="dialog">
+				<div class="modal-dialog">
+				
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">Add card details to hire talent</h4>
+					</div>
+					<div class="modal-body">
+					<!--<div class="form-group">
+					  <label for="rejectreason">Reject Reason</label>
+					  <input type="text" class="form-control" id="rejectreason">
+					</div>-->
+									  
+						<a class=
+					   "btn btn-danger btn-lg largeHeight" href="<?php echo base_url();?>index.php/client_update_payment_details/1"
+					   role="button" id="">Add now
 					 </a>	
 					</div>
 					<div class="modal-footer">

@@ -32,12 +32,12 @@ if (defined('ENVIRONMENT'))
 	switch (ENVIRONMENT)
 	{
 		case 'development':
-			error_reporting(E_ALL);
+			error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 		break;
 	
 		case 'testing':
 		case 'production':
-			error_reporting(0);
+			error_reporting(getenv( 'SOIREE_ERROR_REPORTING' ));
 		break;
 
 		default:
