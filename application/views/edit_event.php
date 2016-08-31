@@ -170,19 +170,23 @@ include('client_header.php'); ?>
             </label>
             <select class="col-xs-12 form-control form-group" name="" id="guestnum">
               
-              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "More than 200") echo 'selected="selected"';?>>More than 200
-              </option>
-              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "150- 200") echo 'selected="selected"';?>>150- 200
-              </option>
-              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "100-150") echo 'selected="selected"';?>>100-150
-              </option>
-              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "50-100") echo 'selected="selected"';?>>50-100
-              </option>
-              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "25 - 50") echo 'selected="selected"';?>>25 - 50
+              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "Less than 10") echo 'selected="selected"';?>>Less than 10
               </option>
               <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "10 - 25") echo 'selected="selected"';?>>10 - 25
               </option>
-              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "Less than 10") echo 'selected="selected"';?>>Less than 10
+              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "25 - 50") echo 'selected="selected"';?>>25 - 50
+              </option>
+              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "50-100") echo 'selected="selected"';?>>50-100
+              </option>
+              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "100-150") echo 'selected="selected"';?>>100-150
+              </option>
+              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "100- 200") echo 'selected="selected"';?>>100- 200
+              </option>
+              <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "200- 500") echo 'selected="selected"';?>>200- 500
+              </option>
+			  <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "500- 1000") echo 'selected="selected"';?>>500- 1000
+              </option>
+			  <option value="" <?php if(isset($event_detail[0]['number_of_guests']) && $event_detail[0]['number_of_guests'] == "More than 1000") echo 'selected="selected"';?>>More than 1000
               </option>
             </select>
           </div>
@@ -199,19 +203,13 @@ include('client_header.php'); ?>
           <div class="form-group prepend-top">
             <label class="" for="">Approximate number of talent needed <span data-placement="right" data-toggle="tooltip" title="Each talent is $30/hour including all taxes and fees." class="glyphicon glyphicon-question-sign"></span>
             </label>
-            <select class="col-xs-12 form-control form-group" name="" id="waitersnum" >
-              <option value="" <?php if(isset($event_detail[0]['number_of_waiters']) && $event_detail[0]['number_of_waiters'] == "Greater than 50") echo 'selected="selected"';?>>Greater than 50
-              </option>
-              <option value="" <?php if(isset($event_detail[0]['number_of_waiters']) && $event_detail[0]['number_of_waiters'] == "40 - 50") echo 'selected="selected"';?>>40 - 50
-              </option>
-              <option value="" <?php if(isset($event_detail[0]['number_of_waiters']) && $event_detail[0]['number_of_waiters'] == "30 - 40") echo 'selected="selected"';?>>30 - 40
-              </option>
-              <option value="" <?php if(isset($event_detail[0]['number_of_waiters']) && $event_detail[0]['number_of_waiters'] == "10 - 20") echo 'selected="selected"';?>>10 - 20
-              </option>
-              <option value="" <?php if(isset($event_detail[0]['number_of_waiters']) && $event_detail[0]['number_of_waiters'] == "6 - 10") echo 'selected="selected"';?>>6 - 10
-              </option>
-              <option value="" <?php if(isset($event_detail[0]['number_of_waiters']) && $event_detail[0]['number_of_waiters'] == "1-5") echo 'selected="selected"';?>>1-5
-              </option>
+            <select class="col-xs-12 form-control form-group" name="" id="waitersnum">
+			<?php $range = range(1,30); 
+			
+			foreach($range as $val){  ?> 
+				<option value="" <?php if(isset($event_detail[0]['number_of_waiters']) && ($event_detail[0]['number_of_waiters'] == $val)) echo 'selected="selected"';?>><?php echo $val; ?></option>
+			<?php   } ?>
+              
             </select>
           </div>
 		  
