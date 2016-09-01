@@ -50,7 +50,7 @@ class client_profile_update extends REST_Controller {
 						$this->form_validation->set_rules('client_id', 'client_id', 'trim|required');
 						$this->form_validation->set_rules('first_name', 'first name', 'trim|required');
 						$this->form_validation->set_rules('last_name', 'last name', 'trim|required');
-						$this->form_validation->set_rules('phone_number', 'phone number', 'trim|required');
+						//$this->form_validation->set_rules('phone_number', 'phone number', 'trim|required');
 						//$this->form_validation->set_rules('gender', 'gender', 'trim|required');
 						$this->form_validation->set_rules('latitude', 'latitude', 'trim|required');
 						$this->form_validation->set_rules('longitude', 'longitude', 'trim|required');
