@@ -72,11 +72,11 @@ class mail_model extends CI_Model {
     	                                 // 2 = messages only
     	$mail->SMTPAuth   = true;        // enable SMTP authentication
     	$mail->Host       = "email-smtp.us-west-2.amazonaws.com"; // sets the SMTP server
-    	$mail->Port       = 25;                    // set the SMTP port for the GMAIL server
+    	$mail->Port       = 465;                    // set the SMTP port for the GMAIL server
     	$mail->Username   = "AKIAIDMG4EYENA45AOSA"; // SMTP account username
     	$mail->Password   = "AsoEpcfn8qAe2tXObKEa53FQg7lb3VmfkJwbycV0EDVC";        // SMTP account password
     	$mail->SetFrom('info@dogytales.com', 'outfitstaff');
-    	$mail->AddReplyTo("info@dogytales.com","outfitstaff");
+    	$mail->AddReplyTo("kumarappan.ssb@gmail.com","outfitstaff");
     	$mail->Subject    = $subject;
     	$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
     	$mail->MsgHTML($body);
