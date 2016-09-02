@@ -23,7 +23,7 @@ $mail->MsgHTML($body);
 //
 
 //recipient
-$mail->AddAddress("rajesh89r@gmail.com", "Test Recipient"); 
+$mail->AddAddress("kumarappan.ssb@gmail.com", "Test Recipient"); 
 
 //Success
 if ($mail->Send()) { 
