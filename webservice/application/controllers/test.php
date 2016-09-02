@@ -18,6 +18,7 @@ class test extends REST_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->model('mail_model');
 	}
 	
 	
@@ -29,6 +30,13 @@ class test extends REST_Controller {
 		$query = $this->db->query("call client_email( ".$_POST['user_id']." )");
 		$result = $query->result_array();
 		print_r($result); die;
+		
+		
+	}
+	public function email_post()
+	{
+		$this->mail_model->email_test();
+		
 		
 		
 	}

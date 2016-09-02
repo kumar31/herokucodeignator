@@ -58,5 +58,39 @@ class mail_model extends CI_Model {
     	}*/
 	}
 	
+	function email_test(){
+		$to_email = "kumarappan.ssb@gmail.com";
+		$subject = "hi"; 
+		$message = "hru";
+		$mail             = new PHPMailer();
+    	$body             = $message;
+    	$body             = eregi_replace("[\]",'',$body);
+    	$mail->IsSMTP(); // telling the class to use SMTP
+    	$mail->Host       = "email-smtp.us-west-2.amazonaws.com"; // SMTP server
+    	$mail->SMTPDebug  = 2;           // enables SMTP debug information (for testing)
+    	                                 // 1 = errors and messages
+    	                                 // 2 = messages only
+    	$mail->SMTPAuth   = true;        // enable SMTP authentication
+    	$mail->Host       = "email-smtp.us-west-2.amazonaws.com"; // sets the SMTP server
+    	$mail->Port       = 25;                    // set the SMTP port for the GMAIL server
+    	$mail->Username   = "AKIAIDMG4EYENA45AOSA"; // SMTP account username
+    	$mail->Password   = "AsoEpcfn8qAe2tXObKEa53FQg7lb3VmfkJwbycV0EDVC";        // SMTP account password
+    	$mail->SetFrom('info@dogytales.com', 'outfitstaff');
+    	$mail->AddReplyTo("info@dogytales.com","outfitstaff");
+    	$mail->Subject    = $subject;
+    	$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+    	$mail->MsgHTML($body);
+    	$address = $to_email;
+    	$mail->AddAddress($address, "outfitstaff");
+    	//$mail->AddAttachment("images/phpmailer.gif");      // attachment
+    	//$mail->AddAttachment("images/phpmailer_mini.gif"); // attachment
+    	$mail->Send();
+    	/*if(!$mail->Send()) {
+    	echo "Mailer Error: " . $mail->ErrorInfo;
+    	} else {
+    	echo "Message sent!";
+    	}*/
+	}
+	
 }
 	
