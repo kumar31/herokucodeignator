@@ -9,11 +9,11 @@ $mail->IsSMTP();
 $mail->SMTPAuth   = true; 
 $mail->SMTPSecure = "tls"; 
 $mail->Host       = "email-smtp.us-west-2.amazonaws.com";
-$mail->Username   = "AKIAIDMG4EYENA45AOSA";
-$mail->Password   = "AsoEpcfn8qAe2tXObKEa53FQg7lb3VmfkJwbycV0EDVC";
+$mail->Username   = "AKIAJ2OC3OC7XWIUQ4IQ";
+$mail->Password   = "Ao9duOh7Y9c8hL83gshFgnmfzdTWIdpgZvg9+oNIuFzE";
 //
 
-$mail->SetFrom('info@dogytales.com', 'Sender Name'); //from (verified email address)
+$mail->SetFrom('support@gobaseapp.com', 'Sender Name'); //from (verified email address)
 $mail->Subject = "Email Subject"; //subject
 
 //message
@@ -23,7 +23,7 @@ $mail->MsgHTML($body);
 //
 
 //recipient
-$mail->AddAddress("kumarappan.ssb@gmail.com", "Test Recipient"); 
+$mail->AddAddress("rajesh89r@gmail.com", "Test Recipient"); 
 
 //Success
 if ($mail->Send()) { 
