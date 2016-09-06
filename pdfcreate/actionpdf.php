@@ -33,7 +33,6 @@ $pdf->AliasNbPages();
 $pdf->SetAutoPageBreak(true, 15);
 
 $pdf->AddPage();
-$pdf->Image('logo.png',18,13,33);
 $pdf->SetFont('Arial','B',14);
 $pdf->WriteHTML('<para><h1>PHPGang Programming Blog, Tutorials, jQuery, Ajax, PHP, MySQL and Demos</h1><br>
 Website: <u>www.phpgang.com</u></para><br><br>How to Convert HTML to PDF with fpdf example');
