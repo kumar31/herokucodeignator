@@ -34,10 +34,7 @@ $pdf->SetAutoPageBreak(true, 15);
 
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',14);
-$pdf->WriteHTML();
-
-$pdf->SetFont('Arial','B',7); 
-$htmlTable='<table cellspacing="0" cellpadding="0" style="width: 100%; left:0;">
+$pdf->WriteHTML('<table cellspacing="0" cellpadding="0" style="width: 100%; left:0;">
         <tr style="">
             <td style="text-indent: 10mm; width: 45%">
                 
@@ -165,7 +162,10 @@ $htmlTable='<table cellspacing="0" cellpadding="0" style="width: 100%; left:0;">
 		</tr>
 	</table>
 	<br>
-	<br>';
+	<br>');
+
+$pdf->SetFont('Arial','B',7); 
+$htmlTable='';
 $pdf->WriteHTML2("<br><br><br>$htmlTable");
 $pdf->SetFont('Arial','B',6);
 $pdf->Output(); 
