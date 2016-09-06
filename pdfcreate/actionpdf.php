@@ -34,8 +34,7 @@ $pdf->SetAutoPageBreak(true, 15);
 
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',14);
-$pdf->WriteHTML('<para><h1>PHPGang Programming Blog, Tutorials, jQuery, Ajax, PHP, MySQL and Demos</h1><br>
-Website: <u>www.phpgang.com</u></para><br><br>How to Convert HTML to PDF with fpdf example');
+$pdf->WriteHTML();
 
 $pdf->SetFont('Arial','B',7); 
 $htmlTable='<table cellspacing="0" cellpadding="0" style="width: 100%; left:0;">
