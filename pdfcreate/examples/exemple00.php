@@ -15,7 +15,7 @@
 
     // get the HTML
     ob_start();
-    include(dirname(__FILE__).'/res/exemple00.php'); echo "hi";
+    include('res/exemple00.php'); echo "hi";
     $content = ob_get_clean();
 
     // convert in PDF
