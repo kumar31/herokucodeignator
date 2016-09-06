@@ -166,7 +166,7 @@ $htmlTable='<table cellspacing="0" cellpadding="0" style="width: 100%; left:0;">
 	</table>
 	<br>
 	<br>';
-$pdf->WriteHTML2("<br><br><br>$htmlTable");
+$pdf->WriteHTML2($htmlTable);
 $pdf->SetFont('Arial','B',6);
 $pdf->Output(); 
 ?>
