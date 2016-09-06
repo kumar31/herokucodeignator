@@ -39,9 +39,7 @@ $pdf->WriteHTML('<para><h1>PHPGang Programming Blog, Tutorials, jQuery, Ajax, PH
 Website: <u>www.phpgang.com</u></para><br><br>How to Convert HTML to PDF with fpdf example');
 
 $pdf->SetFont('Arial','B',7); 
-$htmlTable='<page backimgx="center"  backimgy="top"  backimgw="100%"  backtop="0" style="font-size: 14px;">
-
-    <table cellspacing="0" cellpadding="0" style="width: 100%; left:0;">
+$htmlTable='<table cellspacing="0" cellpadding="0" style="width: 100%; left:0;">
         <tr style="">
             <td style="text-indent: 10mm; width: 45%">
                 
@@ -169,9 +167,7 @@ $htmlTable='<page backimgx="center"  backimgy="top"  backimgw="100%"  backtop="0
 		</tr>
 	</table>
 	<br>
-	<br>
-	
-</page>';
+	<br>';
 $pdf->WriteHTML2("<br><br><br>$htmlTable");
 $pdf->SetFont('Arial','B',6);
 $pdf->Output(); 
