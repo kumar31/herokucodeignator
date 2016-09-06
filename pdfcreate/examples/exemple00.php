@@ -15,11 +15,11 @@
 
     // get the HTML
     ob_start();
-    include(dirname(__FILE__).'/res/exemple00.php');
+    include(dirname(__FILE__).'/res/exemple00.php'); echo "hi";
     $content = ob_get_clean();
 
     // convert in PDF
-   // require_once(dirname(__FILE__).'/../vendor/autoload.php');
+    require_once(dirname(__FILE__).'/../vendor/autoload.php');
     try
     {
         $html2pdf = new HTML2PDF('P', 'A4', 'fr');
