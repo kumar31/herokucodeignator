@@ -19,7 +19,7 @@
     $content = ob_get_clean();
 
     // convert in PDF
-    include('../autoload.php'); echo "hi"; die;
+    include('/../autoload.php'); echo "hi"; die;
     try
     {
         $html2pdf = new HTML2PDF('P', 'A4', 'fr');
