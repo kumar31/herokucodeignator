@@ -22,7 +22,7 @@
     require('/../autoload.php'); 
     try
     { 	
-		ob_get_flush();
+		ob_get_clean();
         $html2pdf = new HTML2PDF('P', 'A4', 'fr'); echo "hi"; die;
 //      $html2pdf->setModeDebug();
         $html2pdf->setDefaultFont('Arial'); 
