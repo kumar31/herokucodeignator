@@ -19,10 +19,11 @@
     $content = ob_get_clean();
 
     // convert in PDF
-    include('./../autoload.php'); 
+    require('/../autoload.php'); 
     try
-    { 
-        $html2pdf = new HTML2PDF('P', 'A4', 'fr'); echo "hi"; die; 
+    { 	
+		ob_get_flush();
+        $html2pdf = new HTML2PDF('P', 'A4', 'fr'); echo "hi"; die;
 //      $html2pdf->setModeDebug();
         $html2pdf->setDefaultFont('Arial'); 
         $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
