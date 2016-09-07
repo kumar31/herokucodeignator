@@ -21,10 +21,10 @@
     // convert in PDF
     include('/../autoload.php'); 
     try
-    {
+    { echo "hi"; die;
         $html2pdf = new HTML2PDF('P', 'A4', 'fr');
 //      $html2pdf->setModeDebug();
-        $html2pdf->setDefaultFont('Arial'); echo "hi"; die;
+        $html2pdf->setDefaultFont('Arial'); 
         $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
         $html2pdf->Output('exemple00.pdf');
     }
