@@ -23,7 +23,7 @@
     try
     { 			
         $html2pdf = new HTML2PDF('P', 'A4', 'fr'); echo "hi"; die;
-		$html2pdf->setModeDebug();
+//      $html2pdf->setModeDebug();
         $html2pdf->setDefaultFont('Arial'); 
         $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
         $html2pdf->Output('exemple00.pdf');
